@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="cmdb_ci_med_device">
+  <cmdb_ci_med_device action="INSERT_OR_UPDATE">
+    <sys_id>f890ea6f2eec424c9f3feb18a397f1ec</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>cmdb_ci_med_device_f890ea6f2eec424c9f3feb18a397f1ec</sys_update_name>
+    <category>Monitoring</category>
+    <company>5c7f992934d146938e84bad4affdf209</company>
+    <discovery_source>Manual Entry</discovery_source>
+    <fda_class>class_2</fda_class>
+    <hardware_status>installed</hardware_status>
+    <install_status>1</install_status>
+    <model_number>CM-450</model_number>
+    <name>CardioMonitor CM-450</name>
+    <operational_status>1</operational_status>
+    <serial_number>CM450-SEL-2847</serial_number>
+    <short_description>Gold Tier Warranty | Gold - 3 Year Full Coverage. COVERED: Manufacturing defects, Component failures, Display screen damage, Software issues, Battery replacement. NOT COVERED: Water damage, Physical abuse drops, Unauthorized modifications.</short_description>
+    <subcategory>Patient Monitoring</subcategory>
+    <warranty_expiration>2025-11-05</warranty_expiration>
+  </cmdb_ci_med_device>
+</record_update>
