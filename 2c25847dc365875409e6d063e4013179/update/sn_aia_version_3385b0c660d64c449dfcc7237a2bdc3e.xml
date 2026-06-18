@@ -5,36 +5,40 @@
     <sys_update_name>sn_aia_version_3385b0c660d64c449dfcc7237a2bdc3e</sys_update_name>
     <condition/>
     <instructions>Step 1: Receive and Parse Claim Request.
-- Use the Warranty Claims Agent to extract claim details from the customer's message: customer name, device serial number, claim reason, and urgency level.
+- Use the Warranty Claims Agent to extract claim details from the customer's message: customer name, device serial number, caller name, claim reason, and urgency level.
 - If the message contains "URGENT", "immediately", or "ASAP", ensure priority is set to Critical.
 - DO NOT PROCEED if device serial number or claim reason cannot be identified. Ask the user to provide missing details.
 
-Step 2: Create Warranty Claim Record.
-- Use the Warranty Claims Agent to create a new warranty claim record with the extracted details.
-- Set state to New (1). Ensure all mandatory fields (customer_name, device_serial_number, claim_reason) are populated.
+Step 2: Lookup Records.
+- Use the Warranty Claims Agent to look up the device from cmdb_ci_med_device using serial_number. If not found, inform user and stop.
+- Look up the customer from core_company using customer name (LIKE query). If not found, create a new company record.
+- Collect device sys_id and customer sys_id for claim creation.
 
-Step 3: Verify Warranty Entitlements.
-- Use the Warranty Claims Agent to call the Lookup Device Warranty tool with the device serial number.
-- Retrieve warranty entitlements including device name, warranty tier, warranty details, and expiry date from the Medtric API.
+Step 3: Create Warranty Claim Record.
+- Use the Warranty Claims Agent to create a new warranty claim record with customer (reference sys_id), device (reference sys_id), caller_name, claim_reason, priority based on urgency, state=New (1).
+
+Step 4: Refresh Warranty Data.
+- Use the Warranty Claims Agent to call the "Lookup Device Warranty" flow action with device sys_id to update device warranty fields from the Medtric API.
 - If the API returns no data, inform the user that warranty information could not be found and recommend ESCALATE.
 
-Step 4: Search Warranty Policy Knowledge Base.
+Step 5: Search Warranty Policy Knowledge Base.
 - Use the Warranty Claims Agent to search the Medtric Warranty Policies knowledge base for relevant coverage policy.
 - Extract keywords from the claim reason to find applicable policy articles.
 - Cite the KB article title and number in the decision reasoning.
 
-Step 5: Analyze Coverage and Decide.
+Step 6: Analyze Coverage and Decide.
 - Use the Warranty Claims Agent to analyze the claim:
-  - Check if warranty is expired (compare expiry date to today)
-  - Check if claim reason falls under COVERED or NOT COVERED categories in warranty_details AND the knowledge base policy articles
+  - Read device warranty data (warranty_expiration, short_description for tier info)
+  - Compare claim_reason against warranty terms and KB findings
+  - Check expiry date vs today
   - If expired OR not covered → DENY
   - If valid and covered → APPROVE
   - If ambiguous → ESCALATE
 
-Step 6: Update Record with Decision.
-- Use the Warranty Claims Agent to update the warranty claim record with the agent_decision and agent_recommendation fields containing the full step-by-step reasoning and KB article citations.
+Step 7: Update Record with Decision.
+- Use the Warranty Claims Agent to update the warranty claim record with agent_decision (Approve/Deny/Escalate), agent_recommendation (full reasoning trace), kb_article_cited (KB article number and title), and set state to appropriate value (3=Resolved for Approve, 4=Closed for Deny, -5=Pending for Escalate).
 
-Step 7: Present Results.
+Step 8: Present Results.
 - Display a formatted summary to the user:
   - Device: name, serial number
   - Customer: name
@@ -43,7 +47,7 @@ Step 7: Present Results.
   - Policy Reference: KB article title and number cited
   - Decision: APPROVE / DENY / ESCALATE
   - Reasoning: step-by-step explanation
-  - Next Steps: what happens next
+  - Next Steps: what happens next (fulfillment work order for approve, denial notice for deny, human review for escalate)
 - NEVER invent warranty terms. Use only data from the API and knowledge base.</instructions>
     <state>published</state>
     <sys_domain>global</sys_domain>

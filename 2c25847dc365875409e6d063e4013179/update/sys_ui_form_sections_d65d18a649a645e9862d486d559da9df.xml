@@ -2,21 +2,21 @@
   <sys_ui_form_sections form_id="d65d18a649a645e9862d486d559da9df" sys_domain="global" table="x_snc_medwc_auto_0_warranty_claim">
     <sys_ui_form_section action="INSERT_OR_UPDATE">
       <position>0</position>
-      <sys_id>f5f5ee040f7947bba5873e5a314d41b6</sys_id>
+      <sys_id>83fb83e1e8a2455fbf1dec2c5c11e313</sys_id>
       <sys_ui_form display_value="x_snc_medwc_auto_0_warranty_claim" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">d65d18a649a645e9862d486d559da9df</sys_ui_form>
-      <sys_ui_section caption="Claim Details" display_value="Claim Details" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a7cc8d729a9948dab3b850bb14fb3df9</sys_ui_section>
+      <sys_ui_section caption="Claim Info" display_value="Claim Info" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">0da5dcc1b0a44383a76a3e73f9ba04d7</sys_ui_section>
     </sys_ui_form_section>
     <sys_ui_form_section action="INSERT_OR_UPDATE">
       <position>1</position>
-      <sys_id>9c371270957f40b2aabab0311c2f9fb2</sys_id>
+      <sys_id>ec777c3d34ac4928986ea9e48914ed3a</sys_id>
       <sys_ui_form display_value="x_snc_medwc_auto_0_warranty_claim" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">d65d18a649a645e9862d486d559da9df</sys_ui_form>
-      <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
+      <sys_ui_section caption="Agent Analysis" display_value="Agent Analysis" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">e8ac54517a1a4dafb169845fd1168114</sys_ui_section>
     </sys_ui_form_section>
     <sys_ui_form_section action="INSERT_OR_UPDATE">
       <position>2</position>
-      <sys_id>28980dc6e41b49608303df406b169783</sys_id>
+      <sys_id>6de5fd31cf8644e19ee9062a54a1477b</sys_id>
       <sys_ui_form display_value="x_snc_medwc_auto_0_warranty_claim" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">d65d18a649a645e9862d486d559da9df</sys_ui_form>
-      <sys_ui_section caption="Agent Decision" display_value="Agent Decision" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">7ea96e46c0064ca98e50e67fa43f3408</sys_ui_section>
+      <sys_ui_section caption="Fulfillment" display_value="Fulfillment" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">b1ff980f0e264726910e3d3d95fefc72</sys_ui_section>
     </sys_ui_form_section>
     <sys_ui_form action="INSERT_OR_UPDATE">
       <name>x_snc_medwc_auto_0_warranty_claim</name>

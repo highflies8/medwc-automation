@@ -16,7 +16,7 @@
     <client_callable>false</client_callable>
     <collection>x_snc_medwc_auto_0_warranty_claim</collection>
     <condition/>
-    <description>Automatically syncs the state field when the AI Agent updates agent_decision. Maps Approve to Resolved (3), Deny to Closed (4), and Escalate to On Hold (-5).</description>
+    <description>Automatically syncs the state field when the AI Agent updates agent_decision. Maps Approve to Resolved (3), Deny to Closed (4), and Escalate to Pending (-5).</description>
     <execute_function>false</execute_function>
     <filter_condition>agent_decisionVALCHANGES</filter_condition>
     <is_rest>false</is_rest>
@@ -33,12 +33,12 @@
     <script><![CDATA[(function executeRule(current, previous) {
     var decision = current.getValue("agent_decision");
 
-    if (decision === "Approve") {
-        current.setValue("state", "3"); // Resolved
-    } else if (decision === "Deny") {
-        current.setValue("state", "4"); // Closed
-    } else if (decision === "Escalate") {
-        current.setValue("state", "-5"); // On Hold
+    if (decision === "approve") {
+        current.setValue("state", "3"); // Resolved - triggers fulfillment flow
+    } else if (decision === "deny") {
+        current.setValue("state", "4"); // Closed - triggers denied notification flow
+    } else if (decision === "escalate") {
+        current.setValue("state", "-5"); // Pending - on hold for human review
     }
 })(current, previous);
 ]]></script>

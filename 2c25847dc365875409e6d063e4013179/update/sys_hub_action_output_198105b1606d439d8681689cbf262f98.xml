@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_action_output">
+  <sys_hub_action_output action="INSERT_OR_UPDATE">
+    <sys_id>198105b1606d439d8681689cbf262f98</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_hub_action_output_198105b1606d439d8681689cbf262f98</sys_update_name>
+    <active>true</active>
+    <array>false</array>
+    <array_denormalized>false</array_denormalized>
+    <display>false</display>
+    <dynamic_creation>false</dynamic_creation>
+    <element>__action_status__</element>
+    <internal_type>string</internal_type>
+    <label>Action Status</label>
+    <mandatory>false</mandatory>
+    <max_length>40</max_length>
+    <model>83a6b593fbf240efba02be410a50a698</model>
+    <model_table>sys_hub_action_type_definition</model_table>
+    <order>1</order>
+    <primary>false</primary>
+    <read_only>false</read_only>
+    <staged>false</staged>
+    <unique>false</unique>
+    <virtual>false</virtual>
+  </sys_hub_action_output>
+</record_update>

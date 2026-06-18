@@ -5,7 +5,7 @@
     <sys_update_name>sn_aia_agent_tool_m2m_e77249723fe04a548f92d3b18f53654a</sys_update_name>
     <active>true</active>
     <agent>f4caf00dad744168941f9b55478451ea</agent>
-    <description>Calls Medtric API to retrieve warranty entitlements using device serial number. Returns customer_name, device_name, warranty_details, warranty_expiry_date, purchase_date, and device_serial_number.</description>
+    <description>Calls Medtric API to refresh warranty data on the device record. Pass device_sys_id.</description>
     <display_output>true</display_output>
     <document_status/>
     <execution_mode>autopilot</execution_mode>
@@ -13,9 +13,9 @@
     <max_auto_executions>10</max_auto_executions>
     <name>Lookup Device Warranty</name>
     <output_transformation_strategy>none</output_transformation_strategy>
-    <post_message>Device warranty information retrieved from Medtric API.</post_message>
+    <post_message>Device warranty information updated from Medtric API.</post_message>
     <post_processing_script/>
-    <pre_message>Calling Medtric Warranty API to look up device entitlements...</pre_message>
+    <pre_message>Calling Medtric Warranty API to refresh device warranty data...</pre_message>
     <pre_run>false</pre_run>
     <sys_domain>global</sys_domain>
     <sys_overrides/>

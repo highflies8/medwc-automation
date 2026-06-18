@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_tool">
   <sn_aia_tool action="INSERT_OR_UPDATE">
-    <sys_id>23aaa24c5b44475db4e2c38809353bc3</sys_id>
+    <sys_id>5c95e3abf9a14d8188e4b9059c910baa</sys_id>
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sn_aia_tool_23aaa24c5b44475db4e2c38809353bc3</sys_update_name>
+    <sys_update_name>sn_aia_tool_5c95e3abf9a14d8188e4b9059c910baa</sys_update_name>
     <active>true</active>
-    <description>Searches Medtric warranty policies using AI Search with hybrid semantic+keyword search against the Medtric Warranty Policies knowledge base. Use before making decisions. Extract 1-2 keywords from the claim reason.</description>
-    <input_schema>[{"name":"keyword","description":"Primary keyword extracted from the claim reason (e.g., 'physical damage', 'software', 'battery', 'screen', 'Gold', 'Silver')","mandatory":true},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
-    <name>Search Warranty Policy Knowledge Base</name>
+    <description>Looks up a medical device record from cmdb_ci_med_device by serial number to get device details and warranty information.</description>
+    <input_schema>[{"name":"serial_number","description":"Serial number of the medical device","mandatory":true},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
+    <name>Lookup Device</name>
     <post_processing_script/>
     <record_type>custom</record_type>
     <script><![CDATA[(function (inputs) {

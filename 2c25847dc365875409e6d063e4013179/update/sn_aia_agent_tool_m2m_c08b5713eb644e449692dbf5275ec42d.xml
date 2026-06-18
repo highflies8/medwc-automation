@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_tool_m2m">
+  <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+    <sys_id>c08b5713eb644e449692dbf5275ec42d</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_tool_m2m_c08b5713eb644e449692dbf5275ec42d</sys_update_name>
+    <active>true</active>
+    <agent>f4caf00dad744168941f9b55478451ea</agent>
+    <description>Looks up a customer company record from core_company by name using a LIKE query.</description>
+    <display_output>true</display_output>
+    <document_status/>
+    <execution_mode>autopilot</execution_mode>
+    <inputs>[{"name":"customer_name","value":"","description":"Name of the customer company","mandatory":true,"invalidMessage":null},{"name":"crudInputs","value":{"operation":"lookup","table":{"value":"core_company","displayValue":"core_company"},"query":"nameLIKE{{customer_name}}","returnFields":[{"excludedOperators":[],"extendedOperators":null,"name":"sys_id","label":"sys_id","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"sys_id","sublabel":"sys_id"},{"excludedOperators":[],"extendedOperators":null,"name":"name","label":"name","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"name","sublabel":"name"}],"limit":"5"},"description":"Lookup operation configuration","mandatory":true,"invalidMessage":null}]</inputs>
+    <max_auto_executions>10</max_auto_executions>
+    <name>Lookup or Create Customer</name>
+    <output_transformation_strategy>none</output_transformation_strategy>
+    <post_message>Customer record retrieved.</post_message>
+    <post_processing_script/>
+    <pre_message>Looking up customer record...</pre_message>
+    <pre_run>false</pre_run>
+    <sys_domain>global</sys_domain>
+    <sys_overrides/>
+    <timeout/>
+    <tool>be8f28dea4634f278aa6d0b7fd6e8fee</tool>
+    <tool_attributes>{}</tool_attributes>
+    <transformation_instructions/>
+    <widgets/>
+  </sn_aia_agent_tool_m2m>
+</record_update>

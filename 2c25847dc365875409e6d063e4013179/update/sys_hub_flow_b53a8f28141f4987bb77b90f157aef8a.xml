@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_hub_flow action="INSERT_OR_UPDATE">
+    <sys_id>b53a8f28141f4987bb77b90f157aef8a</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_hub_flow_b53a8f28141f4987bb77b90f157aef8a</sys_update_name>
+    <access>public</access>
+    <active>false</active>
+    <annotation/>
+    <category/>
+    <description>When a warranty claim is resolved (state=3), creates a fulfillment work order and notifies the customer.</description>
+    <flow_priority>MEDIUM</flow_priority>
+    <generation_source>fluent</generation_source>
+    <internal_name>warranty_claim_approved_fulfillment</internal_name>
+    <label_cache>[{"name":"Updated_1.current","label":"Trigger - Record Updated➛x_snc_medwc_auto_0_warranty_claim Record","type":"reference","base_type":"reference","usedInstances":{"0d9b9cb9-82ac-4ee3-a08a-13c51bd759b7":["record"],"bf2e2789-8310-417d-aceb-dbc285c307ee":["record"]},"attributes":{}}]</label_cache>
+    <name>Warranty Claim Approved Fulfillment</name>
+    <run_as>user</run_as>
+    <run_with_roles/>
+    <show_draft_actions>false</show_draft_actions>
+    <status>draft</status>
+    <sys_policy/>
+    <type>flow</type>
+    <version>2</version>
+  <version_record/>
+    </sys_hub_flow>
+  <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=b53a8f28141f4987bb77b90f157aef8a^sys_idNOT IN100c8146c4004086b1e23821f79e0b4e"/>
+  <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+    <sys_id>100c8146c4004086b1e23821f79e0b4e</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <category/>
+    <comment/>
+    <flow>b53a8f28141f4987bb77b90f157aef8a</flow>
+    <name>Updated</name>
+    <trigger_definition>bb695e60c31322002841b63b12d3aea5</trigger_definition>
+    <trigger_inputs>H4sIAAAAAAAAA71X224bOQz9FUFPXcAFUuybgX3Y3gAD7RbYpNuHohBoiTMWKlNeiWNnEPjfC80lmVsSp57kyTAlkYeHhxLn+43kYPMcw4oiA2m8LOPKyKWUC+lgjU4u5RWsHcqFtMQYCNxVuUO5lJzMimCb1gzukAwS10f1xluNn2xkufz+YyG3QAbYh1IuORS4kD4YDHL55uJiISsXjT+5kHtwRfp/rSJptUVz0AoK9upCHSAEIC6VdmC3KayNOwflf08/8tGia/KMOtgd/63Z7lEuM3ARUwbWmYBU499BgC1ygnwjeSL/QQ596o7HxSk8/1uQ+LZBEl8jBlGRNyI9d9agcvXa6aQ3SU2wHgpShw2SKiKG1nFbgjHDpxNY+ehk+TihvdwegvcgYcAc7LpgjMk1mH1iO2FIwpPHp9biEmO0Pv0yW8rHFalZf6QaNzJrGayOQ83VQmafmoBfyJUiRc18qPNZ3W1sUaQDqy3kTSWyS3SoOWXXkJ59jd1/n22MCXRtSJnfwiBP6hQo/3h6/bxI1p433fBt5LeeNz0SgMx9cOKZeJ7cLfFWDvt+GoN+6VvPv3Ru1XY/oBMkPF+PZM4fxIrObwugciSC5NuSACqF9sR4zTPKLvMB8+ALMvfF7e+YS+2gfz4c9m6HeGUwg8LxHy8o7wRDWeoquwt5qO+JtedR+R2uaf3Np+kvJD5ccxKtEdUDHs+XdwViUHBPQhchIHF1tWEbk9uYs0k9WcbRXdmF0I4uL6UzT6rNuKO1FupAZgPz8yisj+hRRcwjuHeejOX6RR1qrF2KM816uhOrJTwyMP7155jy0cIMpHcTmsA0xUmf5QMQR8VegTGq4+62wbbeoHvf4aqpgLK0KzjKY4dJ5akzshcRVYfk5O+35vbZBsWpF9GH6jVMw/CM94MnVD6bHAFtJhoC0Ih1KXiDIvPO+YOlvMIx50VFPhVlCOa9F+RZhBeB83vfTeNxsK7eoKd6xmccBgeYHhPqfE/nVb3rfPEXZP8vUOkNUF6/ha0aPvogEPRG1FtEvWXWbtCDzyE9p3vcYyhHCSWjKHYGeM5Y4A5QxlFj26xqqObld2VqLaql8BKt017JkQMw5mWnaxruB23Tt87fNxOApkR9PP74BcqW568wEwAA</trigger_inputs>
+    <trigger_outputs/>
+    <trigger_type>record_update</trigger_type>
+  </sys_hub_trigger_instance_v2>
+  <sys_hub_action_instance_v2 action="delete_multiple" query="flow=b53a8f28141f4987bb77b90f157aef8a^sys_idNOT IN2f0a6895fa32481db539bf1463d66b7d,0d9b9cb982ac4ee3a08a13c51bd759b7,bf2e27898310417dacebdbc285c307ee"/>
+  <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+    <sys_id>2f0a6895fa32481db539bf1463d66b7d</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <action_type>2de05916c31332002841b63b12d3aee1</action_type>
+    <action_type_parent>2de05916c31332002841b63b12d3aee1</action_type_parent>
+    <active>true</active>
+    <comment>Create fulfillment work order for approved warranty claim</comment>
+    <display_text/>
+    <flow>b53a8f28141f4987bb77b90f157aef8a</flow>
+    <generation_source/>
+    <order>1</order>
+    <parent_ui_id/>
+    <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+    <ui_id>2f0a6895-fa32-481d-b539-bf1463d66b7d</ui_id>
+    <updation_source/>
+    <values>H4sIAAAAAAAAA7WQzQrCQAyEX2XJub5AwYMHH8CLHkRL3KY0kN2u2bRSSt9d/EFEL148Tgbmy8x+goiBoATDk1B1FwUMKP3teAlVpzUpFFBzToLj9tvJXjnZyhsPBGWDkqmAhIqBjBTKCWxMH4h5Ll7kOyy/UXPbqVU1PYK5i8sdqmK00XlBDq7ppWGRQNHcwmFK2g1UP02lc89K2Rn5NrJnjO72PJpvj+vNd5V/437fh0ISNKoeQ8zz4QoXxqCFnwEAAA==</values>
+  </sys_hub_action_instance_v2>
+  <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+    <sys_id>0d9b9cb982ac4ee3a08a13c51bd759b7</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <action_type>f9d01dd2c31332002841b63b12d3aea1</action_type>
+    <action_type_parent>f9d01dd2c31332002841b63b12d3aea1</action_type_parent>
+    <active>true</active>
+    <comment>Add fulfillment work notes to claim</comment>
+    <display_text/>
+    <flow>b53a8f28141f4987bb77b90f157aef8a</flow>
+    <generation_source/>
+    <order>2</order>
+    <parent_ui_id/>
+    <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+    <ui_id>0d9b9cb9-82ac-4ee3-a08a-13c51bd759b7</ui_id>
+    <updation_source/>
+    <values>H4sIAAAAAAAAA8XRwUoDQQwG4FcJc16Keix4ENG7YL2IDmkmZYOzM0Mm23VZ9t1lK0i1CPXkMT8JfEmeJ5ewY7d2htvI/lA0bo+xX8J3XxP5jsNAHnvL/sIPqIrJRk8RpXONC1JLxPHpDyOVVIrdkMme3XqHsXLjCip2bKxuPTkbyw/UPDdfVmXKGo6c07QpAY2Dv1xRr8rJ5vnU9lvb2Z6Qqe84mZfwDXRw1CPQkPXNp2xcr+/7uJMYlzFYYsgaWIGUF8kKHpnaJCSYYJAYYcuwsNGo5QCDWCsJrqDNvVbYZYVbFRPCCEUlq9i4er17OF32PwjnP5a7EtHYfx5snl8+AHehu/aKAgAA</values>
+  </sys_hub_action_instance_v2>
+  <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+    <sys_id>bf2e27898310417dacebdbc285c307ee</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <action_type>f9d01dd2c31332002841b63b12d3aea1</action_type>
+    <action_type_parent>f9d01dd2c31332002841b63b12d3aea1</action_type_parent>
+    <active>true</active>
+    <comment>Mark customer as notified</comment>
+    <display_text/>
+    <flow>b53a8f28141f4987bb77b90f157aef8a</flow>
+    <generation_source/>
+    <order>3</order>
+    <parent_ui_id/>
+    <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+    <ui_id>bf2e2789-8310-417d-aceb-dbc285c307ee</ui_id>
+    <updation_source/>
+    <values>H4sIAAAAAAAAA5XQzWpCQQwF4HfJ+lLq9kIXLnyALupGNMRMhIH5I5NRL5d5d6mFYisWuzzhBD7OZoZEUWAEo30QvIYBjhTa5/GMNTFGcSdGapbxFU+kSskm5EA+wgDO1xJoWv/jpbL6Yks2fxQYDxSqDFBIKYqJwjiDTeUXqvfh26rCWd2Nc54/iiMTh4sXbqqSrPd726Pa0x6XuUVJht79AF0d9QbErVqOopiy+YMX92baZLd6v0f9VX1+KIklkAl+AXrfXgDPyzDz2gEAAA==</values>
+  </sys_hub_action_instance_v2>
+  <sys_hub_alias_mapping action="delete_multiple" query="source_id=2f0a6895fa32481db539bf1463d66b7d"/>
+  <sys_hub_alias_mapping action="delete_multiple" query="source_id=0d9b9cb982ac4ee3a08a13c51bd759b7"/>
+  <sys_hub_alias_mapping action="delete_multiple" query="source_id=bf2e27898310417dacebdbc285c307ee"/>
+</record_update>

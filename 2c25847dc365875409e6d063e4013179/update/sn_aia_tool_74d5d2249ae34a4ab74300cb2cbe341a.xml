@@ -4,7 +4,7 @@
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
     <sys_update_name>sn_aia_tool_74d5d2249ae34a4ab74300cb2cbe341a</sys_update_name>
     <active>true</active>
-    <description>Calls Medtric API to retrieve warranty entitlements using device serial number. Returns customer_name, device_name, warranty_details, warranty_expiry_date, purchase_date, and device_serial_number.</description>
+    <description>Calls Medtric API to refresh warranty data on the device record. Pass device_sys_id.</description>
     <input_schema>[]</input_schema>
     <name>Lookup Device Warranty</name>
     <post_processing_script/>

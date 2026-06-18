@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Agent Analysis" section_id="e8ac54517a1a4dafb169845fd1168114" sys_domain="global" table="x_snc_medwc_auto_0_warranty_claim" view="Default view">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>agent_recommendation</element>
+      <position>0</position>
+      <sys_id>57d88ebb28b0487da27518f237d308d9</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Agent Analysis" display_value="Agent Analysis" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">e8ac54517a1a4dafb169845fd1168114</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>agent_decision</element>
+      <position>1</position>
+      <sys_id>674ef9ca78e54749b45c437f86412ee6</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Agent Analysis" display_value="Agent Analysis" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">e8ac54517a1a4dafb169845fd1168114</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>kb_article_cited</element>
+      <position>2</position>
+      <sys_id>ce42bf914ab94e3bbe951a2bdd3c5eaa</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Agent Analysis" display_value="Agent Analysis" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">e8ac54517a1a4dafb169845fd1168114</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Agent Analysis</caption>
+      <header>false</header>
+      <name>x_snc_medwc_auto_0_warranty_claim</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>e8ac54517a1a4dafb169845fd1168114</sys_id>
+      <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view>Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

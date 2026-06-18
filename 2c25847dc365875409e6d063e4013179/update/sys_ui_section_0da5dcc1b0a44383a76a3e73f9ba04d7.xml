@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Claim Info" section_id="0da5dcc1b0a44383a76a3e73f9ba04d7" sys_domain="global" table="x_snc_medwc_auto_0_warranty_claim" view="Default view">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>12e1529954ff4352a800bd9ae3cdf43e</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Claim Info" display_value="Claim Info" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">0da5dcc1b0a44383a76a3e73f9ba04d7</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>customer</element>
+      <position>1</position>
+      <sys_id>e2162bac2372498b89e8fcf183143f14</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Claim Info" display_value="Claim Info" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">0da5dcc1b0a44383a76a3e73f9ba04d7</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>device</element>
+      <position>2</position>
+      <sys_id>8608de36ebdc41969dcf86fc98840665</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Claim Info" display_value="Claim Info" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">0da5dcc1b0a44383a76a3e73f9ba04d7</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>caller_name</element>
+      <position>3</position>
+      <sys_id>12aa5f2bc30843c8b090338f0799914b</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Claim Info" display_value="Claim Info" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">0da5dcc1b0a44383a76a3e73f9ba04d7</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>4</position>
+      <sys_id>ae18bddccef04559aa912e3e57540503</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Claim Info" display_value="Claim Info" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">0da5dcc1b0a44383a76a3e73f9ba04d7</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>priority</element>
+      <position>5</position>
+      <sys_id>cedd31972c454d71827831572f27ee87</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Claim Info" display_value="Claim Info" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">0da5dcc1b0a44383a76a3e73f9ba04d7</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>state</element>
+      <position>6</position>
+      <sys_id>68224a7cc9a7401995afdc0b1fa3d5d0</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Claim Info" display_value="Claim Info" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">0da5dcc1b0a44383a76a3e73f9ba04d7</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>7</position>
+      <sys_id>e0627d4d0f5d4b338eb227d08fcfc0e8</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Claim Info" display_value="Claim Info" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">0da5dcc1b0a44383a76a3e73f9ba04d7</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>claim_reason</element>
+      <position>8</position>
+      <sys_id>3f669761d8c241e4a99c33e676c479d3</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Claim Info" display_value="Claim Info" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">0da5dcc1b0a44383a76a3e73f9ba04d7</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Claim Info</caption>
+      <header>false</header>
+      <name>x_snc_medwc_auto_0_warranty_claim</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>0da5dcc1b0a44383a76a3e73f9ba04d7</sys_id>
+      <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view>Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

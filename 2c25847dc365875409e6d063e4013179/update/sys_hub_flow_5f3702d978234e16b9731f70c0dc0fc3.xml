@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_hub_flow action="INSERT_OR_UPDATE">
+    <sys_id>5f3702d978234e16b9731f70c0dc0fc3</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_hub_flow_5f3702d978234e16b9731f70c0dc0fc3</sys_update_name>
+    <access>public</access>
+    <active>false</active>
+    <annotation/>
+    <category/>
+    <description>When a warranty claim is closed (state=4), adds denial work notes and marks customer notified.</description>
+    <flow_priority>MEDIUM</flow_priority>
+    <generation_source>fluent</generation_source>
+    <internal_name>warranty_claim_denied_notification</internal_name>
+    <label_cache>[{"name":"Updated_1.current","label":"Trigger - Record Updated➛x_snc_medwc_auto_0_warranty_claim Record","type":"reference","base_type":"reference","usedInstances":{"4ec1f987-843a-4fe4-b1eb-8c36d7987cea":["record"],"0b0d810e-b9b2-47f0-8fbf-8a68b0ea6bb3":["record"]},"attributes":{}}]</label_cache>
+    <name>Warranty Claim Denied Notification</name>
+    <run_as>user</run_as>
+    <run_with_roles/>
+    <show_draft_actions>false</show_draft_actions>
+    <status>draft</status>
+    <sys_policy/>
+    <type>flow</type>
+    <version>2</version>
+  <version_record/>
+    </sys_hub_flow>
+  <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=5f3702d978234e16b9731f70c0dc0fc3^sys_idNOT INe4f7391d91a54f539495818e0e3f6128"/>
+  <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+    <sys_id>e4f7391d91a54f539495818e0e3f6128</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <category/>
+    <comment/>
+    <flow>5f3702d978234e16b9731f70c0dc0fc3</flow>
+    <name>Updated</name>
+    <trigger_definition>bb695e60c31322002841b63b12d3aea5</trigger_definition>
+    <trigger_inputs>H4sIAAAAAAAAA71X224bOQz9FUFPXcAFUmCfDOzD9gYYaLfAJt0+FIVAS5yxUJnyShw7g8D/XmguydySOPUkT4YpiTw8PJQ4328kB5vnGFYUGUjjZRlXRi6lXEgHa3RyKa9g7VAupCXGQOCuyh3KpeRkVgTbtGZwh2SQuD6qN95q/GQjy+X3Hwu5BTLAPpRyyaHAhfTBYJDLNxcXC1m5aPzJhdyDK9L/axVJqy2ag1ZQsFcX6gAhAHGptAO7TWFt3Dko/3v6kY8WXZNn1MHu+G/Ndo9ymYGLmDKwzgSkGv8OAmyRE+QbyRP5D3LoU3c8Lk7h+d+CxLcNkvgaMYiKvBHpubMGlavXTie9SWqC9VCQOmyQVBExtI7bEowZPp3Aykcny8cJ7eX2ELwHCQPmYNcFY0yuwewT2wlDEp48PrUWlxij9emX2VI+rkjN+iPVuJFZy2B1HGquFjL71AT8Qq4UKWrmQ53P6m5jiyIdWG0hbyqRXaJDzSm7hvTsa+z++2xjTKBrQ8r8FgZ5UqdA+cfT6+dFsva86YZvI7/1vOmRAGTugxPPxPPkbom3ctj30xj0S996/qVzq7b7AZ0g4fl6JHP+IFZ0flsAlSMRJN+WBFAptCfGa55RdpkPmAdfkLkvbn/HXGoH/fPhsHc7xCuDGRSO/3hBeScYylJX2V3IQ31PrD2Pyu9wTetvPk1/IfHhmpNojage8Hi+vCsQg4J7EroIAYmrqw3bmNzGnE3qyTKO7souhHZ0eSmdeVJtxh2ttVAHMhuYn0dhfUSPKmIewb3zZCzXL+pQY+1SnGnW051YLeGRgfGvP8eUjxZmIL2b0ASmKU76LB+AOCr2CoxRHXe3Dbb1Bt37DldNBZSlXcFRHjtMKk+dkb2IqDokJ3+/NbfPNihOvYg+VK9hGoZnvB88ofLZ5AhoM9EQgEasS8EbFJl3zh8s5RWOOS8q8qkoQzDvvSDPIrwInN/7bhqPg3X1Bj3VMz7jMDjA9JhQ53s6r+pd54u/IPt/gUpvgPL6LWzV8NEHgaA3ot4i6i2zdoMefA7pOd3jHkM5SigZRbEzwHPGAneAMo4a22ZVQzUvvytTa1EthZdonfZKjhyAMS87XdNwP2ibvnX+vpkANCXq4/HHL/KpZ4owEwAA</trigger_inputs>
+    <trigger_outputs/>
+    <trigger_type>record_update</trigger_type>
+  </sys_hub_trigger_instance_v2>
+  <sys_hub_action_instance_v2 action="delete_multiple" query="flow=5f3702d978234e16b9731f70c0dc0fc3^sys_idNOT IN4ec1f987843a4fe4b1eb8c36d7987cea,0b0d810eb9b247f08fbf8a68b0ea6bb3"/>
+  <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+    <sys_id>4ec1f987843a4fe4b1eb8c36d7987cea</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <action_type>f9d01dd2c31332002841b63b12d3aea1</action_type>
+    <action_type_parent>f9d01dd2c31332002841b63b12d3aea1</action_type_parent>
+    <active>true</active>
+    <comment>Add denial work notes to claim</comment>
+    <display_text/>
+    <flow>5f3702d978234e16b9731f70c0dc0fc3</flow>
+    <generation_source/>
+    <order>1</order>
+    <parent_ui_id/>
+    <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+    <ui_id>4ec1f987-843a-4fe4-b1eb-8c36d7987cea</ui_id>
+    <updation_source/>
+    <values>H4sIAAAAAAAAA73RzUoEMQwA4FcJPQ+DXgc8yOIDeNCLaIhtFor9M013HIa+u+yKsroI68VjQkK+JA+rSRTZTEbpOTAegsHsKLR98g1rshjZzRapacYLnEmEki5oA/loBuN8LYGW+z+0VCu+6LVVv2MzbSlUHkwhocjKYqbV6FJ+oHofvqzCNos7cq7rXXGk7PBytE2Ek/Z+avut7GyPy7ZFTorefQMdHPUINGd5wZSV69VmvzQ4Tp4dFBb4PAcoS6wjbFrVHFkg0gI2JyWrUClwhW0WKOQdCBfyAq8tK49PN7enu/3DxPPfxrEEUsaPc/T++A4ReVp0aAIAAA==</values>
+  </sys_hub_action_instance_v2>
+  <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+    <sys_id>0b0d810eb9b247f08fbf8a68b0ea6bb3</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <action_type>f9d01dd2c31332002841b63b12d3aea1</action_type>
+    <action_type_parent>f9d01dd2c31332002841b63b12d3aea1</action_type_parent>
+    <active>true</active>
+    <comment>Mark customer as notified</comment>
+    <display_text/>
+    <flow>5f3702d978234e16b9731f70c0dc0fc3</flow>
+    <generation_source/>
+    <order>2</order>
+    <parent_ui_id/>
+    <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+    <ui_id>0b0d810e-b9b2-47f0-8fbf-8a68b0ea6bb3</ui_id>
+    <updation_source/>
+    <values>H4sIAAAAAAAAA5XQzWpCQQwF4HfJ+lLq9kIXLnyALupGNMRMhIH5I5NRL5d5d6mFYisWuzzhBD7OZoZEUWAEo30QvIYBjhTa5/GMNTFGcSdGapbxFU+kSskm5EA+wgDO1xJoWv/jpbL6Yks2fxQYDxSqDFBIKYqJwjiDTeUXqvfh26rCWd2Nc54/iiMTh4sXbqqSrPd726Pa0x6XuUVJht79AF0d9QbErVqOopiy+YMX92baZLd6v0f9VX1+KIklkAl+AXrfXgDPyzDz2gEAAA==</values>
+  </sys_hub_action_instance_v2>
+  <sys_hub_alias_mapping action="delete_multiple" query="source_id=4ec1f987843a4fe4b1eb8c36d7987cea"/>
+  <sys_hub_alias_mapping action="delete_multiple" query="source_id=0b0d810eb9b247f08fbf8a68b0ea6bb3"/>
+</record_update>
