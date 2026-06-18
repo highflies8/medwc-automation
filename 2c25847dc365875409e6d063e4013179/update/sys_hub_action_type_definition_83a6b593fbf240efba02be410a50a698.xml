@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+    <sys_id>83a6b593fbf240efba02be410a50a698</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_hub_action_type_definition_83a6b593fbf240efba02be410a50a698</sys_update_name>
+    <access>public</access>
+    <active>true</active>
+    <annotation/>
+    <category>x_snc_medwc_auto_0</category>
+    <description>Looks up warranty information for a medical device by serial number from the Medtric Device Warranty API.</description>
+    <internal_name>lookup_medtric_device_warranty</internal_name>
+    <label_cache>[{"name":"{{action.serial_number}}","label":"action➛Serial Number","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
+    <name>Lookup Medtric Device Warranty</name>
+    <state>draft</state>
+    <sys_policy/>
+    <system_level>false</system_level>
+  </sys_hub_action_type_definition>
+  <sys_hub_step_instance action="INSERT_OR_UPDATE">
+    <sys_id>3fce634b07ee48c8bf4e6b08f723e5f5</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <action>83a6b593fbf240efba02be410a50a698</action>
+    <active>true</active>
+    <cid>3fce634b-07ee-48c8-bf4e-6b08f723e5f5</cid>
+    <error_handling_type>1</error_handling_type>
+    <label>Call Medtric Warranty API</label>
+    <order>1</order>
+    <step_type>106afb6647032200b4fad7527c9a71e7</step_type>
+  </sys_hub_step_instance>
+  <sys_variable_value action="delete_multiple" query="variable=a22df22f989f4d3c964aaf19bc80635a"/>
+  <sys_variable_value action="delete_multiple" query="variable=cb7f64490e2b4d309d6d26736bcb02fb"/>
+  <sys_variable_value action="delete_multiple" query="variable=75cf18c36f994a489ce986446d1ba94a"/>
+  <sys_variable_value action="delete_multiple" query="variable=43b4d580487a4b568216369bdaf460f2"/>
+  <sys_variable_value action="delete_multiple" query="variable=4ac1220e3707424a9d0895189da93548"/>
+  <sys_variable_value action="delete_multiple" query="variable=9dd959bf30984cedbe7a6317510c2f80"/>
+  <sys_variable_value action="delete_multiple" query="variable=198105b1606d439d8681689cbf262f98"/>
+  <sys_variable_value action="delete_multiple" query="variable=fbe18de8d9694ee19712e4f3b3ad6194"/>
+  <sys_variable_value action="INSERT_OR_UPDATE">
+    <sys_id>bdf1f01f2a1946b59baec16c49e4a717</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <document>sys_hub_step_instance</document>
+    <document_key>3fce634b07ee48c8bf4e6b08f723e5f5</document_key>
+    <order>100</order>
+    <value>instance</value>
+    <variable>74315b04b3201300176b051a16a8dc2b</variable>
+  </sys_variable_value>
+  <sys_variable_value action="INSERT_OR_UPDATE">
+    <sys_id>40f14d32f31544119b35cdf96a4cf9d7</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <document>sys_hub_step_instance</document>
+    <document_key>3fce634b07ee48c8bf4e6b08f723e5f5</document_key>
+    <order>100</order>
+    <value>(function execute(inputs, outputs) {
+    var serialNumber = inputs.serial_number;
+    
+    var restMessage = new sn_ws.RESTMessageV2();
+    restMessage.setEndpoint('https://demoalectriallwfzu131128.service-now.com/api/now/table/x_snc_481_medica_0_medical_device');
+    restMessage.setHttpMethod('GET');
+    restMessage.setBasicAuth('medtric', 'Servicenow123!');
+    restMessage.setQueryParameter('sysparm_limit', '1');
+    restMessage.setQueryParameter('device_serial_number', serialNumber);
+    restMessage.setRequestHeader('Accept', 'application/json');
+    
+    var response = restMessage.execute();
+    var responseBody = response.getBody();
+    var parsed = JSON.parse(responseBody);
+    
+    if (parsed.result &amp;&amp; parsed.result.length &gt; 0) {
+        var record = parsed.result[0];
+        outputs.customer_name = record.customer_name || '';
+        outputs.device_name = record.device_name || '';
+        outputs.warranty_details = record.warranty_details || '';
+        outputs.warranty_expiry_date = record.warranty_expiry_date || '';
+        outputs.purchase_date = record.purchase_date || '';
+        outputs.device_serial_number = record.device_serial_number || '';
+    } else {
+        outputs.customer_name = '';
+        outputs.device_name = '';
+        outputs.warranty_details = '';
+        outputs.warranty_expiry_date = '';
+        outputs.purchase_date = '';
+        outputs.device_serial_number = '';
+    }
+})(inputs, outputs);
+</value>
+    <variable>71aa7f6647032200b4fad7527c9a719b</variable>
+  </sys_variable_value>
+  <sys_element_mapping action="INSERT_OR_UPDATE">
+    <sys_id>dcf75a7f4a1e40cca2f188c1b8e75acf</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <field>serial_number</field>
+    <id>3fce634b07ee48c8bf4e6b08f723e5f5</id>
+    <table>var__m_sys_hub_step_ext_input_3fce634b07ee48c8bf4e6b08f723e5f5</table>
+    <value>{{action.serial_number}}</value>
+  </sys_element_mapping>
+  <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+    <sys_id>b6240d510fe14bd282cc96c87b65f963</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+    <default_value/>
+    <element>serial_number</element>
+    <internal_type>string</internal_type>
+    <label>Serial Number</label>
+    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
+    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+    <model_table>sys_hub_step_instance</model_table>
+    <name>var__m_sys_hub_step_ext_input_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+  </sys_hub_step_ext_input>
+  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+    <sys_id>9d02b076ee58475aaa161acb30b2a157</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+    <element>customer_name</element>
+    <internal_type>string</internal_type>
+    <label>Customer Name</label>
+    <mandatory/>
+    <max_length>255</max_length>
+    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
+    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+    <model_table>sys_hub_step_instance</model_table>
+    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+  </sys_hub_step_ext_output>
+  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+    <sys_id>8027cbc7473b42f193e0565873c6450a</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+    <element>device_name</element>
+    <internal_type>string</internal_type>
+    <label>Device Name</label>
+    <mandatory/>
+    <max_length>255</max_length>
+    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
+    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+    <model_table>sys_hub_step_instance</model_table>
+    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+  </sys_hub_step_ext_output>
+  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+    <sys_id>0542b2e0ae204b9bb3e8fe82e590b164</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+    <element>warranty_details</element>
+    <internal_type>string</internal_type>
+    <label>Warranty Details</label>
+    <mandatory/>
+    <max_length>4000</max_length>
+    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
+    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+    <model_table>sys_hub_step_instance</model_table>
+    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+  </sys_hub_step_ext_output>
+  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+    <sys_id>c47d798822a146f99ecb79db8b2120d6</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+    <element>warranty_expiry_date</element>
+    <internal_type>string</internal_type>
+    <label>Warranty Expiry Date</label>
+    <mandatory/>
+    <max_length>255</max_length>
+    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
+    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+    <model_table>sys_hub_step_instance</model_table>
+    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+  </sys_hub_step_ext_output>
+  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+    <sys_id>accf97aa0dd34d708afdd4dfa09a4100</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+    <element>purchase_date</element>
+    <internal_type>string</internal_type>
+    <label>Purchase Date</label>
+    <mandatory/>
+    <max_length>255</max_length>
+    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
+    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+    <model_table>sys_hub_step_instance</model_table>
+    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+  </sys_hub_step_ext_output>
+  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+    <sys_id>99abacd034d74f4ba5f49925dfa7c49b</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+    <element>device_serial_number</element>
+    <internal_type>string</internal_type>
+    <label>Device Serial Number</label>
+    <mandatory/>
+    <max_length>255</max_length>
+    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
+    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+    <model_table>sys_hub_step_instance</model_table>
+    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+  </sys_hub_step_ext_output>
+  <sys_hub_action_input action="INSERT_OR_UPDATE">
+    <sys_id>f2896d2d4e7b4902a0bd68737130470b</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes/>
+    <default_value/>
+    <element>serial_number</element>
+    <hint/>
+    <internal_type>string</internal_type>
+    <label>Serial Number</label>
+    <mandatory>true</mandatory>
+    <max_length>255</max_length>
+    <model>83a6b593fbf240efba02be410a50a698</model>
+    <model_id>83a6b593fbf240efba02be410a50a698</model_id>
+    <model_table>sys_hub_action_type_definition</model_table>
+    <name>var__m_sys_hub_action_input_83a6b593fbf240efba02be410a50a698</name>
+    <order>1</order>
+  </sys_hub_action_input>
+  <sys_documentation action="INSERT_OR_UPDATE">
+    <sys_id>7b7410d120654993b433675f30209b41</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <element>serial_number</element>
+    <hint/>
+    <label>Serial Number</label>
+    <language>en</language>
+    <name>var__m_sys_hub_action_input_83a6b593fbf240efba02be410a50a698</name>
+    <plural>Serial Numbers</plural>
+  </sys_documentation>
+  <sys_documentation action="INSERT_OR_UPDATE">
+    <sys_id>c129dfafce504900a760fc6b19b20de3</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <element>customer_name</element>
+    <hint/>
+    <label>Customer Name</label>
+    <language>en</language>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <plural>Customer Names</plural>
+  </sys_documentation>
+  <sys_documentation action="INSERT_OR_UPDATE">
+    <sys_id>e40bd23ec7ab48fbabc94a3f0d2c1558</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <element>device_name</element>
+    <hint/>
+    <label>Device Name</label>
+    <language>en</language>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <plural>Device Names</plural>
+  </sys_documentation>
+  <sys_documentation action="INSERT_OR_UPDATE">
+    <sys_id>22adb0e272994df78ae0a0a8a86d7dd7</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <element>warranty_details</element>
+    <hint/>
+    <label>Warranty Details</label>
+    <language>en</language>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <plural>Warranty Details</plural>
+  </sys_documentation>
+  <sys_documentation action="INSERT_OR_UPDATE">
+    <sys_id>eea7516b5da8473bad5bda52c2df0faf</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <element>warranty_expiry_date</element>
+    <hint/>
+    <label>Warranty Expiry Date</label>
+    <language>en</language>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <plural>Warranty Expiry Dates</plural>
+  </sys_documentation>
+  <sys_documentation action="INSERT_OR_UPDATE">
+    <sys_id>f91a17db903d4238a226c4a1f5e39980</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <element>purchase_date</element>
+    <hint/>
+    <label>Purchase Date</label>
+    <language>en</language>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <plural>Purchase Dates</plural>
+  </sys_documentation>
+  <sys_documentation action="INSERT_OR_UPDATE">
+    <sys_id>40f6d03f36324f21baef50bdb2edafff</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <element>device_serial_number</element>
+    <hint/>
+    <label>Device Serial Number</label>
+    <language>en</language>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <plural>Device Serial Numbers</plural>
+  </sys_documentation>
+  <sys_documentation action="INSERT_OR_UPDATE">
+    <sys_id>2ad8a19fa7b34d4f9891d6e6ad5d0270</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <element>__action_status__</element>
+    <hint/>
+    <label>Action Status</label>
+    <language>en</language>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <plural>Action Status</plural>
+  </sys_documentation>
+  <sys_documentation action="INSERT_OR_UPDATE">
+    <sys_id>a9527e98bacb4b47a24775445da8947c</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <element>__dont_treat_as_error__</element>
+    <hint/>
+    <label>Don't Treat as Error</label>
+    <language>en</language>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <plural>Don't Treat as Errors</plural>
+  </sys_documentation>
+  <sys_hub_action_output action="INSERT_OR_UPDATE">
+    <sys_id>a22df22f989f4d3c964aaf19bc80635a</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes/>
+    <default_value/>
+    <element>customer_name</element>
+    <hint/>
+    <internal_type>string</internal_type>
+    <label>Customer Name</label>
+    <mandatory>false</mandatory>
+    <max_length>255</max_length>
+    <model>83a6b593fbf240efba02be410a50a698</model>
+    <model_id>83a6b593fbf240efba02be410a50a698</model_id>
+    <model_table>sys_hub_action_type_definition</model_table>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <order>1</order>
+  </sys_hub_action_output>
+  <sys_hub_action_output action="INSERT_OR_UPDATE">
+    <sys_id>cb7f64490e2b4d309d6d26736bcb02fb</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes/>
+    <default_value/>
+    <element>device_name</element>
+    <hint/>
+    <internal_type>string</internal_type>
+    <label>Device Name</label>
+    <mandatory>false</mandatory>
+    <max_length>255</max_length>
+    <model>83a6b593fbf240efba02be410a50a698</model>
+    <model_id>83a6b593fbf240efba02be410a50a698</model_id>
+    <model_table>sys_hub_action_type_definition</model_table>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <order>2</order>
+  </sys_hub_action_output>
+  <sys_hub_action_output action="INSERT_OR_UPDATE">
+    <sys_id>75cf18c36f994a489ce986446d1ba94a</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes/>
+    <default_value/>
+    <element>warranty_details</element>
+    <hint/>
+    <internal_type>string</internal_type>
+    <label>Warranty Details</label>
+    <mandatory>false</mandatory>
+    <max_length>4000</max_length>
+    <model>83a6b593fbf240efba02be410a50a698</model>
+    <model_id>83a6b593fbf240efba02be410a50a698</model_id>
+    <model_table>sys_hub_action_type_definition</model_table>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <order>3</order>
+  </sys_hub_action_output>
+  <sys_hub_action_output action="INSERT_OR_UPDATE">
+    <sys_id>43b4d580487a4b568216369bdaf460f2</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes/>
+    <default_value/>
+    <element>warranty_expiry_date</element>
+    <hint/>
+    <internal_type>string</internal_type>
+    <label>Warranty Expiry Date</label>
+    <mandatory>false</mandatory>
+    <max_length>255</max_length>
+    <model>83a6b593fbf240efba02be410a50a698</model>
+    <model_id>83a6b593fbf240efba02be410a50a698</model_id>
+    <model_table>sys_hub_action_type_definition</model_table>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <order>4</order>
+  </sys_hub_action_output>
+  <sys_hub_action_output action="INSERT_OR_UPDATE">
+    <sys_id>4ac1220e3707424a9d0895189da93548</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes/>
+    <default_value/>
+    <element>purchase_date</element>
+    <hint/>
+    <internal_type>string</internal_type>
+    <label>Purchase Date</label>
+    <mandatory>false</mandatory>
+    <max_length>255</max_length>
+    <model>83a6b593fbf240efba02be410a50a698</model>
+    <model_id>83a6b593fbf240efba02be410a50a698</model_id>
+    <model_table>sys_hub_action_type_definition</model_table>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <order>5</order>
+  </sys_hub_action_output>
+  <sys_hub_action_output action="INSERT_OR_UPDATE">
+    <sys_id>9dd959bf30984cedbe7a6317510c2f80</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes/>
+    <default_value/>
+    <element>device_serial_number</element>
+    <hint/>
+    <internal_type>string</internal_type>
+    <label>Device Serial Number</label>
+    <mandatory>false</mandatory>
+    <max_length>255</max_length>
+    <model>83a6b593fbf240efba02be410a50a698</model>
+    <model_id>83a6b593fbf240efba02be410a50a698</model_id>
+    <model_table>sys_hub_action_type_definition</model_table>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <order>6</order>
+  </sys_hub_action_output>
+  <sys_hub_action_output action="INSERT_OR_UPDATE">
+    <sys_id>198105b1606d439d8681689cbf262f98</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,action_error_output=true,uiType=object,uiTypeLabel=Object,uiUniqueId=83a6b593fbf240efba02be410a50a698-action-status,co_type_name=FDACTIONSTATUS</attributes>
+    <element>__action_status__</element>
+    <internal_type>string</internal_type>
+    <label>Action Status</label>
+    <mandatory>false</mandatory>
+    <max_length>65000</max_length>
+    <model>83a6b593fbf240efba02be410a50a698</model>
+    <model_id>83a6b593fbf240efba02be410a50a698</model_id>
+    <model_table>sys_hub_action_type_definition</model_table>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <order>1</order>
+  </sys_hub_action_output>
+  <sys_hub_action_output action="INSERT_OR_UPDATE">
+    <sys_id>fbe18de8d9694ee19712e4f3b3ad6194</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <active>true</active>
+    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,action_error_output=true,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=83a6b593fbf240efba02be410a50a698-action-error,visible_in_ui=false</attributes>
+    <element>__dont_treat_as_error__</element>
+    <internal_type>string</internal_type>
+    <label>Don't Treat as Error</label>
+    <mandatory>false</mandatory>
+    <max_length>40</max_length>
+    <model>83a6b593fbf240efba02be410a50a698</model>
+    <model_id>83a6b593fbf240efba02be410a50a698</model_id>
+    <model_table>sys_hub_action_type_definition</model_table>
+    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+    <order>2</order>
+  </sys_hub_action_output>
+</record_update>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_alias">
+  <sys_alias action="INSERT_OR_UPDATE">
+    <sys_id>d489477c4eb441fea132ce52597b4f64</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_alias_d489477c4eb441fea132ce52597b4f64</sys_update_name>
+    <connection_type>http_connection</connection_type>
+    <name>Medtric Warranty API</name>
+    <type>connection</type>
+  </sys_alias>
+</record_update>
