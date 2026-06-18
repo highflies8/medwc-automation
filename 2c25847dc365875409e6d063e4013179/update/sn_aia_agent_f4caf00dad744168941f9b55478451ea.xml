@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent">
+  <sn_aia_agent action="INSERT_OR_UPDATE">
+    <sys_id>f4caf00dad744168941f9b55478451ea</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_f4caf00dad744168941f9b55478451ea</sys_update_name>
+    <acl>21f3262d81a7493fa0b15eb4380ea4ca</acl>
+    <active>true</active>
+    <advanced_mode>false</advanced_mode>
+    <agent_type>internal</agent_type>
+    <channel>nap_and_va</channel>
+    <compiled_handbook/>
+    <condition/>
+    <context_processing_script>/*
+ * Available Variables:
+ * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
+ * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
+ * - agent_id: The agent id.
+ * - context: An object that carries additional contextual information for the agent.
+ * It always includes a "pageContext" and may include a "triggerContext",
+ * depending on how and from where the agent is invoked.
+ *
+ * Behavior by invocation type:
+ * ---------------------------------
+ * - When invoked via the startAiAgentConversation API:
+ * If a "contextMemory" parameter is provided in the API request,
+ * it will be available here as the "triggerContext".
+ * The "pageContext" is always present in this call, regardless
+ * of whether the agent is executed individually or as part of a use case.
+ * Example:
+ * {
+ * pageContext: { ... },
+ * triggerContext: { ... } // Derived from contextMemory (if passed)
+ * }
+ *
+ * - When invoked as part of a use case or workflow:
+ * The "pageContext" and "triggerContext" objects available here
+ * may have been *modified* by the use case's context processing script.
+ * This means the use case may alter, extend, or overwrite values
+ * from the original "pageContext" or "triggerContext"
+ * before the context reaches the agent.
+ * If the use case was originally triggered via the API,
+ * the initial "triggerContext" is still derived from the
+ * "contextMemory" parameter, but its contents may have been updated
+ * by the use case logic.
+ *
+ * - When executed directly (standalone agent execution):
+ * The "pageContext" will always be present (default or empty),
+ * and the "triggerContext" will only be populated if explicitly
+ * passed through the API call.
+ * Return an modified context like: { pageContext : {},triggerContext:{} }
+ */
+(function(task, user_utterance, agent_id, context) {
+	return {
+		pageContext : context?.pageContext,
+		triggerContext : context?.triggerContext
+	};
+})(task,user_utterance, agent_id, context);</context_processing_script>
+    <description>Processes warranty claims by extracting claim details from customer messages, looking up device warranty entitlements via API, analyzing coverage against policy, and recommending approve/deny/escalate decisions.</description>
+    <external>false</external>
+    <external_agent_configuration/>
+    <instructions>You process warranty claims following these steps:
+
+Step 1: EXTRACT from the customer's message: customer name, device serial number, claim reason, urgency level. If message contains "URGENT", "immediately", "ASAP", set priority to Critical.
+
+Step 2: CREATE a warranty claim record using the "Manage Warranty Claim Records" tool with extracted details. Set state to New (1). You MUST provide customer_name, device_serial_number, and claim_reason as they are mandatory fields.
+
+Step 3: CALL the "Lookup Device Warranty" tool using the device serial number to retrieve warranty entitlements from the Medtric API.
+
+Step 4: ANALYZE the claim: Check if warranty is expired (compare expiry date to today). Check if claim reason falls under COVERED or NOT COVERED categories in warranty_details. If expired OR not covered → recommend DENY. If valid and covered → recommend APPROVE. If ambiguous → recommend ESCALATE.
+
+Step 5: UPDATE the warranty claim record using the "Manage Warranty Claim Records" tool with your decision (agent_decision field) and full step-by-step reasoning (agent_recommendation field).
+
+Step 6: RESPOND to the user with device information, warranty status, coverage analysis, your decision, and next steps. Format results in plain English:
+- Device: name, serial number
+- Customer: name
+- Warranty Status: Active/Expired (expiry date)
+- Coverage Analysis: what is covered vs what was claimed
+- Decision: APPROVE / DENY / ESCALATE
+- Reasoning: step-by-step explanation
+- Next Steps: what happens next
+
+Never invent warranty terms. Use only data from the API. Always explain your reasoning step by step. Do NOT display sys_ids or raw JSON to the user.</instructions>
+    <internal_name>global.x_snc_medwc_auto_0.Warranty Claims Agent</internal_name>
+    <name>Warranty Claims Agent</name>
+    <parent/>
+    <post_processing_message>Warranty claim processing complete.</post_processing_message>
+    <processing_message>Processing your warranty claim...</processing_message>
+    <record_type>custom</record_type>
+    <role>You are Medtric Global's Warranty Claims Agent. You process warranty claims by extracting claim details from customer messages, looking up device warranty entitlements via API, analyzing coverage against policy, and recommending approve/deny/escalate decisions.</role>
+    <source_id/>
+    <strategy>f0bff21f9f13c6108f431597d90a1c74</strategy>
+    <sys_domain>global</sys_domain>
+  </sn_aia_agent>
+</record_update>

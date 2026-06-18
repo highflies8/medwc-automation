@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_tool_m2m">
+  <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+    <sys_id>240e97c2132f493d87e79988b76e444d</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_tool_m2m_240e97c2132f493d87e79988b76e444d</sys_update_name>
+    <active>true</active>
+    <agent>f4caf00dad744168941f9b55478451ea</agent>
+    <description>Creates and updates warranty claim records in the system. Use with operationName 'create' to create new claims, 'lookup' to find existing claims, or 'update' to modify claim records with decisions and recommendations.</description>
+    <display_output>true</display_output>
+    <document_status/>
+    <execution_mode>copilot</execution_mode>
+    <inputs>[{"name":"customer_name","value":"","description":"Name of the customer filing the claim","mandatory":true,"invalidMessage":null},{"name":"device_serial_number","value":"","description":"Serial number of the device","mandatory":true,"invalidMessage":null},{"name":"claim_reason","value":"","description":"Reason for the warranty claim","mandatory":true,"invalidMessage":null},{"name":"state","value":"","description":"State of the claim (1=New, 2=In Progress, 3=Closed)","mandatory":false,"invalidMessage":null},{"name":"priority","value":"","description":"Priority level (1=Critical, 2=High, 3=Moderate, 4=Low)","mandatory":false,"invalidMessage":null},{"name":"short_description","value":"","description":"Brief summary of the claim","mandatory":false,"invalidMessage":null},{"name":"crudInputs","value":{"operation":"create","table":{"value":"x_snc_medwc_auto_0_warranty_claim","displayValue":"x_snc_medwc_auto_0_warranty_claim"},"fieldValues":[{"field":{"id":"customer_name","sublabel":"customer_name","excludedOperators":[],"label":"customer_name","type":"string","dictionaryAttributes":[],"name":"customer_name"},"value":{"fieldValue":"{{customer_name}}"}},{"field":{"id":"device_serial_number","sublabel":"device_serial_number","excludedOperators":[],"label":"device_serial_number","type":"string","dictionaryAttributes":[],"name":"device_serial_number"},"value":{"fieldValue":"{{device_serial_number}}"}},{"field":{"id":"claim_reason","sublabel":"claim_reason","excludedOperators":[],"label":"claim_reason","type":"string","dictionaryAttributes":[],"name":"claim_reason"},"value":{"fieldValue":"{{claim_reason}}"}},{"field":{"id":"state","sublabel":"state","excludedOperators":[],"label":"state","type":"choice","dictionaryAttributes":[],"name":"state"},"value":{"fieldValue":"{{state}}"}},{"field":{"id":"priority","sublabel":"priority","excludedOperators":[],"label":"priority","type":"integer","dictionaryAttributes":[],"name":"priority"},"value":{"fieldValue":"{{priority}}"}},{"field":{"id":"short_description","sublabel":"short_description","excludedOperators":[],"label":"short_description","type":"string","dictionaryAttributes":[],"name":"short_description"},"value":{"fieldValue":"{{short_description}}"}}]},"description":"Create operation configuration","mandatory":true,"invalidMessage":null}]</inputs>
+    <max_auto_executions>10</max_auto_executions>
+    <name>Manage Warranty Claim Records</name>
+    <output_transformation_strategy>none</output_transformation_strategy>
+    <post_message>Warranty claim record operation complete.</post_message>
+    <post_processing_script/>
+    <pre_message>Managing warranty claim record...</pre_message>
+    <pre_run>false</pre_run>
+    <sys_domain>global</sys_domain>
+    <sys_overrides/>
+    <timeout/>
+    <tool>c83b50a6f9d3412ea7bb0ea8ce49a272</tool>
+    <tool_attributes>{}</tool_attributes>
+    <transformation_instructions/>
+    <widgets/>
+  </sn_aia_agent_tool_m2m>
+</record_update>

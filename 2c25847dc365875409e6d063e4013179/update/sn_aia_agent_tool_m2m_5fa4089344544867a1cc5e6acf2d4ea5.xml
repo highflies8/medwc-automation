@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_tool_m2m">
+  <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+    <sys_id>5fa4089344544867a1cc5e6acf2d4ea5</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_tool_m2m_5fa4089344544867a1cc5e6acf2d4ea5</sys_update_name>
+    <active>true</active>
+    <agent>f4caf00dad744168941f9b55478451ea</agent>
+    <description>Updates an existing warranty claim record with agent decision, recommendation, and other field changes.</description>
+    <display_output>true</display_output>
+    <document_status/>
+    <execution_mode>copilot</execution_mode>
+    <inputs>[{"name":"record_number","value":"","description":"The claim number to update","mandatory":true,"invalidMessage":null},{"name":"agent_decision","value":"","description":"Agent decision: APPROVE, DENY, or ESCALATE","mandatory":false,"invalidMessage":null},{"name":"agent_recommendation","value":"","description":"Full step-by-step reasoning for the decision","mandatory":false,"invalidMessage":null},{"name":"state","value":"","description":"New state for the claim","mandatory":false,"invalidMessage":null},{"name":"warranty_details","value":"","description":"Warranty coverage details from API","mandatory":false,"invalidMessage":null},{"name":"warranty_expiry","value":"","description":"Warranty expiry date from API","mandatory":false,"invalidMessage":null},{"name":"device_name","value":"","description":"Device name from API","mandatory":false,"invalidMessage":null},{"name":"crudInputs","value":{"operation":"update","table":{"value":"x_snc_medwc_auto_0_warranty_claim","displayValue":"x_snc_medwc_auto_0_warranty_claim"},"query":"number={{record_number}}","fieldValues":[{"field":{"id":"agent_decision","sublabel":"agent_decision","excludedOperators":[],"label":"agent_decision","type":"string","dictionaryAttributes":[],"name":"agent_decision"},"value":{"fieldValue":"{{agent_decision}}"}},{"field":{"id":"agent_recommendation","sublabel":"agent_recommendation","excludedOperators":[],"label":"agent_recommendation","type":"string","dictionaryAttributes":[],"name":"agent_recommendation"},"value":{"fieldValue":"{{agent_recommendation}}"}},{"field":{"id":"state","sublabel":"state","excludedOperators":[],"label":"state","type":"choice","dictionaryAttributes":[],"name":"state"},"value":{"fieldValue":"{{state}}"}},{"field":{"id":"warranty_details","sublabel":"warranty_details","excludedOperators":[],"label":"warranty_details","type":"string","dictionaryAttributes":[],"name":"warranty_details"},"value":{"fieldValue":"{{warranty_details}}"}},{"field":{"id":"warranty_expiry","sublabel":"warranty_expiry","excludedOperators":[],"label":"warranty_expiry","type":"string","dictionaryAttributes":[],"name":"warranty_expiry"},"value":{"fieldValue":"{{warranty_expiry}}"}},{"field":{"id":"device_name","sublabel":"device_name","excludedOperators":[],"label":"device_name","type":"string","dictionaryAttributes":[],"name":"device_name"},"value":{"fieldValue":"{{device_name}}"}}]},"description":"Update operation configuration","mandatory":true,"invalidMessage":null}]</inputs>
+    <max_auto_executions>10</max_auto_executions>
+    <name>Update Warranty Claim Record</name>
+    <output_transformation_strategy>none</output_transformation_strategy>
+    <post_message>Warranty claim record updated.</post_message>
+    <post_processing_script/>
+    <pre_message>Updating warranty claim record...</pre_message>
+    <pre_run>false</pre_run>
+    <sys_domain>global</sys_domain>
+    <sys_overrides/>
+    <timeout/>
+    <tool>6369871d894c4cff91ef5872e9e94485</tool>
+    <tool_attributes>{}</tool_attributes>
+    <transformation_instructions/>
+    <widgets/>
+  </sn_aia_agent_tool_m2m>
+</record_update>

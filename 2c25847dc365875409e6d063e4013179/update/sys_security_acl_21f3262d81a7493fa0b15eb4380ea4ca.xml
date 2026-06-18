@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+  <sys_security_acl action="INSERT_OR_UPDATE">
+    <sys_id>21f3262d81a7493fa0b15eb4380ea4ca</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_security_acl_21f3262d81a7493fa0b15eb4380ea4ca</sys_update_name>
+    <active>true</active>
+    <admin_overrides>true</admin_overrides>
+    <advanced>false</advanced>
+    <decision_type>allow</decision_type>
+    <local_or_existing>Existing</local_or_existing>
+    <name>global.x_snc_medwc_auto_0.Warranty Claims Agent</name>
+    <operation>execute</operation>
+    <security_attribute>239bdf0c47d23110ba46ff58936d4330</security_attribute>
+    <type>fc55e9f79f8222109570e67e8a0a1c34</type>
+  </sys_security_acl>
+</record_update>

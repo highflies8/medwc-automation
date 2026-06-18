@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_tool_m2m">
+  <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+    <sys_id>66ad616c78bd43f3bdb9a710cba539a9</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_tool_m2m_66ad616c78bd43f3bdb9a710cba539a9</sys_update_name>
+    <active>true</active>
+    <agent>f4caf00dad744168941f9b55478451ea</agent>
+    <description>Looks up an existing warranty claim record by number or sys_id to retrieve its details.</description>
+    <display_output>true</display_output>
+    <document_status/>
+    <execution_mode>autopilot</execution_mode>
+    <inputs>[{"name":"identifier","value":"","description":"Claim number or sys_id to look up","mandatory":false,"invalidMessage":null},{"name":"crudInputs","value":{"operation":"lookup","table":{"value":"x_snc_medwc_auto_0_warranty_claim","displayValue":"x_snc_medwc_auto_0_warranty_claim"},"query":"number={{identifier}}^ORsys_id={{identifier}}","returnFields":[{"excludedOperators":[],"extendedOperators":null,"name":"sys_id","label":"sys_id","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"sys_id","sublabel":"sys_id"},{"excludedOperators":[],"extendedOperators":null,"name":"number","label":"number","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"number","sublabel":"number"},{"excludedOperators":[],"extendedOperators":null,"name":"customer_name","label":"customer_name","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"customer_name","sublabel":"customer_name"},{"excludedOperators":[],"extendedOperators":null,"name":"device_serial_number","label":"device_serial_number","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"device_serial_number","sublabel":"device_serial_number"},{"excludedOperators":[],"extendedOperators":null,"name":"device_name","label":"device_name","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"device_name","sublabel":"device_name"},{"excludedOperators":[],"extendedOperators":null,"name":"claim_reason","label":"claim_reason","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"claim_reason","sublabel":"claim_reason"},{"excludedOperators":[],"extendedOperators":null,"name":"state","label":"state","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"state","sublabel":"state"},{"excludedOperators":[],"extendedOperators":null,"name":"priority","label":"priority","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"priority","sublabel":"priority"},{"excludedOperators":[],"extendedOperators":null,"name":"agent_decision","label":"agent_decision","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"agent_decision","sublabel":"agent_decision"},{"excludedOperators":[],"extendedOperators":null,"name":"agent_recommendation","label":"agent_recommendation","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"agent_recommendation","sublabel":"agent_recommendation"},{"excludedOperators":[],"extendedOperators":null,"name":"warranty_details","label":"warranty_details","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"warranty_details","sublabel":"warranty_details"},{"excludedOperators":[],"extendedOperators":null,"name":"warranty_expiry","label":"warranty_expiry","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"warranty_expiry","sublabel":"warranty_expiry"},{"excludedOperators":[],"extendedOperators":null,"name":"short_description","label":"short_description","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"short_description","sublabel":"short_description"}],"limit":"5"},"description":"Lookup operation configuration","mandatory":true,"invalidMessage":null}]</inputs>
+    <max_auto_executions>10</max_auto_executions>
+    <name>Lookup Warranty Claim Record</name>
+    <output_transformation_strategy>none</output_transformation_strategy>
+    <post_message>Warranty claim record retrieved.</post_message>
+    <post_processing_script/>
+    <pre_message>Looking up warranty claim record...</pre_message>
+    <pre_run>false</pre_run>
+    <sys_domain>global</sys_domain>
+    <sys_overrides/>
+    <timeout/>
+    <tool>a5e898cbae6b4d5f89c3c2940b372f50</tool>
+    <tool_attributes>{}</tool_attributes>
+    <transformation_instructions/>
+    <widgets/>
+  </sn_aia_agent_tool_m2m>
+</record_update>

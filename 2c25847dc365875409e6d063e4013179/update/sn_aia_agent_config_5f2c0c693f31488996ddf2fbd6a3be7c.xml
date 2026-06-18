@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_config">
+  <sn_aia_agent_config action="INSERT_OR_UPDATE">
+    <sys_id>5f2c0c693f31488996ddf2fbd6a3be7c</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_config_5f2c0c693f31488996ddf2fbd6a3be7c</sys_update_name>
+    <active>true</active>
+    <agent>f4caf00dad744168941f9b55478451ea</agent>
+    <agent_learning>false</agent_learning>
+    <doc_url/>
+    <icon_url/>
+    <public>false</public>
+    <run_as_user/>
+    <sys_domain>global</sys_domain>
+    <sys_overrides/>
+  </sn_aia_agent_config>
+</record_update>
