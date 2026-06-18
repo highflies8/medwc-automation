@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_medwc_auto_0_warranty_claim">
+  <x_snc_medwc_auto_0_warranty_claim action="INSERT_OR_UPDATE">
+    <sys_id>f080d9df8f82432898a12635456fcca7</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>x_snc_medwc_auto_0_warranty_claim_f080d9df8f82432898a12635456fcca7</sys_update_name>
+    <claim_reason>Device not turning on. Suspected firmware issue from missed patch</claim_reason>
+    <customer_name>Singapore General Hospital</customer_name>
+    <device_serial_number>USX-SGP-7721</device_serial_number>
+    <number>WC0001002</number>
+    <priority>1</priority>
+    <state>1</state>
+  </x_snc_medwc_auto_0_warranty_claim>
+</record_update>

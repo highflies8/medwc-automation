@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set field="agent_decision" table="x_snc_medwc_auto_0_warranty_claim">
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>07246e18fb014e6aa45f888a4e246e90</sys_id>
+      <name>x_snc_medwc_auto_0_warranty_claim</name>
+      <element>agent_decision</element>
+      <label>Approve</label>
+      <value>approve</value>
+      <sequence>0</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>7735c5992ef0436ba08973c8127d7b36</sys_id>
+      <name>x_snc_medwc_auto_0_warranty_claim</name>
+      <element>agent_decision</element>
+      <label>Deny</label>
+      <value>deny</value>
+      <sequence>1</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>53febffb49b54a10a4f7b3bbdf1a5417</sys_id>
+      <name>x_snc_medwc_auto_0_warranty_claim</name>
+      <element>agent_decision</element>
+      <label>Escalate</label>
+      <value>escalate</value>
+      <sequence>2</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice_set action="INSERT_OR_UPDATE">
+      <sys_id>02a4ac66641b4cb0a728009f367f9206</sys_id>
+      <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+      <name>x_snc_medwc_auto_0_warranty_claim</name>
+      <element>agent_decision</element>
+    </sys_choice_set>
+  </sys_choice_set>
+</record_update>

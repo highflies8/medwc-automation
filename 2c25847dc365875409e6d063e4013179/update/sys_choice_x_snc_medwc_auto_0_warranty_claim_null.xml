@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_choice">
+  <sys_choice action="INSERT_OR_UPDATE">
+    <sys_id>9012d1950e204fa480c1a5dc2f38eb10</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_choice_x_snc_medwc_auto_0_warranty_claim_state</sys_update_name>
+    <element>state</element>
+    <inactive>false</inactive>
+    <label>Escalated</label>
+    <language>en</language>
+    <name>x_snc_medwc_auto_0_warranty_claim</name>
+    <sequence>4</sequence>
+    <value>-5</value>
+  </sys_choice>
+</record_update>

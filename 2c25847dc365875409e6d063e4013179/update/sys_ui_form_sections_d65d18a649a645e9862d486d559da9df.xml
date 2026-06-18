@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_form_sections form_id="d65d18a649a645e9862d486d559da9df" sys_domain="global" table="x_snc_medwc_auto_0_warranty_claim">
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>0</position>
+      <sys_id>f5f5ee040f7947bba5873e5a314d41b6</sys_id>
+      <sys_ui_form display_value="x_snc_medwc_auto_0_warranty_claim" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">d65d18a649a645e9862d486d559da9df</sys_ui_form>
+      <sys_ui_section caption="Claim Details" display_value="Claim Details" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a7cc8d729a9948dab3b850bb14fb3df9</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>1</position>
+      <sys_id>9c371270957f40b2aabab0311c2f9fb2</sys_id>
+      <sys_ui_form display_value="x_snc_medwc_auto_0_warranty_claim" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">d65d18a649a645e9862d486d559da9df</sys_ui_form>
+      <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>2</position>
+      <sys_id>28980dc6e41b49608303df406b169783</sys_id>
+      <sys_ui_form display_value="x_snc_medwc_auto_0_warranty_claim" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">d65d18a649a645e9862d486d559da9df</sys_ui_form>
+      <sys_ui_section caption="Agent Decision" display_value="Agent Decision" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">7ea96e46c0064ca98e50e67fa43f3408</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form action="INSERT_OR_UPDATE">
+      <name>x_snc_medwc_auto_0_warranty_claim</name>
+      <roles/>
+      <sys_id>d65d18a649a645e9862d486d559da9df</sys_id>
+      <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+      <sys_user/>
+      <view>Default view</view>
+      <view_name/>
+    </sys_ui_form>
+  </sys_ui_form_sections>
+</record_update>

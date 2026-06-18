@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Agent Decision" section_id="7ea96e46c0064ca98e50e67fa43f3408" sys_domain="global" table="x_snc_medwc_auto_0_warranty_claim" view="Default view">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>agent_recommendation</element>
+      <position>0</position>
+      <sys_id>d6f208348cbf4247a2166d4d2ac90978</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Agent Decision" display_value="Agent Decision" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">7ea96e46c0064ca98e50e67fa43f3408</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>agent_decision</element>
+      <position>1</position>
+      <sys_id>aa1055aaf7a148e9a91858302c02cbeb</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Agent Decision" display_value="Agent Decision" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">7ea96e46c0064ca98e50e67fa43f3408</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Agent Decision</caption>
+      <header>false</header>
+      <name>x_snc_medwc_auto_0_warranty_claim</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>7ea96e46c0064ca98e50e67fa43f3408</sys_id>
+      <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view>Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

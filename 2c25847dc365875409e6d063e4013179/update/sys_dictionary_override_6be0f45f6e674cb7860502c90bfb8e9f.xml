@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_dictionary_override">
+  <sys_dictionary_override action="INSERT_OR_UPDATE">
+    <sys_id>6be0f45f6e674cb7860502c90bfb8e9f</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_dictionary_override_x_snc_medwc_auto_0_warranty_claim_state</sys_update_name>
+    <attributes/>
+    <attributes_override>false</attributes_override>
+    <base_table>task</base_table>
+    <calculation/>
+    <calculation_override>false</calculation_override>
+    <default_value>1</default_value>
+    <default_value_override>true</default_value_override>
+    <dependent/>
+    <dependent_override>false</dependent_override>
+    <display_override>false</display_override>
+    <element>state</element>
+    <mandatory>false</mandatory>
+    <mandatory_override>false</mandatory_override>
+    <name>x_snc_medwc_auto_0_warranty_claim</name>
+    <read_only>false</read_only>
+    <read_only_option/>
+    <read_only_option_override>false</read_only_option_override>
+    <read_only_override>false</read_only_override>
+    <reference_qual/>
+    <reference_qual_override>false</reference_qual_override>
+  </sys_dictionary_override>
+</record_update>

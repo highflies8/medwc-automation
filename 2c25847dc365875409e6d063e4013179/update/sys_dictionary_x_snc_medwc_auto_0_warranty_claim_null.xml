@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_dictionary">
+  <sys_dictionary action="INSERT_OR_UPDATE" element="" table="x_snc_medwc_auto_0_warranty_claim">
+    <sys_id>10afee234a9a4f07bfc4a4bc027e7da2</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_dictionary_x_snc_medwc_auto_0_warranty_claim_null</sys_update_name>
+    <active>true</active>
+    <attributes/>
+    <audit>false</audit>
+    <element/>
+    <internal_type>collection</internal_type>
+    <name>x_snc_medwc_auto_0_warranty_claim</name>
+    <read_only>false</read_only>
+    <text_index>false</text_index>
+  </sys_dictionary>
+</record_update>
