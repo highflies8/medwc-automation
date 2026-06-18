@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_team">
+  <sn_aia_team action="INSERT_OR_UPDATE">
+    <sys_id>de3d9a0a2b634d3ca4405539e2357cce</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_team_de3d9a0a2b634d3ca4405539e2357cce</sys_update_name>
+    <active>true</active>
+    <description>Automate end-to-end warranty claim processing. Orchestrates the Warranty Claims Agent to extract claim details, verify warranty entitlements via Medtric API, analyze coverage, and deliver approve/deny/escalate recommendations.</description>
+    <name>Warranty Claims Team</name>
+    <sys_domain>global</sys_domain>
+  </sn_aia_team>
+</record_update>

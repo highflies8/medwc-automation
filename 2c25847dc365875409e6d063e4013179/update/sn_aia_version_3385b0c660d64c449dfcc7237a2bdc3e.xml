@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_version">
+  <sn_aia_version action="INSERT_OR_UPDATE">
+    <sys_id>3385b0c660d64c449dfcc7237a2bdc3e</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_version_3385b0c660d64c449dfcc7237a2bdc3e</sys_update_name>
+    <condition/>
+    <instructions>Step 1: Receive and Parse Claim Request.
+- Use the Warranty Claims Agent to extract claim details from the customer's message: customer name, device serial number, claim reason, and urgency level.
+- If the message contains "URGENT", "immediately", or "ASAP", ensure priority is set to Critical.
+- DO NOT PROCEED if device serial number or claim reason cannot be identified. Ask the user to provide missing details.
+
+Step 2: Create Warranty Claim Record.
+- Use the Warranty Claims Agent to create a new warranty claim record with the extracted details.
+- Set state to New (1). Ensure all mandatory fields (customer_name, device_serial_number, claim_reason) are populated.
+
+Step 3: Verify Warranty Entitlements.
+- Use the Warranty Claims Agent to call the Lookup Device Warranty tool with the device serial number.
+- Retrieve warranty entitlements including device name, warranty tier, warranty details, and expiry date from the Medtric API.
+- If the API returns no data, inform the user that warranty information could not be found and recommend ESCALATE.
+
+Step 4: Analyze Coverage and Decide.
+- Use the Warranty Claims Agent to analyze the claim:
+  - Check if warranty is expired (compare expiry date to today)
+  - Check if claim reason falls under COVERED or NOT COVERED categories in warranty_details
+  - If expired OR not covered → DENY
+  - If valid and covered → APPROVE
+  - If ambiguous → ESCALATE
+
+Step 5: Update Record with Decision.
+- Use the Warranty Claims Agent to update the warranty claim record with the agent_decision and agent_recommendation fields containing the full step-by-step reasoning.
+
+Step 6: Present Results.
+- Display a formatted summary to the user:
+  - Device: name, serial number
+  - Customer: name
+  - Warranty Status: Active/Expired with expiry date
+  - Coverage Analysis: what is covered vs what was claimed
+  - Decision: APPROVE / DENY / ESCALATE
+  - Reasoning: step-by-step explanation
+  - Next Steps: what happens next
+- NEVER invent warranty terms. Use only data from the API.</instructions>
+    <state>published</state>
+    <sys_domain>global</sys_domain>
+    <target_id>531034a671f3454495c8b8343feb86ff</target_id>
+    <target_table>sn_aia_usecase</target_table>
+    <version_name>V1</version_name>
+    <version_number>1</version_number>
+  </sn_aia_version>
+</record_update>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+  <sys_security_acl action="INSERT_OR_UPDATE">
+    <sys_id>0b3b86377789444484cb9ce33f06e535</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_security_acl_0b3b86377789444484cb9ce33f06e535</sys_update_name>
+    <active>true</active>
+    <admin_overrides>true</admin_overrides>
+    <advanced>false</advanced>
+    <decision_type>allow</decision_type>
+    <local_or_existing>Existing</local_or_existing>
+    <name>global.x_snc_medwc_auto_0.Medtric Warranty Claims Automation</name>
+    <operation>execute</operation>
+    <security_attribute>239bdf0c47d23110ba46ff58936d4330</security_attribute>
+    <type>d9eb25b39fc222109570e67e8a0a1c6a</type>
+  </sys_security_acl>
+</record_update>
