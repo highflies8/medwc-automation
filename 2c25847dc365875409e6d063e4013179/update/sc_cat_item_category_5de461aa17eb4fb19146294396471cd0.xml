@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+  <sc_cat_item_category action="INSERT_OR_UPDATE">
+    <sys_id>5de461aa17eb4fb19146294396471cd0</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sc_cat_item_category_5de461aa17eb4fb19146294396471cd0</sys_update_name>
+    <sc_cat_item>4745678a76ee4fffb0178735f8cc2246</sc_cat_item>
+    <sc_category>4481fab8fb1e5690d67ef84065efdc83</sc_category>
+  </sc_cat_item_category>
+</record_update>

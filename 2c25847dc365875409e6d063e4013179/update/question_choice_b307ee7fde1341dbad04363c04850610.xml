@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+  <question_choice action="INSERT_OR_UPDATE">
+    <sys_id>b307ee7fde1341dbad04363c04850610</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>question_choice_b307ee7fde1341dbad04363c04850610</sys_update_name>
+    <inactive>false</inactive>
+    <order>2</order>
+    <question cat_item="4745678a76ee4fffb0178735f8cc2246" name="is_urgent" variable_set="NULL">c5e1ebcedc3745a5b73d5d56704df6f8</question>
+    <text>Yes - Device is critical for patient care</text>
+    <value>true</value>
+  </question_choice>
+</record_update>

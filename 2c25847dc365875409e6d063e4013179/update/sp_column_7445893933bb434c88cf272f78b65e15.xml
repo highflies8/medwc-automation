@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+  <sp_column action="INSERT_OR_UPDATE">
+    <sys_id>7445893933bb434c88cf272f78b65e15</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sp_column_7445893933bb434c88cf272f78b65e15</sys_update_name>
+    <class_name/>
+    <order>1</order>
+    <semantic_tag/>
+    <size>12</size>
+    <size_lg/>
+    <size_sm/>
+    <size_xs/>
+    <sp_row>e3944ade328a41149a47a5569199517e</sp_row>
+  </sp_column>
+</record_update>

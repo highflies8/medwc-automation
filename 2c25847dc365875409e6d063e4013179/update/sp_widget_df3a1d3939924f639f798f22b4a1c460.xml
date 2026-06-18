@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+  <sp_widget action="INSERT_OR_UPDATE">
+    <sys_id>df3a1d3939924f639f798f22b4a1c460</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sp_widget_df3a1d3939924f639f798f22b4a1c460</sys_update_name>
+    <category>custom</category>
+    <client_script><![CDATA[api.controller = function($scope) {
+  var c = this;
+
+  c.copied = false;
+
+  c.copyClaimNumber = function() {
+    if (c.data.claim && c.data.claim.number) {
+      var tempInput = document.createElement("input");
+      tempInput.value = c.data.claim.number;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      c.copied = true;
+      setTimeout(function() {
+        $scope.$apply(function() {
+          c.copied = false;
+        });
+      }, 2000);
+    }
+  };
+
+  c.trackClaim = function() {
+    window.location.href = "?id=requests";
+  };
+
+  c.stages = [
+    { label: "Submitted", icon: "glyphicon-ok", status: "complete" },
+    { label: "AI Analysis", icon: "glyphicon-cog", status: "current" },
+    { label: "Decision Made", icon: "glyphicon-check", status: "pending" },
+    { label: "Fulfillment", icon: "glyphicon-gift", status: "pending" }
+  ];
+};
+]]></client_script>
+    <controller_as>c</controller_as>
+    <css><![CDATA[.medtric-confirmation {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.medtric-confirm-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.medtric-confirm-check {
+  font-size: 48px;
+  color: #0F6E56;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.medtric-confirm-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: $text-color;
+  margin: 0 0 8px;
+}
+
+.medtric-claim-card {
+  border: 1px solid $border-tertiary;
+  border-radius: $border-radius-large;
+  margin-bottom: 24px;
+  .panel-body {
+    padding: 24px;
+  }
+}
+
+.medtric-claim-number-section {
+  margin-bottom: 8px;
+}
+
+.medtric-label {
+  display: block;
+  font-size: $font-size-small;
+  color: $text-muted;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.medtric-claim-number-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.medtric-claim-number {
+  font-size: 22px;
+  font-weight: 700;
+  color: #032D42;
+}
+
+.medtric-copy-btn {
+  border-radius: $border-radius-base;
+  font-size: $font-size-small;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 1px solid $border-tertiary;
+  background: $background-primary;
+  color: $text-muted;
+  cursor: pointer;
+  &:hover {
+    background: $background-secondary;
+    color: $text-color;
+  }
+}
+
+.medtric-status-badge {
+  font-size: $font-size-small;
+  padding: 4px 12px;
+  border-radius: $border-radius-base;
+  background: #00A9E0;
+  color: $btn-primary-color;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.medtric-value {
+  font-size: $font-size-base;
+  font-weight: 500;
+  color: $text-color;
+  margin-top: 4px;
+}
+
+.medtric-timeline-card {
+  border: 1px solid $border-tertiary;
+  border-radius: $border-radius-large;
+  margin-bottom: 24px;
+  overflow: hidden;
+  .panel-heading {
+    background: $background-secondary;
+    border-bottom: 1px solid $border-tertiary;
+    padding: 16px 24px;
+  }
+  .panel-title {
+    font-size: $font-size-large;
+    font-weight: 600;
+    color: $text-color;
+    margin: 0;
+  }
+  .panel-body {
+    padding: 32px 24px;
+  }
+}
+
+.medtric-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.medtric-timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+
+.medtric-step-marker {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 8px;
+  border: 2px solid $border-tertiary;
+  background: $background-secondary;
+  color: $text-muted;
+}
+
+.medtric-step-complete .medtric-step-marker {
+  background: #0F6E56;
+  border-color: #0F6E56;
+  color: $btn-primary-color;
+}
+
+.medtric-step-current .medtric-step-marker {
+  background: #00A9E0;
+  border-color: #00A9E0;
+  color: $btn-primary-color;
+  animation: medtric-pulse 2s ease-in-out infinite;
+}
+
+.medtric-step-pending .medtric-step-marker {
+  background: $background-secondary;
+  border-color: $border-tertiary;
+  color: $text-muted;
+}
+
+.medtric-step-label {
+  font-size: $font-size-small;
+  font-weight: 500;
+  color: $text-color;
+}
+
+.medtric-step-connector {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: $border-tertiary;
+  z-index: 0;
+}
+
+.medtric-step-complete .medtric-step-connector {
+  background: #0F6E56;
+}
+
+.medtric-analysis-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: $background-secondary;
+  border-radius: $border-radius-base;
+  padding: 16px;
+  .glyphicon {
+    font-size: 16px;
+    color: #00A9E0;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  p {
+    margin: 0;
+    font-size: $font-size-small;
+    color: $text-secondary;
+    line-height: 1.5;
+  }
+}
+
+.medtric-help-card {
+  border: 1px solid $border-tertiary;
+  border-radius: $border-radius-large;
+  .panel-body {
+    padding: 24px;
+  }
+}
+
+.medtric-help-title {
+  font-size: $font-size-large;
+  font-weight: 600;
+  color: $text-color;
+  margin: 0 0 8px;
+}
+
+.medtric-help-actions {
+  margin: 16px 0;
+}
+
+.medtric-btn-track {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: $border-radius-base;
+  font-size: $font-size-base;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #032D42;
+  color: $btn-primary-color;
+  border: none;
+  transition: background 0.15s;
+  &:hover {
+    background: #004C61;
+    color: $btn-primary-color;
+  }
+}
+
+.medtric-contact-info {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid $border-tertiary;
+}
+
+.medtric-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: $font-size-small;
+  color: $text-muted;
+  .glyphicon {
+    font-size: 16px;
+    color: #00A9E0;
+  }
+}
+
+@keyframes medtric-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 169, 224, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(0, 169, 224, 0); }
+}
+]]></css>
+    <data_table>sp_instance</data_table>
+    <demo_data/>
+    <description>Confirmation page widget showing claim submission details and progress timeline</description>
+    <docs/>
+    <field_list/>
+    <has_preview>false</has_preview>
+    <id>medtric_claim_confirmation</id>
+    <internal>false</internal>
+    <link>function link(scope, element, attrs, controller) {
+}</link>
+    <name>Medtric Claim Confirmation</name>
+    <option_schema/>
+    <public>false</public>
+    <roles/>
+    <script><![CDATA[(function() {
+  data.claim = null;
+  data.error = "";
+
+  try {
+    var sysId = $sp.getParameter("sys_id") || (input && input.sys_id);
+    if (sysId) {
+      var gr = new GlideRecord("x_snc_medwc_auto_0_warranty_claim");
+      gr.setLimit(1);
+      if (gr.get(sysId)) {
+        var gdt = new GlideDateTime(gr.getValue("sys_created_on"));
+        var resolutionDate = new GlideDateTime(gr.getValue("sys_created_on"));
+        resolutionDate.addDaysUTC(5);
+
+        data.claim = {
+          sys_id: gr.getUniqueValue(),
+          number: gr.getValue("number") || "Pending",
+          state: gr.getDisplayValue("state") || "New",
+          short_description: gr.getValue("short_description") || "",
+          priority: gr.getDisplayValue("priority") || "Moderate",
+          created_on: gdt.getDisplayValue(),
+          expected_resolution: resolutionDate.getDisplayValue(),
+          customer: gr.getDisplayValue("customer") || "",
+          device: gr.getDisplayValue("device") || "",
+          claim_reason: gr.getValue("claim_reason") || ""
+        };
+      } else {
+        data.error = "Claim not found.";
+      }
+    } else {
+      data.error = "No claim ID provided.";
+    }
+  } catch (e) {
+    gs.error("Medtric Claim Confirmation widget error: " + e.message);
+    data.error = "An error occurred while loading the claim details.";
+  }
+})();
+]]></script>
+    <servicenow>false</servicenow>
+    <template><![CDATA[<div class="medtric-confirmation" ng-if="!c.data.error">
+  <!-- Success Header -->
+  <div class="medtric-confirm-header">
+    <span class="glyphicon glyphicon-ok-circle medtric-confirm-check"></span>
+    <h2 class="medtric-confirm-title">Warranty Claim Submitted Successfully</h2>
+    <p class="text-muted">Your claim has been received and is being processed by our AI agent.</p>
+  </div>
+
+  <!-- Claim Info Card -->
+  <div class="panel panel-default medtric-claim-card">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="medtric-claim-number-section">
+            <span class="medtric-label">Claim Number</span>
+            <div class="medtric-claim-number-row">
+              <strong class="medtric-claim-number">{{c.data.claim.number}}</strong>
+              <button type="button" class="btn btn-sm btn-default medtric-copy-btn" ng-click="c.copyClaimNumber()" title="Copy to clipboard">
+                <span class="glyphicon" ng-class="c.copied ? 'glyphicon-ok' : 'glyphicon-copy'"></span>
+                {{c.copied ? 'Copied!' : 'Copy'}}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <span class="medtric-label">Status</span>
+          <div>
+            <span class="label label-info medtric-status-badge">Under Review by AI Agent</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <span class="medtric-label">Expected Resolution</span>
+          <div class="medtric-value">{{c.data.claim.expected_resolution}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress Timeline -->
+  <div class="panel panel-default medtric-timeline-card">
+    <div class="panel-heading">
+      <h4 class="panel-title">Claim Progress</h4>
+    </div>
+    <div class="panel-body">
+      <div class="medtric-timeline">
+        <div class="medtric-timeline-step" ng-repeat="stage in c.stages track by $index" ng-class="'medtric-step-' + stage.status">
+          <div class="medtric-step-marker">
+            <span class="glyphicon" ng-class="stage.icon"></span>
+          </div>
+          <div class="medtric-step-label">{{stage.label}}</div>
+          <div class="medtric-step-connector" ng-if="!$last"></div>
+        </div>
+      </div>
+      <div class="medtric-analysis-info">
+        <span class="glyphicon glyphicon-info-sign"></span>
+        <p>Our AI Agent is currently analyzing your warranty coverage, device history, and claim eligibility. This typically takes 1-2 business days.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Help Section -->
+  <div class="panel panel-default medtric-help-card">
+    <div class="panel-body">
+      <h4 class="medtric-help-title">Need Help?</h4>
+      <p class="text-muted">Our Virtual Agent is available 24/7 to help answer questions about your claim. Look for the chat icon in the bottom-right corner.</p>
+      <div class="medtric-help-actions">
+        <button type="button" class="btn btn-primary medtric-btn-track" ng-click="c.trackClaim()">
+          <span class="glyphicon glyphicon-list-alt"></span> Track My Claim Status
+        </button>
+      </div>
+      <div class="medtric-contact-info">
+        <div class="medtric-contact-item">
+          <span class="glyphicon glyphicon-envelope"></span>
+          <span>support@medtric.com</span>
+        </div>
+        <div class="medtric-contact-item">
+          <span class="glyphicon glyphicon-earphone"></span>
+          <span>1-800-MEDTRIC (1-800-633-8742)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Error state -->
+<div class="medtric-confirmation" ng-if="c.data.error">
+  <div class="alert alert-warning" role="alert">
+    <span class="glyphicon glyphicon-warning-sign"></span>
+    <strong>Notice:</strong> {{c.data.error}}
+  </div>
+</div>
+]]></template>
+  </sp_widget>
+</record_update>

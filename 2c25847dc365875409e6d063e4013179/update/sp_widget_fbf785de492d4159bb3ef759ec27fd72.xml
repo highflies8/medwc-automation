@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+  <sp_widget action="INSERT_OR_UPDATE">
+    <sys_id>fbf785de492d4159bb3ef759ec27fd72</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sp_widget_fbf785de492d4159bb3ef759ec27fd72</sys_update_name>
+    <category>custom</category>
+    <client_script><![CDATA[api.controller = function() {
+  var c = this;
+
+  c.submitClaim = function() {
+    window.location.href = "?id=sc_cat_item&sys_id=" + (c.options.record_producer_id || "");
+  };
+
+  c.trackClaim = function() {
+    window.location.href = "?id=requests";
+  };
+};
+]]></client_script>
+    <controller_as>c</controller_as>
+    <css><![CDATA[.medtric-homepage {
+  padding: 0;
+}
+
+.medtric-hero {
+  background: linear-gradient(135deg, #032D42 0%, #004C61 50%, #00A9E0 100%);
+  border-radius: $border-radius-large;
+  padding: 64px 48px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+  }
+}
+
+.medtric-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.medtric-hero-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: $btn-primary-color;
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.medtric-hero-subtitle {
+  font-size: $font-size-base;
+  color: $btn-primary-color;
+  opacity: 0.85;
+  margin: 0 0 32px;
+  line-height: 1.6;
+}
+
+.medtric-hero-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.medtric-btn-cta {
+  height: 48px;
+  padding: 0 24px;
+  border-radius: $border-radius-base;
+  font-size: $font-size-base;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: $btn-primary-color;
+  color: #032D42;
+  border: none;
+  transition: background 0.15s, box-shadow 0.15s;
+  &:hover {
+    background: #F5F6F7;
+    color: #032D42;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.medtric-btn-secondary {
+  height: 48px;
+  padding: 0 24px;
+  border-radius: $border-radius-base;
+  font-size: $font-size-base;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: $btn-primary-color;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  transition: background 0.15s, border-color 0.15s;
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: $btn-primary-color;
+    color: $btn-primary-color;
+  }
+}
+
+.medtric-features {
+  padding: 0 16px;
+}
+
+.medtric-feature-card {
+  border: 1px solid $border-tertiary;
+  border-radius: $border-radius-large;
+  margin-bottom: 24px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+  .panel-body {
+    padding: 32px 24px;
+  }
+}
+
+.medtric-feature-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.medtric-icon-success {
+  color: #0F6E56;
+}
+
+.medtric-icon-info {
+  color: #00A9E0;
+}
+
+.medtric-icon-primary {
+  color: #032D42;
+}
+
+.medtric-feature-title {
+  font-size: $font-size-large;
+  font-weight: 600;
+  color: $text-color;
+  margin: 0 0 8px;
+}
+]]></css>
+    <data_table>sp_instance</data_table>
+    <demo_data/>
+    <description>Homepage widget for the Medtric Customer Support Portal</description>
+    <docs/>
+    <field_list/>
+    <has_preview>false</has_preview>
+    <id>medtric_homepage</id>
+    <internal>false</internal>
+    <link>function link(scope, element, attrs, controller) {
+}</link>
+    <name>Medtric Homepage</name>
+    <option_schema/>
+    <public>false</public>
+    <roles/>
+    <script><![CDATA[(function() {
+  data.heroTitle = "Welcome to Medtric Global Support";
+  data.heroSubtitle = "We're here to help with your medical devices. Submit warranty claims, track existing requests, and get expert assistance.";
+  data.userName = gs.getUserDisplayName() || "Guest";
+})();
+]]></script>
+    <servicenow>false</servicenow>
+    <template><![CDATA[<div class="medtric-homepage">
+  <!-- Hero Banner -->
+  <div class="medtric-hero">
+    <div class="medtric-hero-content">
+      <h1 class="medtric-hero-title">{{c.data.heroTitle}}</h1>
+      <p class="medtric-hero-subtitle">{{c.data.heroSubtitle}}</p>
+      <div class="medtric-hero-actions">
+        <button type="button" class="btn btn-primary medtric-btn-cta" ng-click="c.submitClaim()">
+          <span class="glyphicon glyphicon-plus"></span> Submit Warranty Claim
+        </button>
+        <button type="button" class="btn btn-default medtric-btn-secondary" ng-click="c.trackClaim()">
+          <span class="glyphicon glyphicon-search"></span> Track My Claim
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="medtric-features">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default medtric-feature-card">
+          <div class="panel-body text-center">
+            <span class="glyphicon glyphicon-ok-circle medtric-feature-icon medtric-icon-success"></span>
+            <h4 class="medtric-feature-title">AI-Powered Analysis</h4>
+            <p class="text-muted">Our AI agent reviews claims instantly to expedite your warranty resolution.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default medtric-feature-card">
+          <div class="panel-body text-center">
+            <span class="glyphicon glyphicon-time medtric-feature-icon medtric-icon-info"></span>
+            <h4 class="medtric-feature-title">Real-Time Tracking</h4>
+            <p class="text-muted">Monitor your claim status and receive updates throughout the process.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="panel panel-default medtric-feature-card">
+          <div class="panel-body text-center">
+            <span class="glyphicon glyphicon-headphones medtric-feature-icon medtric-icon-primary"></span>
+            <h4 class="medtric-feature-title">Expert Support</h4>
+            <p class="text-muted">Connect with our specialized team for complex device warranty inquiries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
+  </sp_widget>
+</record_update>

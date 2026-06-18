@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_theme">
+  <sp_theme action="INSERT_OR_UPDATE">
+    <sys_id>9a70f1410006484e8596f59923804108</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sp_theme_9a70f1410006484e8596f59923804108</sys_update_name>
+    <css_variables>
+    // ── Grays ──
+    $gray-base: #000000;
+    $gray-dark: #1D272B !default;
+    $gray-darker: #10171A !default;
+    $gray-light: #616D74 !default;
+    $gray-lighter: #F5F6F7 !default;
+    $gray: #3D4A50 !default;
+
+    // ── Brand (Medtric medical brand) ──
+    $brand-primary: #032D42 !default;
+    $brand-primary-dark: #021E2D !default;
+    $brand-primary-darker: #011019 !default;
+    $brand-primary-light: #00A9E0 !default;
+    $brand-primary-lighter: #B3E5F7 !default;
+    $body-bg: #FFFFFF !default;
+    $body-bg-tertiary: #E2E5E7 !default;
+    $brand-success: #0F6E56 !default;
+    $brand-warning: #B29800 !default;
+    $brand-danger: #E52239 !default;
+    $brand-info: #00A9E0 !default;
+
+    // ── Text ──
+    $text-color: #10171A !default;
+    $text-muted: #37444A !default;
+    $text-primary: #10171A !default;
+    $text-secondary: #232E33 !default;
+    $text-tertiary: #37444A !default;
+    $link-color: #00A9E0;
+    $link-hover-color: #007BA8;
+
+    // ── Backgrounds ──
+    $background-primary: #FFFFFF;
+    $background-secondary: #F5F6F7;
+    $background-tertiary: #E2E5E7;
+
+    // ── Borders ──
+    $border-primary: #737F84;
+    $border-secondary: #AAB2B6;
+    $border-tertiary: #CFD5D7;
+
+    // ── Navbar (Medtric dark medical blue) ──
+    $sp-navbar-divider-color: #004C61 !default;
+    $navbar-inverse-bg: #032D42 !default;
+    $navbar-inverse-border: #021E2D !default;
+    $navbar-inverse-link-color: #FFFFFF !default;
+    $navbar-inverse-link-hover-color: #FFFFFF !default;
+    $navbar-inverse-link-active-color: #FFFFFF !default;
+    $navbar-inverse-link-hover-bg: #004C61 !default;
+    $navbar-inverse-link-active-bg: #004C61;
+    $navbar-inverse-brand-color: #FFFFFF !default;
+    $navbar-inverse-toggle-icon-bar-bg: #FFFFFF !default;
+    $navbar-inverse-toggle-border-color: #004C61 !default;
+
+    // ── Buttons ──
+    $btn-primary-color: #FFFFFF !default;
+    $btn-primary-bg: #032D42;
+    $btn-primary-border: #032D42;
+    $btn-default-bg: $background-primary;
+    $btn-default-color: #032D42;
+    $btn-default-border: #CFD5D7 !default;
+    $btn-success-bg: #0F6E56;
+    $btn-success-border: #0F6E56;
+    $btn-success-color: #FFFFFF;
+
+    // ── Component / Selection ──
+    $component-active-color: $gray;
+    $component-active-bg: #F5F6F7 !default;
+    $selection-primary: #E0F4FB !default;
+    $input-border: #737F84 !default;
+    $input-border-focus: #00A9E0 !default;
+
+    // ── States / Alerts ──
+    $state-success-bg: #D4EDDA !default;
+    $state-warning-bg: #FFF3CD !default;
+    $state-danger-bg: #F8D7DA !default;
+    $state-info-bg: #D1ECF1 !default;
+    $alert-success-border: #C3E6CB !default;
+    $alert-warning-border: #FFEEBA !default;
+    $alert-danger-border: #F5C6CB !default;
+    $alert-info-border: #BEE5EB !default;
+
+    // ── Panels / Forms / Tables ──
+    $panel-primary-text: #FFFFFF !default;
+    $panel-border-color: $border-tertiary !default;
+    $sp-page-bg: #F5F6F7;
+    $sp-form-field--background-color: #FFFFFF;
+  </css_variables>
+    <footer/>
+    <footer_fixed>true</footer_fixed>
+    <header>bf5ec2f2cb10120000f8d856634c9c0c</header>
+    <icon/>
+    <logo/>
+    <logo_alt_text/>
+    <matching_now_experience_theme/>
+    <name>Medtric Customer Support Theme</name>
+    <navbar_fixed>true</navbar_fixed>
+    <turn_off_scss_compilation>false</turn_off_scss_compilation>
+  </sp_theme>
+</record_update>

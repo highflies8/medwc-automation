@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+  <sp_page action="INSERT_OR_UPDATE">
+    <sys_id>38797ea1372a4fd0b997acd6d3cbc845</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sp_page_38797ea1372a4fd0b997acd6d3cbc845</sys_update_name>
+    <category>custom</category>
+    <css/>
+    <draft>false</draft>
+    <dynamic_title_structure/>
+    <human_readable_url_structure/>
+    <id>medtric_claim_confirmation</id>
+    <internal>false</internal>
+    <omit_watcher>false</omit_watcher>
+    <public>false</public>
+    <roles/>
+    <seo_script/>
+    <short_description/>
+    <title>Claim Confirmation</title>
+    <use_seo_script>false</use_seo_script>
+  </sp_page>
+</record_update>

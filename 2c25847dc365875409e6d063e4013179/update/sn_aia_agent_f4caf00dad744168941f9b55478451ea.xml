@@ -55,7 +55,7 @@
 		triggerContext : context?.triggerContext
 	};
 })(task,user_utterance, agent_id, context);</context_processing_script>
-    <description>Processes warranty claims by extracting claim details from customer messages, looking up device and customer records, creating claims, verifying warranty entitlements via Medtric API, analyzing coverage against KB policy, and recommending approve/deny/escalate decisions.</description>
+    <description>Processes warranty claims for medical devices by checking coverage, analyzing entitlements, and recommending decisions for Medtric Global customers submitting claims for device repairs or replacements. Handles warranty claim submissions, device serial number lookups, coverage verification against Medtric API, KB policy analysis, and approve/deny/escalate decisions.</description>
     <external>false</external>
     <external_agent_configuration/>
     <instructions>Step 1: EXTRACT from the customer's message: customer name, device serial number, caller name, claim reason, urgency level. If message contains "URGENT", "immediately", "ASAP", set priority to Critical.
