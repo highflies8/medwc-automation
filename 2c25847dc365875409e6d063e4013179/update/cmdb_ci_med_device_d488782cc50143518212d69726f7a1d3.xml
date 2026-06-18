@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="cmdb_ci_med_device">
+  <cmdb_ci_med_device action="INSERT_OR_UPDATE">
+    <sys_id>d488782cc50143518212d69726f7a1d3</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>cmdb_ci_med_device_d488782cc50143518212d69726f7a1d3</sys_update_name>
+    <category>Imaging</category>
+    <company>40e317be4767011042fca852736d431f</company>
+    <discovery_source>Manual Entry</discovery_source>
+    <fda_class>class_2</fda_class>
+    <firmware_version>2.8.3</firmware_version>
+    <hardware_status>installed</hardware_status>
+    <install_status>1</install_status>
+    <manufacturer>48e317be4767011042fca852736d4322</manufacturer>
+    <model_number>US-X200</model_number>
+    <name>UltraScan X200</name>
+    <operational_status>1</operational_status>
+    <purchase_date>2023-11-30</purchase_date>
+    <serial_number>USX-200-CHI-7741</serial_number>
+    <short_description>Silver Tier Warranty - Portable ultrasound imaging system for diagnostic imaging</short_description>
+    <subcategory>Diagnostic Imaging</subcategory>
+    <warranty_expiration>2026-11-30</warranty_expiration>
+  </cmdb_ci_med_device>
+</record_update>

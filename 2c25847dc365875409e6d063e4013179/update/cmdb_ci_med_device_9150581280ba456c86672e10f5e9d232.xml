@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="cmdb_ci_med_device">
+  <cmdb_ci_med_device action="INSERT_OR_UPDATE">
+    <sys_id>9150581280ba456c86672e10f5e9d232</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>cmdb_ci_med_device_9150581280ba456c86672e10f5e9d232</sys_update_name>
+    <category>Therapeutic</category>
+    <company>b8d9864b544e4ad0b5612c0fcb28b4b7</company>
+    <discovery_source>Manual Entry</discovery_source>
+    <fda_class>class_2</fda_class>
+    <firmware_version>3.5.2</firmware_version>
+    <hardware_status>installed</hardware_status>
+    <install_status>1</install_status>
+    <manufacturer>48e317be4767011042fca852736d4322</manufacturer>
+    <model_number>IP-ELITE-100</model_number>
+    <name>InfuPump Elite 100</name>
+    <operational_status>1</operational_status>
+    <purchase_date>2021-12-31</purchase_date>
+    <serial_number>IPE-100-MUM-2201</serial_number>
+    <short_description>Bronze Tier Warranty (EXPIRED) - Smart infusion pump with dose error reduction system</short_description>
+    <subcategory>Infusion</subcategory>
+    <warranty_expiration>2024-12-31</warranty_expiration>
+  </cmdb_ci_med_device>
+</record_update>
