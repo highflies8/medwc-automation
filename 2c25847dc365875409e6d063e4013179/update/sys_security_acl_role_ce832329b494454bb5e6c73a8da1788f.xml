@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+  <sys_security_acl_role action="INSERT_OR_UPDATE">
+    <sys_id>ce832329b494454bb5e6c73a8da1788f</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_security_acl_role_ce832329b494454bb5e6c73a8da1788f</sys_update_name>
+    <sys_security_acl>750fadfee9c447b1bf52bc3c3e43e9da</sys_security_acl>
+    <sys_user_role name="x_snc_medwc_auto_0.admin">39f6817db692411f9bcc673647e7e38a</sys_user_role>
+  </sys_security_acl_role>
+</record_update>

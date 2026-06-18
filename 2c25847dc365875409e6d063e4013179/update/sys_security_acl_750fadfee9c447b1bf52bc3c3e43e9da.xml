@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
   <sys_security_acl action="INSERT_OR_UPDATE">
-    <sys_id>096e8072dec64ab7854efa24af5cf309</sys_id>
+    <sys_id>750fadfee9c447b1bf52bc3c3e43e9da</sys_id>
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sys_security_acl_096e8072dec64ab7854efa24af5cf309</sys_update_name>
+    <sys_update_name>sys_security_acl_750fadfee9c447b1bf52bc3c3e43e9da</sys_update_name>
     <active>true</active>
     <admin_overrides>true</admin_overrides>
     <advanced>false</advanced>
     <applies_to/>
     <condition/>
     <decision_type>allow</decision_type>
-    <description>Allow write/update access to Warranty Claim table for admin and user roles</description>
+    <description>Allow create access to Warranty Claim table for admin and user roles</description>
     <local_or_existing>Local</local_or_existing>
     <name>x_snc_medwc_auto_0_warranty_claim</name>
-    <operation>write</operation>
+    <operation>create</operation>
     <script/>
     <security_attribute/>
     <type>record</type>
