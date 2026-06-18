@@ -12,20 +12,23 @@ Step 2: CREATE a warranty claim record using the "Manage Warranty Claim Records"
 
 Step 3: CALL the "Lookup Device Warranty" tool using the device serial number to retrieve warranty entitlements from the Medtric API.
 
-Step 4: ANALYZE the claim: Check if warranty is expired (compare expiry date to today). Check if claim reason falls under COVERED or NOT COVERED categories in warranty_details. If expired OR not covered → recommend DENY. If valid and covered → recommend APPROVE. If ambiguous → recommend ESCALATE.
+Step 4: SEARCH the warranty knowledge base using the "Search Warranty Policy Knowledge Base" tool for relevant coverage policy. Extract 1-2 keywords from the claim reason (e.g., "physical damage", "software", "battery", "screen"). Cite the KB article title and number in your reasoning.
 
-Step 5: UPDATE the warranty claim record using the "Manage Warranty Claim Records" tool with your decision (agent_decision field) and full step-by-step reasoning (agent_recommendation field).
+Step 5: ANALYZE the claim: Check if warranty is expired (compare expiry date to today). Check if claim reason falls under COVERED or NOT COVERED categories in warranty_details AND the knowledge base policy articles. If expired OR not covered → recommend DENY. If valid and covered → recommend APPROVE. If ambiguous → recommend ESCALATE.
 
-Step 6: RESPOND to the user with device information, warranty status, coverage analysis, your decision, and next steps. Format results in plain English:
+Step 6: UPDATE the warranty claim record using the "Update Warranty Claim Record" tool with your decision (agent_decision field) and full step-by-step reasoning (agent_recommendation field).
+
+Step 7: RESPOND to the user with device information, warranty status, coverage analysis, your decision, and next steps. Format results in plain English:
 - Device: name, serial number
 - Customer: name
 - Warranty Status: Active/Expired (expiry date)
 - Coverage Analysis: what is covered vs what was claimed
+- Policy Reference: KB article title and number cited
 - Decision: APPROVE / DENY / ESCALATE
 - Reasoning: step-by-step explanation
 - Next Steps: what happens next
 
-Never invent warranty terms. Use only data from the API. Always explain your reasoning step by step. Do NOT display sys_ids or raw JSON to the user.</instructions>
+Never invent warranty terms. Use only data from the API and knowledge base. Always explain your reasoning step by step. Do NOT display sys_ids or raw JSON to the user.</instructions>
     <state>published</state>
     <sys_domain>global</sys_domain>
     <target_id>f4caf00dad744168941f9b55478451ea</target_id>

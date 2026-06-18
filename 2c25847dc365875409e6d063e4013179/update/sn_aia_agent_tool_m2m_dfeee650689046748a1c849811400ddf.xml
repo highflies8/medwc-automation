@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_tool_m2m">
+  <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+    <sys_id>dfeee650689046748a1c849811400ddf</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_tool_m2m_dfeee650689046748a1c849811400ddf</sys_update_name>
+    <active>true</active>
+    <agent>f4caf00dad744168941f9b55478451ea</agent>
+    <description>Searches Medtric warranty policies using semantic search to ground claim decisions in official policy documentation. Use before making decisions. Searches the Medtric Warranty Policies knowledge base for coverage terms, exclusions, and support policies.</description>
+    <display_output>true</display_output>
+    <document_status/>
+    <execution_mode>autopilot</execution_mode>
+    <inputs>[{"name":"keyword","value":"","description":"Primary keyword extracted from the claim reason (e.g., 'physical damage', 'software', 'battery', 'screen', 'Gold', 'Silver')","mandatory":true,"invalidMessage":null},{"name":"crudInputs","value":{"operation":"lookup","table":{"value":"kb_knowledge","displayValue":"kb_knowledge"},"query":"kb_knowledge_base.titleLIKEMedtric Warranty^workflow_state=published^short_descriptionLIKE{{keyword}}^ORtextLIKE{{keyword}}","returnFields":[{"excludedOperators":[],"extendedOperators":null,"name":"sys_id","label":"sys_id","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"sys_id","sublabel":"sys_id"},{"excludedOperators":[],"extendedOperators":null,"name":"number","label":"number","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"number","sublabel":"number"},{"excludedOperators":[],"extendedOperators":null,"name":"short_description","label":"short_description","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"short_description","sublabel":"short_description"},{"excludedOperators":[],"extendedOperators":null,"name":"text","label":"text","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"text","sublabel":"text"}],"limit":"5"},"description":"Lookup operation configuration","mandatory":true,"invalidMessage":null}]</inputs>
+    <max_auto_executions>10</max_auto_executions>
+    <name>Search Warranty Policy Knowledge Base</name>
+    <output_transformation_strategy>none</output_transformation_strategy>
+    <post_message>Warranty policy articles retrieved.</post_message>
+    <post_processing_script/>
+    <pre_message>Searching warranty policy knowledge base...</pre_message>
+    <pre_run>false</pre_run>
+    <sys_domain>global</sys_domain>
+    <sys_overrides/>
+    <timeout/>
+    <tool>23aaa24c5b44475db4e2c38809353bc3</tool>
+    <tool_attributes>{}</tool_attributes>
+    <transformation_instructions/>
+    <widgets/>
+  </sn_aia_agent_tool_m2m>
+</record_update>

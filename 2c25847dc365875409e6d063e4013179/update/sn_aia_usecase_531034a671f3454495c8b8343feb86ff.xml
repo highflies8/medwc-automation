@@ -19,27 +19,33 @@ Step 3: Verify Warranty Entitlements.
 - Retrieve warranty entitlements including device name, warranty tier, warranty details, and expiry date from the Medtric API.
 - If the API returns no data, inform the user that warranty information could not be found and recommend ESCALATE.
 
-Step 4: Analyze Coverage and Decide.
+Step 4: Search Warranty Policy Knowledge Base.
+- Use the Warranty Claims Agent to search the Medtric Warranty Policies knowledge base for relevant coverage policy.
+- Extract keywords from the claim reason to find applicable policy articles.
+- Cite the KB article title and number in the decision reasoning.
+
+Step 5: Analyze Coverage and Decide.
 - Use the Warranty Claims Agent to analyze the claim:
   - Check if warranty is expired (compare expiry date to today)
-  - Check if claim reason falls under COVERED or NOT COVERED categories in warranty_details
+  - Check if claim reason falls under COVERED or NOT COVERED categories in warranty_details AND the knowledge base policy articles
   - If expired OR not covered → DENY
   - If valid and covered → APPROVE
   - If ambiguous → ESCALATE
 
-Step 5: Update Record with Decision.
-- Use the Warranty Claims Agent to update the warranty claim record with the agent_decision and agent_recommendation fields containing the full step-by-step reasoning.
+Step 6: Update Record with Decision.
+- Use the Warranty Claims Agent to update the warranty claim record with the agent_decision and agent_recommendation fields containing the full step-by-step reasoning and KB article citations.
 
-Step 6: Present Results.
+Step 7: Present Results.
 - Display a formatted summary to the user:
   - Device: name, serial number
   - Customer: name
   - Warranty Status: Active/Expired with expiry date
   - Coverage Analysis: what is covered vs what was claimed
+  - Policy Reference: KB article title and number cited
   - Decision: APPROVE / DENY / ESCALATE
   - Reasoning: step-by-step explanation
   - Next Steps: what happens next
-- NEVER invent warranty terms. Use only data from the API.</base_plan>
+- NEVER invent warranty terms. Use only data from the API and knowledge base.</base_plan>
     <context_processing_script/>
     <description>Automate end-to-end warranty claim processing. Orchestrates the Warranty Claims Agent to extract claim details, verify warranty entitlements via Medtric API, analyze coverage, and deliver approve/deny/escalate recommendations.</description>
     <execution_mode>copilot</execution_mode>
