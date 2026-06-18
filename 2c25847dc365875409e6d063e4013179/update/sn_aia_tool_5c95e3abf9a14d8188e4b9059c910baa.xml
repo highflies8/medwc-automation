@@ -11,14 +11,14 @@
     <record_type>custom</record_type>
     <script><![CDATA[(function(inputs) {
     var serial = inputs.serial_number;
-    var gr = new GlideRecordSecure('cmdb_ci_med_device');
+    var gr = new GlideRecord('cmdb_ci_med_device');
     gr.addQuery('serial_number', serial);
     gr.setLimit(1);
     gr.query();
     if (gr.next()) {
         var companyName = '';
         if (gr.getValue('company')) {
-            var comp = new GlideRecordSecure('core_company');
+            var comp = new GlideRecord('core_company');
             if (comp.get(gr.getValue('company'))) {
                 companyName = comp.getValue('name');
             }
