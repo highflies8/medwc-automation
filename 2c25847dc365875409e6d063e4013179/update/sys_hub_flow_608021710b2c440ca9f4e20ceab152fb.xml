@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_hub_flow action="INSERT_OR_UPDATE">
+    <sys_id>608021710b2c440ca9f4e20ceab152fb</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_hub_flow_608021710b2c440ca9f4e20ceab152fb</sys_update_name>
+    <access>public</access>
+    <active>false</active>
+    <annotation/>
+    <category/>
+    <description/>
+    <flow_priority>MEDIUM</flow_priority>
+    <generation_source>fluent</generation_source>
+    <internal_name>warranty_claim_escalation_handler</internal_name>
+    <label_cache>[{"name":"Updated_1.current","label":"Trigger - Record Updated➛x_snc_medwc_auto_0_warranty_claim Record","type":"reference","base_type":"reference","usedInstances":{"9e8e8416-0518-455a-839e-f113593f8969":["record"]},"attributes":{}}]</label_cache>
+    <name>Warranty Claim Escalation Handler</name>
+    <run_as>user</run_as>
+    <run_with_roles/>
+    <show_draft_actions>false</show_draft_actions>
+    <status>draft</status>
+    <sys_policy/>
+    <type>flow</type>
+    <version>2</version>
+  <version_record/>
+    </sys_hub_flow>
+  <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=608021710b2c440ca9f4e20ceab152fb^sys_idNOT IN274e90d09df94e5ebf9a7a15c30d81b4"/>
+  <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+    <sys_id>274e90d09df94e5ebf9a7a15c30d81b4</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <category/>
+    <comment/>
+    <flow>608021710b2c440ca9f4e20ceab152fb</flow>
+    <name>Updated</name>
+    <trigger_definition>bb695e60c31322002841b63b12d3aea5</trigger_definition>
+    <trigger_inputs>H4sIAAAAAAAAA71XW2/bOgz+K4KezoAM6F4D7GG3AgF2AdbunIdhEBiJdoQpVCbRSY0i//1AvrS24zbp4vYpCCWRHz9+lOift5KDzXMMC4oMpPGqjAsj51LOpIMlOjmX17B0KGfSEmMgcNflBuVccjIrgnVaM7hBMkhcH9UrbzV+tpHl/OevmVwDGWAfSjnnUOBM+mAwyPmbi4uZrFw0/uRMbsEV6f+NiqTVGs1OKyjYqwu1gxCAuFTagV2nsDZuHJT/Pv3IpUXX5Bl1sBt+p9luUc4zcBFTBtaZgFTj30CANXKCfCt5JP9BDn3q9vvZKTx/L0j8t0ISPyIGUZF3QHrurEHl6rXTSW+SGmE9FKR2KyRVRAyt47YEhwyfTmDlo5PlcUJ7uT0G71HCgDnYZcEYk2sw28R2wpCEJ/dPrcUVxmh9+mW2lB9WpGb9SDVuZdYyWB2HmquZzD43Ab+RK0WKmvlQ57O439iiSAcWa8ibSmRX6FBzyq4hPfsRu/++2BgT6NqQMr+DQZ7UKVC+enr9vEiWnlfd8G3k955XPRKAzENw4pl4ntwt8U4O234ag37pW8+/dO7U9jCgEyQ8XY9kzu/Egs5vC6DyQATJtyUBVArtifGGJ5Rd5gPmwRdkHorb3zGV2kH/fjzs/Q7xj8EMCsevXlDeCYay1FV2F/JQ3yNrz6Pye1zj+ptO099IfLrhJFojqgc8ni/vCsSg4J6ELkJA4upqwzYmtzEnk3qyHEZ3ZRdCO7q8lM48qTbjjtZaqAOZDczPo7A+oqOKmEZwHzwZy/WLOtRYuxQnmvV0J1ZLOORIrAxqm96It5+iBgc8UoKjGycoSjfhEcxjnPWrsAPiqNgrMEZ13N014NobdB87XDYVUpY2BUe57zCtPHVG+iKi6hQh+furuX6yQXLsxfShei3TsDzh/eEJlc9GR0SbiYYANGJZCl6hyLxzfmcpr3BMeZGRT0UZgvnoBXkW4UXg/N131eG4WFdv2GNd4zMOiwNMx4Q63dN6Xe86X/wF2T8FKr0Cyuu3slXDpQ8CQa9EvUXUWybtBj34XNJTuscthvIgoWQUxcbUN+5UscDtoIwHjW2zqqGaycCVqbWolsJLtE57JUcOwJiXna5puB+0Td86fd+MABoT9X7/638wv9rQUBMAAA==</trigger_inputs>
+    <trigger_outputs/>
+    <trigger_type>record_update</trigger_type>
+  </sys_hub_trigger_instance_v2>
+  <sys_hub_action_instance_v2 action="delete_multiple" query="flow=608021710b2c440ca9f4e20ceab152fb^sys_idNOT IN9e8e84160518455a839ef113593f8969"/>
+  <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+    <sys_id>9e8e84160518455a839ef113593f8969</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <action_type>f9d01dd2c31332002841b63b12d3aea1</action_type>
+    <action_type_parent>f9d01dd2c31332002841b63b12d3aea1</action_type_parent>
+    <active>true</active>
+    <comment>Assign escalated claim to manager for human review</comment>
+    <display_text/>
+    <flow>608021710b2c440ca9f4e20ceab152fb</flow>
+    <generation_source/>
+    <order>1</order>
+    <parent_ui_id/>
+    <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+    <ui_id>9e8e8416-0518-455a-839e-f113593f8969</ui_id>
+    <updation_source/>
+    <values>H4sIAAAAAAAAA83SwWrDMAwA0F8xPmcloVnXBXroYYcdN9guYzWKraRmsR1sOVkJ+feRFEa3MmhvO0pI4iHpbeAWDPKCE5QNijlIeAdNnJKfIlgpDKpeCojkRCp68B4sHYRsQBuecKVD28Dh9YqWIL1uaStJd8iLCpqACW/Bg0FCz4uB06H9hRrH5NvqUTqvTpzD8NIqIFQiW8joPVoax3PbX2UXe5ST0aAlodUP0OwIJyAIQdcWlSC3Wa2zVXV3L2UK6zRb5Wkmb2G5LDHNS8zzbNc7/yGsIwyb7SPb1miJYZDQTFRGex3YvDlWOc/20YBlHjuN/YI9IwRnCwam1HV0MTDpOvRQI5tqdb2/mUnHAYvdw9P5Vv619fJXQdNOCHE8wTi+fwGXIl+q3AIAAA==</values>
+  </sys_hub_action_instance_v2>
+  <sys_hub_alias_mapping action="delete_multiple" query="source_id=9e8e84160518455a839ef113593f8969"/>
+</record_update>
