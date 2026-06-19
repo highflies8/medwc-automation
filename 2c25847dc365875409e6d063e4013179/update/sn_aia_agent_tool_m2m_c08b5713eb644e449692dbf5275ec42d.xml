@@ -5,7 +5,7 @@
     <sys_update_name>sn_aia_agent_tool_m2m_c08b5713eb644e449692dbf5275ec42d</sys_update_name>
     <active>true</active>
     <agent>f4caf00dad744168941f9b55478451ea</agent>
-    <description>Looks up a customer company record from core_company by name using a LIKE query.</description>
+    <description>Looks up a customer company record from core_company by name.</description>
     <display_output>false</display_output>
     <document_status/>
     <execution_mode>autopilot</execution_mode>

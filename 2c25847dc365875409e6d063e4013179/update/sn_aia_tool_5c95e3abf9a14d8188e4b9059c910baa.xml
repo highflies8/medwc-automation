@@ -48,14 +48,10 @@
             coverage_details: desc,
             customer_name: companyName,
             customer_sys_id: gr.getValue('company') || '',
-            model_number: gr.getValue('model_number') || '',
-            message: 'Device found: ' + gr.getValue('name') + ' | Warranty: ' + warrantyStatus + ' (' + tier + ' tier, expires ' + warrantyExp + ') | Customer: ' + companyName
+            model_number: gr.getValue('model_number') || ''
         });
     } else {
-        return JSON.stringify({
-            status: 'not_found',
-            message: 'No device found with serial number: ' + serial
-        });
+        return JSON.stringify({ status: 'not_found', message: 'No device found with serial number: ' + serial });
     }
 })(inputs);]]></script>
     <sys_domain>global</sys_domain>

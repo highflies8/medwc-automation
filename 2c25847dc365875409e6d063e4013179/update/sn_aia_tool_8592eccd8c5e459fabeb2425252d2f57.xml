@@ -4,8 +4,8 @@
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
     <sys_update_name>sn_aia_tool_8592eccd8c5e459fabeb2425252d2f57</sys_update_name>
     <active>true</active>
-    <description>Updates an existing warranty claim with the agent decision, recommendation, and state. This is a supervised action that requires user approval before execution.</description>
-    <input_schema>[{"name":"number","description":"Claim number in WC-format to identify the record","mandatory":true},{"name":"agent_decision","description":"Agent decision: approve, deny, or escalate","mandatory":true},{"name":"agent_recommendation","description":"Full reasoning for the decision","mandatory":true},{"name":"kb_article_cited","description":"KB article title cited in the decision","mandatory":false},{"name":"state","description":"New state (3=Resolved, 4=Closed, -5=Pending)","mandatory":true},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
+    <description>Updates an existing warranty claim with agent decision and state. Supervised action requiring user approval.</description>
+    <input_schema>[{"name":"number","description":"Claim number in WC-format","mandatory":true},{"name":"agent_decision","description":"Decision: approve, deny, or escalate","mandatory":true},{"name":"agent_recommendation","description":"Full reasoning for the decision","mandatory":true},{"name":"kb_article_cited","description":"KB article title cited","mandatory":false},{"name":"state","description":"New state (3=Resolved, 4=Closed, -5=Pending)","mandatory":true},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
     <name>Update Warranty Claim</name>
     <post_processing_script/>
     <record_type>custom</record_type>

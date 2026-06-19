@@ -4,8 +4,8 @@
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
     <sys_update_name>sn_aia_tool_c698455ba36648a5b55e48491180e068</sys_update_name>
     <active>true</active>
-    <description>Adds a formatted work note (journal entry) to a warranty claim record for audit trail. The work note appears in the Activity stream. Use this AFTER the Update Warranty Claim tool has been approved and executed.</description>
-    <input_schema>[{"name":"claim_sys_id","description":"The sys_id of the warranty claim record to add the work note to","mandatory":true},{"name":"decision","description":"The decision: APPROVE, DENY, or ESCALATE","mandatory":true},{"name":"analysis","description":"Full step-by-step reasoning with KB citations, warranty status, and coverage comparison","mandatory":true},{"name":"policy_reference","description":"KB article title referenced in the decision","mandatory":true}]</input_schema>
+    <description>Adds a formatted work note (journal entry) to a warranty claim for audit trail. Appears in Activity stream.</description>
+    <input_schema>[{"name":"claim_sys_id","description":"The sys_id of the warranty claim record","mandatory":true},{"name":"decision","description":"The decision: APPROVE, DENY, or ESCALATE","mandatory":true},{"name":"analysis","description":"Full reasoning with KB citations, warranty status, coverage comparison","mandatory":true},{"name":"policy_reference","description":"KB article title referenced","mandatory":true}]</input_schema>
     <name>Add Work Note to Claim</name>
     <post_processing_script/>
     <record_type>custom</record_type>
@@ -16,13 +16,10 @@
     var policyRef = inputs.policy_reference;
     var gr = new GlideRecordSecure('x_snc_medwc_auto_0_warranty_claim');
     if (!gr.get(claimSysId)) {
-        return JSON.stringify({
-            status: 'error',
-            message: 'Claim record not found: ' + claimSysId
-        });
+        return JSON.stringify({ status: 'error', message: 'Claim not found: ' + claimSysId });
     }
     var now = new GlideDateTime();
-    var workNote = '\n[AI Agent Decision: ' + decision.toUpperCase() + ']\n\n';
+    var workNote = '[AI Agent Decision: ' + decision.toUpperCase() + ']\n\n';
     workNote += 'Analysis:\n' + analysis + '\n\n';
     workNote += 'Policy Reference: ' + policyRef + '\n\n';
     workNote += 'Decision made at: ' + now.getDisplayValue();

@@ -5,11 +5,11 @@
     <sys_update_name>sn_aia_agent_tool_m2m_670d88cdcc474e9c90671021c410b026</sys_update_name>
     <active>true</active>
     <agent>f4caf00dad744168941f9b55478451ea</agent>
-    <description>Adds a formatted work note (journal entry) to a warranty claim record for audit trail. The work note appears in the Activity stream. Use this AFTER the Update Warranty Claim tool has been approved and executed.</description>
+    <description>Adds a formatted work note (journal entry) to a warranty claim for audit trail. Appears in Activity stream.</description>
     <display_output>false</display_output>
     <document_status/>
     <execution_mode>autopilot</execution_mode>
-    <inputs>[{"name":"claim_sys_id","description":"The sys_id of the warranty claim record to add the work note to","mandatory":true},{"name":"decision","description":"The decision: APPROVE, DENY, or ESCALATE","mandatory":true},{"name":"analysis","description":"Full step-by-step reasoning with KB citations, warranty status, and coverage comparison","mandatory":true},{"name":"policy_reference","description":"KB article title referenced in the decision","mandatory":true}]</inputs>
+    <inputs>[{"name":"claim_sys_id","description":"The sys_id of the warranty claim record","mandatory":true},{"name":"decision","description":"The decision: APPROVE, DENY, or ESCALATE","mandatory":true},{"name":"analysis","description":"Full reasoning with KB citations, warranty status, coverage comparison","mandatory":true},{"name":"policy_reference","description":"KB article title referenced","mandatory":true}]</inputs>
     <max_auto_executions>10</max_auto_executions>
     <name>Add Work Note to Claim</name>
     <output_transformation_strategy>none</output_transformation_strategy>
