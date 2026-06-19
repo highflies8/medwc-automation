@@ -39,6 +39,7 @@ Present a clean, formatted summary:
 • **Device:** [device name] (Serial: [serial_number])
 • **Customer:** [customer name]
 • **Claim Reason:** [reason]
+• **Record Link:** /now/nav/ui/classic/params/target/x_snc_medwc_auto_0_warranty_claim.do%3Fsys_id%3D[claim_sys_id_from_Step_4]
 
 🔍 **Warranty Analysis**
 ━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="kb_knowledge">
+  <kb_knowledge action="INSERT_OR_UPDATE">
+    <sys_id>8d208f6833014edd974e737406370d18</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>kb_knowledge_8d208f6833014edd974e737406370d18</sys_update_name>
+    <active>true</active>
+    <kb_knowledge_base>589b035e1a034b679b491bc527987c75</kb_knowledge_base>
+    <short_description>Warranty Expiration and Renewal Guidelines</short_description>
+    <text>&lt;h2&gt;Warranty Expiration Policy&lt;/h2&gt;
+&lt;h3&gt;Expiration Rules&lt;/h3&gt;
+&lt;p&gt;All warranty claims must be submitted while the device warranty is in ACTIVE status. Claims submitted after the warranty expiration date are automatically denied regardless of the nature of the issue.&lt;/p&gt;
+
+&lt;h3&gt;Decision: DENY (Expired Warranty)&lt;/h3&gt;
+&lt;p&gt;If the warranty_expiration date has passed, the claim must be DENIED. No exceptions unless approved by a Medtric Global warranty manager through the escalation process.&lt;/p&gt;
+
+&lt;h3&gt;Grace Period&lt;/h3&gt;
+&lt;p&gt;There is NO grace period after warranty expiration. The expiration date is the final day of coverage.&lt;/p&gt;
+
+&lt;h3&gt;Renewal Options&lt;/h3&gt;
+&lt;p&gt;Customers with expired warranties may purchase an extended warranty within 30 days of expiration. Contact Medtric Sales for renewal pricing.&lt;/p&gt;</text>
+    <workflow_state>published</workflow_state>
+  </kb_knowledge>
+</record_update>

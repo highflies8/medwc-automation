@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="kb_knowledge">
+  <kb_knowledge action="INSERT_OR_UPDATE">
+    <sys_id>fa0390e8ce464cb9ab78dc9b570af9c4</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>kb_knowledge_fa0390e8ce464cb9ab78dc9b570af9c4</sys_update_name>
+    <active>true</active>
+    <kb_knowledge_base>589b035e1a034b679b491bc527987c75</kb_knowledge_base>
+    <short_description>Gold Tier Warranty Coverage Policy - Full Terms and Conditions</short_description>
+    <text>&lt;h2&gt;Gold Tier Warranty - 3 Year Full Coverage&lt;/h2&gt;
+&lt;h3&gt;Coverage Period&lt;/h3&gt;
+&lt;p&gt;Gold Tier warranties provide 3 years of full coverage from date of purchase. Coverage is valid only during the active warranty period.&lt;/p&gt;
+
+&lt;h3&gt;COVERED Items&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Manufacturing defects&lt;/strong&gt; - Any defect originating from the manufacturing process&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Component failures&lt;/strong&gt; - Internal component failures during normal use&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Display screen damage&lt;/strong&gt; - Screen failures, dead pixels, or display malfunctions&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Software issues&lt;/strong&gt; - Firmware bugs, software crashes, calibration drift&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Battery replacement&lt;/strong&gt; - Battery degradation below 80% capacity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;NOT COVERED Items (Exclusions)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Water damage&lt;/strong&gt; - Submersion, liquid spills, humidity exposure beyond rated IP level&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Physical abuse drops&lt;/strong&gt; - Damage from dropping, impact, crushing, or physical force&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unauthorized modifications&lt;/strong&gt; - Third-party repairs, hardware mods, jailbreaking&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Claim Decision Guidelines&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;APPROVE&lt;/strong&gt; if: Warranty is active AND claim reason matches a COVERED item.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DENY&lt;/strong&gt; if: Warranty is expired OR claim reason matches a NOT COVERED exclusion.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ESCALATE&lt;/strong&gt; if: Claim reason is ambiguous or does not clearly match covered/excluded categories.&lt;/p&gt;</text>
+    <workflow_state>published</workflow_state>
+  </kb_knowledge>
+</record_update>
