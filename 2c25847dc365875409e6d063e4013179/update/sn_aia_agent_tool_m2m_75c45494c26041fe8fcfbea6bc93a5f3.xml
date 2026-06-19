@@ -9,7 +9,7 @@
     <display_output>false</display_output>
     <document_status/>
     <execution_mode>autopilot</execution_mode>
-    <inputs>[{"name":"number","description":"Claim number in WC-format (e.g. WC0001001)","mandatory":true},{"name":"agent_decision","description":"Decision value - MUST be exact lowercase: approve, deny, or escalate","mandatory":true},{"name":"agent_recommendation","description":"Complete multi-paragraph reasoning with KB citations embedded (max 4000 chars)","mandatory":true},{"name":"api_call_timestamp","description":"Current timestamp (YYYY-MM-DD HH:MM:SS format)","mandatory":false}]</inputs>
+    <inputs>[{"name":"number","description":"Claim number in WC-format (e.g. WC0001022) OR the sys_id of the claim. Use whichever was returned by the Create or Lookup tool.","mandatory":true},{"name":"agent_decision","description":"Decision value - MUST be exact lowercase: approve, deny, or escalate","mandatory":true},{"name":"agent_recommendation","description":"Complete multi-paragraph reasoning with KB citations embedded (max 4000 chars)","mandatory":true},{"name":"api_call_timestamp","description":"Current timestamp (YYYY-MM-DD HH:MM:SS format)","mandatory":false}]</inputs>
     <max_auto_executions>10</max_auto_executions>
     <name>Update Warranty Claim</name>
     <output_transformation_strategy>none</output_transformation_strategy>

@@ -5,12 +5,12 @@
     <sys_update_name>sn_aia_tool_8592eccd8c5e459fabeb2425252d2f57</sys_update_name>
     <active>true</active>
     <description>Updates a warranty claim record with agent_decision, agent_recommendation, and api_call_timestamp using GlideRecord. IMPORTANT: agent_decision must be exact lowercase: approve, deny, or escalate. Returns the updated field values to confirm persistence.</description>
-    <input_schema>[{"name":"number","description":"Claim number in WC-format (e.g. WC0001001)","mandatory":true},{"name":"agent_decision","description":"Decision value - MUST be exact lowercase: approve, deny, or escalate","mandatory":true},{"name":"agent_recommendation","description":"Complete multi-paragraph reasoning with KB citations embedded (max 4000 chars)","mandatory":true},{"name":"api_call_timestamp","description":"Current timestamp (YYYY-MM-DD HH:MM:SS format)","mandatory":false}]</input_schema>
+    <input_schema>[{"name":"number","description":"Claim number in WC-format (e.g. WC0001022) OR the sys_id of the claim. Use whichever was returned by the Create or Lookup tool.","mandatory":true},{"name":"agent_decision","description":"Decision value - MUST be exact lowercase: approve, deny, or escalate","mandatory":true},{"name":"agent_recommendation","description":"Complete multi-paragraph reasoning with KB citations embedded (max 4000 chars)","mandatory":true},{"name":"api_call_timestamp","description":"Current timestamp (YYYY-MM-DD HH:MM:SS format)","mandatory":false}]</input_schema>
     <name>Update Warranty Claim</name>
     <post_processing_script/>
     <record_type>custom</record_type>
     <script><![CDATA[(function(inputs) {
-    var claimNumber = inputs.number;
+    var identifier = inputs.number;
     var decision = inputs.agent_decision;
     var recommendation = inputs.agent_recommendation;
     var timestamp = inputs.api_call_timestamp || '';
@@ -22,13 +22,31 @@
     }
     decision = decision.toLowerCase();
 
-    // Find the claim by number
+    // Find the claim - try by number first, then by sys_id
     var gr = new GlideRecord('x_snc_medwc_auto_0_warranty_claim');
-    gr.addQuery('number', claimNumber);
-    gr.query();
+    var found = false;
 
-    if (!gr.next()) {
-        return JSON.stringify({ status: 'error', message: 'No warranty claim found with number: ' + claimNumber });
+    // Try by number (WC format)
+    if (identifier.indexOf('WC') === 0) {
+        gr.addQuery('number', identifier);
+        gr.query();
+        found = gr.next();
+    }
+
+    // If not found by number, try by sys_id (32-char hex)
+    if (!found && identifier.length === 32) {
+        gr = new GlideRecord('x_snc_medwc_auto_0_warranty_claim');
+        found = gr.get(identifier);
+    }
+
+    // Last resort: try as sys_id regardless of length
+    if (!found) {
+        gr = new GlideRecord('x_snc_medwc_auto_0_warranty_claim');
+        found = gr.get(identifier);
+    }
+
+    if (!found) {
+        return JSON.stringify({ status: 'error', message: 'No warranty claim found with number or sys_id: ' + identifier });
     }
 
     var sysId = gr.getValue('sys_id');
