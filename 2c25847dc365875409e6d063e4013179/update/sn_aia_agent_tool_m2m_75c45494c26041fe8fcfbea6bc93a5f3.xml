@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_tool_m2m">
+  <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+    <sys_id>75c45494c26041fe8fcfbea6bc93a5f3</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_tool_m2m_75c45494c26041fe8fcfbea6bc93a5f3</sys_update_name>
+    <active>true</active>
+    <agent>f4caf00dad744168941f9b55478451ea</agent>
+    <description>Updates an existing warranty claim with the agent decision, recommendation, and state. This is a supervised action that requires user approval before execution.</description>
+    <display_output>false</display_output>
+    <document_status/>
+    <execution_mode>copilot</execution_mode>
+    <inputs>[{"name":"number","value":"","description":"Claim number in WC-format to identify the record","mandatory":true,"invalidMessage":null},{"name":"agent_decision","value":"","description":"Agent decision: approve, deny, or escalate","mandatory":true,"invalidMessage":null},{"name":"agent_recommendation","value":"","description":"Full reasoning for the decision","mandatory":true,"invalidMessage":null},{"name":"kb_article_cited","value":"","description":"KB article title cited in the decision","mandatory":false,"invalidMessage":null},{"name":"state","value":"","description":"New state (3=Resolved, 4=Closed, -5=Pending)","mandatory":true,"invalidMessage":null},{"name":"crudInputs","value":{"operation":"update","table":{"value":"x_snc_medwc_auto_0_warranty_claim","displayValue":"x_snc_medwc_auto_0_warranty_claim"},"query":"number={{number}}","fieldValues":[{"field":{"id":"agent_decision","sublabel":"agent_decision","excludedOperators":[],"label":"agent_decision","type":"string","dictionaryAttributes":[],"name":"agent_decision"},"value":{"fieldValue":"{{agent_decision}}"}},{"field":{"id":"agent_recommendation","sublabel":"agent_recommendation","excludedOperators":[],"label":"agent_recommendation","type":"string","dictionaryAttributes":[],"name":"agent_recommendation"},"value":{"fieldValue":"{{agent_recommendation}}"}},{"field":{"id":"kb_article_cited","sublabel":"kb_article_cited","excludedOperators":[],"label":"kb_article_cited","type":"string","dictionaryAttributes":[],"name":"kb_article_cited"},"value":{"fieldValue":"{{kb_article_cited}}"}},{"field":{"id":"state","sublabel":"state","excludedOperators":[],"label":"state","type":"choice","dictionaryAttributes":[],"name":"state"},"value":{"fieldValue":"{{state}}"}}],"returnFields":[{"excludedOperators":[],"extendedOperators":null,"name":"sys_id","label":"sys_id","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"sys_id","sublabel":"sys_id"},{"excludedOperators":[],"extendedOperators":null,"name":"number","label":"number","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"number","sublabel":"number"},{"excludedOperators":[],"extendedOperators":null,"name":"state","label":"state","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"state","sublabel":"state"},{"excludedOperators":[],"extendedOperators":null,"name":"agent_decision","label":"agent_decision","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"agent_decision","sublabel":"agent_decision"}],"limit":"1"},"description":"Update operation configuration","mandatory":true,"invalidMessage":null}]</inputs>
+    <max_auto_executions>10</max_auto_executions>
+    <name>Update Warranty Claim</name>
+    <output_transformation_strategy>none</output_transformation_strategy>
+    <post_message>Warranty claim updated.</post_message>
+    <post_processing_script/>
+    <pre_message>Updating warranty claim with decision...</pre_message>
+    <pre_run>false</pre_run>
+    <sys_domain>global</sys_domain>
+    <sys_overrides/>
+    <timeout/>
+    <tool>8592eccd8c5e459fabeb2425252d2f57</tool>
+    <tool_attributes>{}</tool_attributes>
+    <transformation_instructions/>
+    <widgets/>
+  </sn_aia_agent_tool_m2m>
+</record_update>

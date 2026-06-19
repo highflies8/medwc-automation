@@ -54,7 +54,7 @@
     } else {
         return JSON.stringify({
             status: 'not_found',
-            message: 'No device found with serial number: ' + serial + '. Please verify the serial number or contact support to register the device.'
+            message: 'No device found with serial number: ' + serial
         });
     }
 })(inputs);]]></script>

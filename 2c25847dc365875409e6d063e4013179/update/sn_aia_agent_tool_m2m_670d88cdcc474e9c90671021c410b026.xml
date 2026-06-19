@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_tool_m2m">
+  <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+    <sys_id>670d88cdcc474e9c90671021c410b026</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_tool_m2m_670d88cdcc474e9c90671021c410b026</sys_update_name>
+    <active>true</active>
+    <agent>f4caf00dad744168941f9b55478451ea</agent>
+    <description>Adds a formatted work note (journal entry) to a warranty claim record for audit trail. The work note appears in the Activity stream. Use this AFTER the Update Warranty Claim tool has been approved and executed.</description>
+    <display_output>false</display_output>
+    <document_status/>
+    <execution_mode>autopilot</execution_mode>
+    <inputs>[{"name":"claim_sys_id","description":"The sys_id of the warranty claim record to add the work note to","mandatory":true},{"name":"decision","description":"The decision: APPROVE, DENY, or ESCALATE","mandatory":true},{"name":"analysis","description":"Full step-by-step reasoning with KB citations, warranty status, and coverage comparison","mandatory":true},{"name":"policy_reference","description":"KB article title referenced in the decision","mandatory":true}]</inputs>
+    <max_auto_executions>10</max_auto_executions>
+    <name>Add Work Note to Claim</name>
+    <output_transformation_strategy>none</output_transformation_strategy>
+    <post_message>Work note added to claim.</post_message>
+    <post_processing_script/>
+    <pre_message>Adding audit trail work note...</pre_message>
+    <pre_run>false</pre_run>
+    <sys_domain>global</sys_domain>
+    <sys_overrides/>
+    <timeout/>
+    <tool>c698455ba36648a5b55e48491180e068</tool>
+    <tool_attributes>{}</tool_attributes>
+    <transformation_instructions/>
+    <widgets/>
+  </sn_aia_agent_tool_m2m>
+</record_update>
