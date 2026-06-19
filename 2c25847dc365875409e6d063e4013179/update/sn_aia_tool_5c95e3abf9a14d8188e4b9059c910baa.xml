@@ -13,6 +13,7 @@
     var serial = inputs.serial_number;
     var gr = new GlideRecord('cmdb_ci_med_device');
     gr.addQuery('serial_number', serial);
+    gr.orderByDesc('sys_created_on');
     gr.setLimit(1);
     gr.query();
     if (gr.next()) {
@@ -23,24 +24,37 @@
                 companyName = comp.getValue('name');
             }
         }
+        var warrantyExp = gr.getValue('warranty_expiration') || '';
+        var today = new GlideDate();
+        var warrantyStatus = 'Unknown';
+        if (warrantyExp) {
+            var expDate = new GlideDate();
+            expDate.setValue(warrantyExp);
+            warrantyStatus = (expDate.compareTo(today) >= 0) ? 'ACTIVE' : 'EXPIRED';
+        }
+        var desc = gr.getValue('short_description') || '';
+        var tier = 'Unknown';
+        if (desc.indexOf('Gold') >= 0) tier = 'Gold';
+        else if (desc.indexOf('Silver') >= 0) tier = 'Silver';
+        else if (desc.indexOf('Bronze') >= 0) tier = 'Bronze';
         return JSON.stringify({
             status: 'success',
-            records: [{
-                sys_id: gr.getValue('sys_id'),
-                name: gr.getValue('name'),
-                serial_number: gr.getValue('serial_number'),
-                warranty_expiration: gr.getValue('warranty_expiration'),
-                short_description: gr.getValue('short_description'),
-                company: companyName,
-                company_sys_id: gr.getValue('company')
-            }],
-            message: 'Device found: ' + gr.getValue('name')
+            device_name: gr.getValue('name'),
+            device_sys_id: gr.getValue('sys_id'),
+            serial_number: gr.getValue('serial_number'),
+            warranty_expiration: warrantyExp,
+            warranty_status: warrantyStatus,
+            warranty_tier: tier,
+            coverage_details: desc,
+            customer_name: companyName,
+            customer_sys_id: gr.getValue('company') || '',
+            model_number: gr.getValue('model_number') || '',
+            message: 'Device found: ' + gr.getValue('name') + ' | Warranty: ' + warrantyStatus + ' (' + tier + ' tier, expires ' + warrantyExp + ') | Customer: ' + companyName
         });
     } else {
         return JSON.stringify({
             status: 'not_found',
-            records: [],
-            message: 'No device found with serial number: ' + serial
+            message: 'No device found with serial number: ' + serial + '. Please verify the serial number or contact support to register the device.'
         });
     }
 })(inputs);]]></script>
