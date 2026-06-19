@@ -4,8 +4,8 @@
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
     <sys_update_name>sn_aia_tool_be8f28dea4634f278aa6d0b7fd6e8fee</sys_update_name>
     <active>true</active>
-    <description>Looks up a customer company record from core_company by name.</description>
-    <input_schema>[{"name":"customer_name","description":"Name of the customer company","mandatory":true},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
+    <description>Looks up a customer company from core_company by name.</description>
+    <input_schema>[{"name":"customer_name","description":"Customer company name","mandatory":true},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
     <name>Lookup or Create Customer</name>
     <post_processing_script/>
     <record_type>custom</record_type>

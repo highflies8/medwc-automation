@@ -19,9 +19,9 @@
       <type/>
     </sys_ui_element>
     <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>kb_article_cited</element>
+      <element>api_call_timestamp</element>
       <position>2</position>
-      <sys_id>ce42bf914ab94e3bbe951a2bdd3c5eaa</sys_id>
+      <sys_id>d8e4e59ff08d4cbfa0e1fb860379b090</sys_id>
       <sys_ui_formatter/>
       <sys_ui_section caption="Agent Analysis" display_value="Agent Analysis" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">e8ac54517a1a4dafb169845fd1168114</sys_ui_section>
       <sys_user/>

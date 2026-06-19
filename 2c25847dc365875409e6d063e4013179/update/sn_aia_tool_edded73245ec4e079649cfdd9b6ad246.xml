@@ -4,8 +4,8 @@
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
     <sys_update_name>sn_aia_tool_edded73245ec4e079649cfdd9b6ad246</sys_update_name>
     <active>true</active>
-    <description>Looks up an existing warranty claim record by its claim number (WC-format). Used in LOOKUP MODE when processing existing claims.</description>
-    <input_schema>[{"name":"number","description":"Claim number in WC-format (e.g., WC0001001)","mandatory":true},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
+    <description>Looks up an existing warranty claim by its WC-number.</description>
+    <input_schema>[{"name":"number","description":"Claim number (WC-format)","mandatory":true},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
     <name>Lookup Warranty Claim</name>
     <post_processing_script/>
     <record_type>custom</record_type>

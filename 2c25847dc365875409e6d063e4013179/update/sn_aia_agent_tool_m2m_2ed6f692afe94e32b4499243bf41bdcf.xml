@@ -5,11 +5,11 @@
     <sys_update_name>sn_aia_agent_tool_m2m_2ed6f692afe94e32b4499243bf41bdcf</sys_update_name>
     <active>true</active>
     <agent>f4caf00dad744168941f9b55478451ea</agent>
-    <description>Looks up a medical device record from cmdb_ci_med_device by serial number to get device details, warranty information, and customer company name.</description>
+    <description>Looks up a medical device from cmdb_ci_med_device by serial number to get warranty info and customer.</description>
     <display_output>false</display_output>
     <document_status/>
     <execution_mode>autopilot</execution_mode>
-    <inputs>[{"name":"serial_number","description":"Serial number of the medical device to look up","mandatory":true}]</inputs>
+    <inputs>[{"name":"serial_number","description":"Serial number of the medical device","mandatory":true}]</inputs>
     <max_auto_executions>10</max_auto_executions>
     <name>Lookup Device</name>
     <output_transformation_strategy>none</output_transformation_strategy>

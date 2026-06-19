@@ -4,8 +4,8 @@
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
     <sys_update_name>sn_aia_tool_5c95e3abf9a14d8188e4b9059c910baa</sys_update_name>
     <active>true</active>
-    <description>Looks up a medical device record from cmdb_ci_med_device by serial number to get device details, warranty information, and customer company name.</description>
-    <input_schema>[{"name":"serial_number","description":"Serial number of the medical device to look up","mandatory":true}]</input_schema>
+    <description>Looks up a medical device from cmdb_ci_med_device by serial number to get warranty info and customer.</description>
+    <input_schema>[{"name":"serial_number","description":"Serial number of the medical device","mandatory":true}]</input_schema>
     <name>Lookup Device</name>
     <post_processing_script/>
     <record_type>custom</record_type>
@@ -47,11 +47,10 @@
             warranty_tier: tier,
             coverage_details: desc,
             customer_name: companyName,
-            customer_sys_id: gr.getValue('company') || '',
-            model_number: gr.getValue('model_number') || ''
+            customer_sys_id: gr.getValue('company') || ''
         });
     } else {
-        return JSON.stringify({ status: 'not_found', message: 'No device found with serial number: ' + serial });
+        return JSON.stringify({ status: 'not_found', message: 'No device found with serial: ' + serial });
     }
 })(inputs);]]></script>
     <sys_domain>global</sys_domain>

@@ -48,19 +48,44 @@
 * To access the Record Producer use `cat_item`
 */</save_script>
     <sc_catalogs>e0d08b13c3330100c8b837659bba8fb4</sc_catalogs>
-    <script><![CDATA[(function executeProducerScript(current, producer) {
-  current.customer = producer.company;
-  current.device = producer.device_serial;
-  current.caller_name = producer.contact_name + '';
-  current.claim_reason = producer.issue_description + '';
-  current.short_description = 'Warranty claim: ' + producer.issue_description.toString().substring(0, 80);
-  if (producer.is_urgent == 'true' || producer.is_urgent == true) {
-    current.priority = 2; // High
-  } else {
-    current.priority = 3; // Moderate
-  }
-  current.state = 1; // New
-})(current, producer);
+    <script><![CDATA[// Record Producer script: maps catalog variables to warranty claim fields
+(function() {
+    // Map company reference
+    current.customer = producer.company;
+
+    // Map contact name
+    current.caller_name = producer.contact_name.toString();
+
+    // Map device reference
+    current.device = producer.device_serial;
+
+    // Get device serial and name for denormalized fields
+    var deviceGr = new GlideRecord('cmdb_ci_med_device');
+    if (deviceGr.get(producer.device_serial.toString())) {
+        current.device_serial_number = deviceGr.getValue('serial_number') || '';
+        current.device_name = deviceGr.getValue('name') || '';
+    }
+
+    // Get customer name for denormalized field
+    var compGr = new GlideRecord('core_company');
+    if (compGr.get(producer.company.toString())) {
+        current.customer_name = compGr.getValue('name') || '';
+    }
+
+    // Map issue description to claim_reason
+    current.claim_reason = producer.issue_description.toString();
+
+    // Set state to New
+    current.state = 1;
+
+    // Set priority based on urgency
+    current.priority = (producer.is_urgent.toString() === 'true') ? 1 : 3;
+
+    // Set short description
+    var reason = producer.issue_description.toString();
+    var shortReason = reason.length > 80 ? reason.substring(0, 80) + '...' : reason;
+    current.short_description = 'Warranty claim: ' + shortReason;
+})();
 ]]></script>
     <short_description>Submit a warranty claim for your Medtric medical device</short_description>
     <show_variable_help_on_load>false</show_variable_help_on_load>

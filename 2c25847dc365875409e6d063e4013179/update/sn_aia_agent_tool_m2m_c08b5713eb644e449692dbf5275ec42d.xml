@@ -5,17 +5,17 @@
     <sys_update_name>sn_aia_agent_tool_m2m_c08b5713eb644e449692dbf5275ec42d</sys_update_name>
     <active>true</active>
     <agent>f4caf00dad744168941f9b55478451ea</agent>
-    <description>Looks up a customer company record from core_company by name.</description>
+    <description>Looks up a customer company from core_company by name.</description>
     <display_output>false</display_output>
     <document_status/>
     <execution_mode>autopilot</execution_mode>
-    <inputs>[{"name":"customer_name","value":"","description":"Name of the customer company","mandatory":true,"invalidMessage":null},{"name":"crudInputs","value":{"operation":"lookup","table":{"value":"core_company","displayValue":"core_company"},"query":"nameLIKE{{customer_name}}","returnFields":[{"excludedOperators":[],"extendedOperators":null,"name":"sys_id","label":"sys_id","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"sys_id","sublabel":"sys_id"},{"excludedOperators":[],"extendedOperators":null,"name":"name","label":"name","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"name","sublabel":"name"}],"limit":"5"},"description":"Lookup operation configuration","mandatory":true,"invalidMessage":null}]</inputs>
+    <inputs>[{"name":"customer_name","value":"","description":"Customer company name","mandatory":true,"invalidMessage":null},{"name":"crudInputs","value":{"operation":"lookup","table":{"value":"core_company","displayValue":"core_company"},"query":"nameLIKE{{customer_name}}","returnFields":[{"excludedOperators":[],"extendedOperators":null,"name":"sys_id","label":"sys_id","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"sys_id","sublabel":"sys_id"},{"excludedOperators":[],"extendedOperators":null,"name":"name","label":"name","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"name","sublabel":"name"}],"limit":"5"},"description":"Lookup operation configuration","mandatory":true,"invalidMessage":null}]</inputs>
     <max_auto_executions>10</max_auto_executions>
     <name>Lookup or Create Customer</name>
     <output_transformation_strategy>none</output_transformation_strategy>
     <post_message>Customer verified.</post_message>
     <post_processing_script/>
-    <pre_message>Looking up customer record...</pre_message>
+    <pre_message>Looking up customer...</pre_message>
     <pre_run>false</pre_run>
     <sys_domain>global</sys_domain>
     <sys_overrides/>
