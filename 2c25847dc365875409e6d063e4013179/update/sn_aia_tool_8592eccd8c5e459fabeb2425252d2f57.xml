@@ -4,7 +4,7 @@
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
     <sys_update_name>sn_aia_tool_8592eccd8c5e459fabeb2425252d2f57</sys_update_name>
     <active>true</active>
-    <description>Updates a warranty claim record with agent_decision, agent_recommendation, and api_call_timestamp using GlideRecord. IMPORTANT: agent_decision must be exact lowercase: approve, deny, or escalate. Returns the updated field values to confirm persistence.</description>
+    <description>Updates a warranty claim record with agent_decision, agent_recommendation, and api_call_timestamp using GlideRecord. Also adds a formatted work note for audit trail. IMPORTANT: agent_decision must be exact lowercase: approve, deny, or escalate. Returns the updated field values to confirm persistence.</description>
     <input_schema>[{"name":"number","description":"Claim number in WC-format (e.g. WC0001022) OR the sys_id of the claim. Use whichever was returned by the Create or Lookup tool.","mandatory":true},{"name":"agent_decision","description":"Decision value - MUST be exact lowercase: approve, deny, or escalate","mandatory":true},{"name":"agent_recommendation","description":"Complete multi-paragraph reasoning with KB citations embedded (max 4000 chars)","mandatory":true},{"name":"api_call_timestamp","description":"Current timestamp (YYYY-MM-DD HH:MM:SS format)","mandatory":false}]</input_schema>
     <name>Update Warranty Claim</name>
     <post_processing_script/>
@@ -62,6 +62,13 @@
         gr.setValue('api_call_timestamp', new GlideDateTime().getValue());
     }
 
+    // Add work note for audit trail
+    var now = new GlideDateTime();
+    var workNote = 'AI Agent Decision: ' + decision.toUpperCase() + '\n\n';
+    workNote += 'Warranty Analysis:\n' + recommendation.substring(0, 2000) + '\n\n';
+    workNote += 'Decision made: ' + now.getDisplayValue();
+    gr.work_notes = workNote;
+
     // Force the update
     gr.setWorkflow(true);
     gr.autoSysFields(true);
@@ -73,7 +80,7 @@
 
     return JSON.stringify({
         status: 'success',
-        message: 'Warranty claim ' + claimNumber + ' updated successfully',
+        message: 'Warranty claim ' + gr.getValue('number') + ' updated successfully',
         claim_sys_id: sysId,
         claim_number: verify.getValue('number'),
         agent_decision: verify.getValue('agent_decision'),

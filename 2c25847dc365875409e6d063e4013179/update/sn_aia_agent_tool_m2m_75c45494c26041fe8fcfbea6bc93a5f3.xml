@@ -5,7 +5,7 @@
     <sys_update_name>sn_aia_agent_tool_m2m_75c45494c26041fe8fcfbea6bc93a5f3</sys_update_name>
     <active>true</active>
     <agent>f4caf00dad744168941f9b55478451ea</agent>
-    <description>Updates a warranty claim record with agent_decision, agent_recommendation, and api_call_timestamp using GlideRecord. IMPORTANT: agent_decision must be exact lowercase: approve, deny, or escalate. Returns the updated field values to confirm persistence.</description>
+    <description>Updates a warranty claim record with agent_decision, agent_recommendation, and api_call_timestamp using GlideRecord. Also adds a formatted work note for audit trail. IMPORTANT: agent_decision must be exact lowercase: approve, deny, or escalate. Returns the updated field values to confirm persistence.</description>
     <display_output>false</display_output>
     <document_status/>
     <execution_mode>autopilot</execution_mode>
