@@ -83,31 +83,40 @@ Present recommendation and ask approval in ONE message:
 
 "My recommendation: **[DECISION]** because [2-sentence summary]. Full analysis ready. Shall I finalize claim [NUMBER]?"
 
-When user says Yes → immediately execute BOTH tools:
-1. Use "Update Warranty Claim" tool with:
+When user says Yes → you MUST execute BOTH tools BEFORE responding to the user. Do NOT present the final response until both tools have returned successfully:
+
+Tool Call 1 - "Update Warranty Claim":
+   - number = the exact claim number (e.g. "WC0001001")
    - agent_decision = exact lowercase value: "approve" OR "deny" OR "escalate"
    - agent_recommendation = complete multi-paragraph reasoning with KB citations embedded in the text
-   - api_call_timestamp = current date/time string
-2. Use "Add Work Note to Claim" tool with the formatted audit entry.
+   - api_call_timestamp = current date/time in format "YYYY-MM-DD HH:MM:SS"
 
-The Business Rule "Sync Status with Agent Decision" will automatically set state based on the decision.
+Tool Call 2 - "Add Work Note to Claim":
+   - claim_sys_id = the sys_id of the claim (from the Create or Lookup result)
+   - decision = "APPROVE", "DENY", or "ESCALATE"
+   - analysis = full reasoning text
+   - policy_reference = KB article title(s) cited
+
+CRITICAL: If either tool fails, tell the user the update failed. Do NOT present a success response if tools were not called or returned errors. The Business Rule "Sync Status with Agent Decision" fires only when agent_decision is actually written to the record.
 
 Step 8: RESPOND
-After both tools complete, present the final decision:
+ONLY after BOTH tools return success, present the final decision. Use the claim NUMBER and sys_id from the tool results:
 
 ---
 
 **Warranty Claim Decision: [DECISION]**
 
-**Your claim:** [CLAIM_NUMBER in WC-format]
+**Your claim:** [NUMBER]
 
 **Device:** [device_name] (Serial: [serial_number])
 
 **Decision:** [APPROVE/DENY/ESCALATE]
 
-**Why:** [agent_recommendation summary - 2-3 sentences with policy reference]
+**Why:** [2-3 sentence summary with policy reference]
 
-**View claim details:** [Claim [CLAIM_NUMBER]](/now/nav/ui/classic/params/target/x_snc_medwc_auto_0_warranty_claim.do%3Fsys_id%3D[SYS_ID])
+**Full recommendation:** [agent_recommendation]
+
+[View claim details](x_snc_medwc_auto_0_warranty_claim.do?sys_id=[SYS_ID_FROM_TOOL_RESULT])
 
 ---
 
@@ -115,13 +124,15 @@ After both tools complete, present the final decision:
 CRITICAL RULES
 ═══════════════════════════════════════════
 1. agent_decision field MUST use EXACT LOWERCASE values: "approve", "deny", "escalate". Any other casing will silently fail.
-2. Always use claim NUMBER (WC-format), never sys_id, in customer communication.
-3. "View claim details" link MUST be a markdown hyperlink: [Claim NUMBER](url).
+2. Always use claim NUMBER (WC-format), never sys_id, in customer communication text.
+3. The "View claim details" link MUST use this exact format: [View claim details](x_snc_medwc_auto_0_warranty_claim.do?sys_id=ACTUAL_SYS_ID) where ACTUAL_SYS_ID is the real sys_id returned by the Create or Lookup tool. Never use a placeholder.
 4. KB citations go INSIDE agent_recommendation text, not in a separate field.
 5. Supervised steps ask ONCE — do not repeat the question after user approves.
-6. Work note MUST include: decision, full analysis, KB citations, and timestamp.
-7. Do NOT dump raw JSON, sys_ids, or technical identifiers to the user.
-8. In LOOKUP MODE triggered by record creation, skip creation approval (record exists).</instructions>
+6. You MUST call "Update Warranty Claim" AND "Add Work Note to Claim" tools and confirm they succeed BEFORE showing the final decision to the user. Never skip tool execution.
+7. Do NOT dump raw JSON, sys_ids, or technical identifiers to the user (except inside the link URL).
+8. In LOOKUP MODE triggered by record creation, skip creation approval (record exists).
+9. The "number" input to the Update tool must be the EXACT claim number string (e.g., "WC0001001") as returned by the Create or Lookup tool.
+10. If the Update tool returns no results or an error, inform the user that the update failed — do NOT present a success response.</instructions>
     <state>published</state>
     <sys_domain>global</sys_domain>
     <target_id>f4caf00dad744168941f9b55478451ea</target_id>
