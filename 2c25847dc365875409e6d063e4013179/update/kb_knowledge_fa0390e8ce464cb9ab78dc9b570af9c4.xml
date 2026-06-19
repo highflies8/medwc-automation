@@ -30,6 +30,7 @@
 &lt;p&gt;&lt;strong&gt;APPROVE&lt;/strong&gt; if: Warranty is active AND claim reason matches a COVERED item.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;DENY&lt;/strong&gt; if: Warranty is expired OR claim reason matches a NOT COVERED exclusion.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ESCALATE&lt;/strong&gt; if: Claim reason is ambiguous or does not clearly match covered/excluded categories.&lt;/p&gt;</text>
+    <valid_to>2100-01-01</valid_to>
     <workflow_state>published</workflow_state>
   </kb_knowledge>
 </record_update>

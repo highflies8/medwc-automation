@@ -24,6 +24,7 @@
 
 &lt;h3&gt;Customer Communication&lt;/h3&gt;
 &lt;p&gt;Inform the customer that physical damage from drops is not covered under their warranty. Suggest they contact Medtric Repair Services for out-of-warranty repair pricing.&lt;/p&gt;</text>
+    <valid_to>2100-01-01</valid_to>
     <workflow_state>published</workflow_state>
   </kb_knowledge>
 </record_update>
