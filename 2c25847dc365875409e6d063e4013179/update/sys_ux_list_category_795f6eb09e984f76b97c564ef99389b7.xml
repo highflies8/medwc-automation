@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_list_category">
+  <sys_ux_list_category action="INSERT_OR_UPDATE">
+    <sys_id>795f6eb09e984f76b97c564ef99389b7</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sys_ux_list_category_795f6eb09e984f76b97c564ef99389b7</sys_update_name>
+    <active>true</active>
+    <configuration>03b9695b28a7493c9f77218c711ea473</configuration>
+    <description/>
+    <order>100</order>
+    <title>Warranty Claims</title>
+  </sys_ux_list_category>
+</record_update>
