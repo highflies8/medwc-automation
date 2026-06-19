@@ -18,7 +18,7 @@
             .sources([new sn_search.RAGRetrievalSource()
                 .sourceTableName('kb_knowledge')
                 .fields(['number', 'short_description', 'text'])
-                .filter('kb_knowledge_base=589b035e1a034b679b491bc527987c75^workflow_state=published')])
+                .filter('kb_knowledge_baseIN589b035e1a034b679b491bc527987c75,medtric_warranty_policies_kb^workflow_state=published')])
             .query(query)
             .semanticConfiguration(new sn_search.RAGRetrievalSemanticConfiguration()
                 .documentMatchThreshold(0.5)
