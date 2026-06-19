@@ -4,8 +4,8 @@
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
     <sys_update_name>sn_aia_tool_8592eccd8c5e459fabeb2425252d2f57</sys_update_name>
     <active>true</active>
-    <description>Updates a warranty claim record with agent_decision, agent_recommendation, and api_call_timestamp using GlideRecord. Also adds a formatted work note for audit trail. IMPORTANT: agent_decision must be exact lowercase: approve, deny, or escalate. Returns the updated field values to confirm persistence.</description>
-    <input_schema>[{"name":"number","description":"Claim number in WC-format (e.g. WC0001022) OR the sys_id of the claim. Use whichever was returned by the Create or Lookup tool.","mandatory":true},{"name":"agent_decision","description":"Decision value - MUST be exact lowercase: approve, deny, or escalate","mandatory":true},{"name":"agent_recommendation","description":"Complete multi-paragraph reasoning with KB citations embedded (max 4000 chars)","mandatory":true},{"name":"api_call_timestamp","description":"Current timestamp (YYYY-MM-DD HH:MM:SS format)","mandatory":false}]</input_schema>
+    <description>Updates a warranty claim with agent_decision, agent_recommendation, kb_article_cited, and adds an audit work note. Accepts claim number OR sys_id. agent_decision must be exact lowercase: approve, deny, or escalate.</description>
+    <input_schema>[{"name":"number","description":"Claim number (WC-format) OR sys_id of the claim","mandatory":true},{"name":"agent_decision","description":"Decision: approve, deny, or escalate (exact lowercase)","mandatory":true},{"name":"agent_recommendation","description":"Complete reasoning with KB citations (max 4000 chars)","mandatory":true},{"name":"kb_article_cited","description":"KB article title(s) referenced in the decision","mandatory":false},{"name":"api_call_timestamp","description":"Current timestamp (YYYY-MM-DD HH:MM:SS)","mandatory":false}]</input_schema>
     <name>Update Warranty Claim</name>
     <post_processing_script/>
     <record_type>custom</record_type>
@@ -13,9 +13,10 @@
     var identifier = inputs.number;
     var decision = inputs.agent_decision;
     var recommendation = inputs.agent_recommendation;
+    var kbCited = inputs.kb_article_cited || '';
     var timestamp = inputs.api_call_timestamp || '';
 
-    // Validate decision value
+    // Validate decision
     var validDecisions = ['approve', 'deny', 'escalate'];
     if (validDecisions.indexOf(decision.toLowerCase()) === -1) {
         return JSON.stringify({ status: 'error', message: 'Invalid agent_decision: ' + decision + '. Must be approve, deny, or escalate.' });
@@ -26,34 +27,35 @@
     var gr = new GlideRecord('x_snc_medwc_auto_0_warranty_claim');
     var found = false;
 
-    // Try by number (WC format)
     if (identifier.indexOf('WC') === 0) {
         gr.addQuery('number', identifier);
         gr.query();
         found = gr.next();
     }
 
-    // If not found by number, try by sys_id (32-char hex)
     if (!found && identifier.length === 32) {
         gr = new GlideRecord('x_snc_medwc_auto_0_warranty_claim');
         found = gr.get(identifier);
     }
 
-    // Last resort: try as sys_id regardless of length
     if (!found) {
         gr = new GlideRecord('x_snc_medwc_auto_0_warranty_claim');
         found = gr.get(identifier);
     }
 
     if (!found) {
-        return JSON.stringify({ status: 'error', message: 'No warranty claim found with number or sys_id: ' + identifier });
+        return JSON.stringify({ status: 'error', message: 'No warranty claim found with: ' + identifier });
     }
 
     var sysId = gr.getValue('sys_id');
+    var claimNumber = gr.getValue('number');
 
-    // Set the fields
+    // Set decision fields
     gr.setValue('agent_decision', decision);
     gr.setValue('agent_recommendation', recommendation.substring(0, 4000));
+    if (kbCited) gr.setValue('kb_article_cited', kbCited);
+
+    // Set timestamp
     if (timestamp) {
         var gdt = new GlideDateTime();
         gdt.setDisplayValue(timestamp);
@@ -62,31 +64,31 @@
         gr.setValue('api_call_timestamp', new GlideDateTime().getValue());
     }
 
-    // Add work note for audit trail
+    // Add audit work note
     var now = new GlideDateTime();
     var workNote = 'AI Agent Decision: ' + decision.toUpperCase() + '\n\n';
-    workNote += 'Warranty Analysis:\n' + recommendation.substring(0, 2000) + '\n\n';
-    workNote += 'Decision made: ' + now.getDisplayValue();
+    workNote += 'Recommendation:\n' + recommendation.substring(0, 2000) + '\n\n';
+    if (kbCited) workNote += 'Policy Reference: ' + kbCited + '\n\n';
+    workNote += 'Decision timestamp: ' + now.getDisplayValue();
     gr.work_notes = workNote;
 
-    // Force the update
+    // Update with workflow enabled (triggers Business Rule)
     gr.setWorkflow(true);
     gr.autoSysFields(true);
     gr.update();
 
-    // Read back to confirm persistence
+    // Verify persistence
     var verify = new GlideRecord('x_snc_medwc_auto_0_warranty_claim');
     verify.get(sysId);
 
     return JSON.stringify({
         status: 'success',
-        message: 'Warranty claim ' + gr.getValue('number') + ' updated successfully',
+        message: 'Claim ' + claimNumber + ' finalized as ' + decision.toUpperCase(),
         claim_sys_id: sysId,
         claim_number: verify.getValue('number'),
         agent_decision: verify.getValue('agent_decision'),
-        agent_recommendation_length: (verify.getValue('agent_recommendation') || '').length,
         state: verify.getValue('state'),
-        api_call_timestamp: verify.getValue('api_call_timestamp')
+        kb_article_cited: verify.getValue('kb_article_cited')
     });
 })(inputs);]]></script>
     <sys_domain>global</sys_domain>

@@ -4,158 +4,50 @@
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
     <sys_update_name>sn_aia_tool_0b40135e8f2440cabe6311d7c7ac3909</sys_update_name>
     <active>true</active>
-    <description>Creates a new warranty claim record. The agent asks for user approval in instructions before calling this tool.</description>
-    <input_schema>[{"name":"customer","description":"Customer company sys_id","mandatory":true},{"name":"device","description":"Device sys_id","mandatory":true},{"name":"caller_name","description":"Caller name","mandatory":true},{"name":"claim_reason","description":"Reason for warranty claim","mandatory":true},{"name":"state","description":"State (1=New)","mandatory":false},{"name":"priority","description":"Priority (1-4)","mandatory":false},{"name":"short_description","description":"Brief summary","mandatory":false},{"name":"customer_name","description":"Customer display name","mandatory":false},{"name":"device_serial_number","description":"Device serial number","mandatory":false},{"name":"device_name","description":"Device display name","mandatory":false},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
+    <description>Creates a new warranty claim record. caller_name is auto-populated from the current user.</description>
+    <input_schema>[{"name":"customer","description":"Customer company sys_id","mandatory":true},{"name":"device","description":"Device sys_id from cmdb_ci_med_device","mandatory":true},{"name":"claim_reason","description":"Reason for warranty claim","mandatory":true},{"name":"priority","description":"Priority: 1=Critical, 2=High, 3=Moderate, 4=Low","mandatory":false},{"name":"customer_name","description":"Customer display name","mandatory":false},{"name":"device_serial_number","description":"Device serial number","mandatory":false},{"name":"device_name","description":"Device display name","mandatory":false}]</input_schema>
     <name>Create Warranty Claim</name>
     <post_processing_script/>
     <record_type>custom</record_type>
-    <script><![CDATA[(function (inputs) {
-    function getChoiceList(tableName, fieldName) {
-        var choices = GlideChoiceList.getChoiceList(tableName, fieldName);
-        if (!choices) return [];
+    <script><![CDATA[(function(inputs) {
+    var gr = new GlideRecord('x_snc_medwc_auto_0_warranty_claim');
+    gr.initialize();
+    gr.setValue('customer', inputs.customer);
+    gr.setValue('device', inputs.device);
+    gr.setValue('claim_reason', inputs.claim_reason);
+    gr.setValue('state', '1');
+    gr.setValue('priority', inputs.priority || '3');
+    if (inputs.customer_name) gr.setValue('customer_name', inputs.customer_name);
+    if (inputs.device_serial_number) gr.setValue('device_serial_number', inputs.device_serial_number);
+    if (inputs.device_name) gr.setValue('device_name', inputs.device_name);
 
+    // Auto-populate caller_name from current user
+    var currentUser = gs.getUserDisplayName();
+    gr.setValue('caller_name', currentUser || inputs.customer_name || 'Unknown');
 
-        var choicesArray = [];
-        for (var i = 0; i < choices.getSize(); i++) {
-            choicesArray.push({
-                value: choices.getChoice(i).getValue(),
-                label: choices.getChoice(i).getLabel(),
-            });
-        }
-        return choicesArray;
-    }
-
-
-    // parses {{value}} and obtains the correct value for a choice or reference field.
-    function parseValue(table, value, field, inputs) {
-        if (!value || typeof value === 'object') return '';
-        // regex to parse {{var}} and check if the inputs contain that prop
-        var fieldValue = value.replace(
-            /{{\s*(\w+)\s*}}/g,
-            function (match, variableName) {
-                if (inputs && inputs.hasOwnProperty(variableName)) {
-                    return inputs[variableName];
-                }
-                return '';
-            }
-        );
-        if (!fieldValue) return field.type === 'string' ? '' : null;
-        if (field.type === 'choice') {
-            var choices = getChoiceList(table, field.id);
-            for (var i = 0; i < choices.length; i++) {
-                if (
-                    choices[i].value == fieldValue ||
-                    choices[i].label
-                        .toLowerCase()
-                        .includes(fieldValue.toLowerCase())
-                ) {
-                    return choices[i].value;
-                }
-            }
-            // Neither value nor label matched
-            gs.error(
-                '[AIA AGENTS MSG] Invalid choice field value or label: {0}',
-                fieldValue
-            );
-        } else if (field.referenceTable) {
-            // First check if the input is a valid sys_id
-            var refGr = new GlideRecordSecure(field.referenceTable);
-            refGr.addQuery('sys_id', fieldValue);
-            refGr.query();
-            if (refGr.getRowCount() === 1) {
-                return fieldValue; // User input is a valid sys_id
-            }
-
-
-            if (field.referenceTableDefaultField) {
-                // If not, try to find a record with matching display value
-                var refName = field.referenceTableDefaultField;
-                refGr = new GlideRecordSecure(field.referenceTable);
-
-
-                // Check for both exact match and display value containing the input
-                var qr = refGr.addQuery(refName, fieldValue);
-                qr.addOrCondition(refName, 'CONTAINS', fieldValue);
-                refGr.setLimit(1);
-                refGr.query();
-
-
-                if (refGr.next()) {
-                    return refGr.getUniqueValue(); // Return the sys_id
-                }
-            }
-            // No match found
-            gs.error(
-                '[AIA AGENTS MSG] Invalid reference field value or label: {0}',
-                fieldValue
-            );
-        }
-        return fieldValue;
-    }
-
-
-    var table = inputs.crudInputs.table.value;
-    var tableName = inputs.crudInputs.table.displayValue;
-    var fieldValues = inputs.crudInputs.fieldValues
-        ? inputs.crudInputs.fieldValues
-        : [];
-    // each field is passed as an {id, label} obj to be displayed when editing the tool
-    // each value is not passed directly, but in an object containing the fieldValue prop
-    fieldValues = fieldValues.map(function (item) {
-        var fieldValue = item.value ? item.value.fieldValue : '';
-        return {
-            field: item.field.id,
-            value: parseValue(table, fieldValue, item.field, inputs),
-        };
-    });
-
-
-    var gr = new GlideRecordSecure(table);
-    if (gr.canCreate()) {
-        gr.initialize();
-        fieldValues.forEach(function (item) {
-            if (gr.isValidField(item.field)) {
-                gr.setValue(item.field, item.value);
-            }
-        });
-    } else {
-        return {
-            output: sn_i18n.Message.getMessage(
-                'sn_aia',
-                'Cannot create record due to security constraints.'
-            ),
-            status: sn_i18n.Message.getMessage('sn_aia', 'error'),
-        };
-    }
     var sysId = gr.insert();
-
-
     if (!sysId) {
-        gs.error('[AIA AGENTS MSG] Failed to insert the record.');
-        return {
-            output: sn_i18n.Message.getMessage(
-                'sn_aia',
-                'Failed to insert the record'
-            ),
-            status: sn_i18n.Message.getMessage('sn_aia', 'error'),
-        };
+        return JSON.stringify({ status: 'error', message: 'Failed to create warranty claim record' });
     }
-    return {
-        sysId: sysId,
-        message: sn_i18n.Message.getMessage(
-            'sn_aia',
-            'Record successfully inserted into the {table} table.',
-            {
-                table: tableName,
-            }
-        ),
-        status: sn_i18n.Message.getMessage('sn_aia', 'success'),
-    };
+
+    // Read back to get the auto-generated number
+    var created = new GlideRecord('x_snc_medwc_auto_0_warranty_claim');
+    created.get(sysId);
+
+    return JSON.stringify({
+        status: 'success',
+        message: 'Warranty claim created successfully',
+        sys_id: sysId,
+        number: created.getValue('number'),
+        state: created.getValue('state'),
+        priority: created.getValue('priority'),
+        caller_name: created.getValue('caller_name')
+    });
 })(inputs);]]></script>
     <sys_domain>global</sys_domain>
     <sys_overrides/>
     <target_document/>
     <target_document_table>sn_aia_tool</target_document_table>
-    <type>crud</type>
+    <type>script</type>
   </sn_aia_tool>
 </record_update>

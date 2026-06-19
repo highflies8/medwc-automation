@@ -5,17 +5,17 @@
     <sys_update_name>sn_aia_agent_tool_m2m_75c45494c26041fe8fcfbea6bc93a5f3</sys_update_name>
     <active>true</active>
     <agent>f4caf00dad744168941f9b55478451ea</agent>
-    <description>Updates a warranty claim record with agent_decision, agent_recommendation, and api_call_timestamp using GlideRecord. Also adds a formatted work note for audit trail. IMPORTANT: agent_decision must be exact lowercase: approve, deny, or escalate. Returns the updated field values to confirm persistence.</description>
+    <description>Updates a warranty claim with agent_decision, agent_recommendation, kb_article_cited, and adds an audit work note. Accepts claim number OR sys_id. agent_decision must be exact lowercase: approve, deny, or escalate.</description>
     <display_output>false</display_output>
     <document_status/>
     <execution_mode>autopilot</execution_mode>
-    <inputs>[{"name":"number","description":"Claim number in WC-format (e.g. WC0001022) OR the sys_id of the claim. Use whichever was returned by the Create or Lookup tool.","mandatory":true},{"name":"agent_decision","description":"Decision value - MUST be exact lowercase: approve, deny, or escalate","mandatory":true},{"name":"agent_recommendation","description":"Complete multi-paragraph reasoning with KB citations embedded (max 4000 chars)","mandatory":true},{"name":"api_call_timestamp","description":"Current timestamp (YYYY-MM-DD HH:MM:SS format)","mandatory":false}]</inputs>
+    <inputs>[{"name":"number","description":"Claim number (WC-format) OR sys_id of the claim","mandatory":true},{"name":"agent_decision","description":"Decision: approve, deny, or escalate (exact lowercase)","mandatory":true},{"name":"agent_recommendation","description":"Complete reasoning with KB citations (max 4000 chars)","mandatory":true},{"name":"kb_article_cited","description":"KB article title(s) referenced in the decision","mandatory":false},{"name":"api_call_timestamp","description":"Current timestamp (YYYY-MM-DD HH:MM:SS)","mandatory":false}]</inputs>
     <max_auto_executions>10</max_auto_executions>
     <name>Update Warranty Claim</name>
     <output_transformation_strategy>none</output_transformation_strategy>
-    <post_message>Warranty claim updated.</post_message>
+    <post_message>Warranty claim finalized.</post_message>
     <post_processing_script/>
-    <pre_message>Updating warranty claim with decision...</pre_message>
+    <pre_message>Finalizing warranty claim decision...</pre_message>
     <pre_run>false</pre_run>
     <sys_domain>global</sys_domain>
     <sys_overrides/>

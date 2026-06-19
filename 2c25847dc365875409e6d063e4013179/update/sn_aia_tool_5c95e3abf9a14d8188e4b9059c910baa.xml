@@ -4,7 +4,7 @@
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
     <sys_update_name>sn_aia_tool_5c95e3abf9a14d8188e4b9059c910baa</sys_update_name>
     <active>true</active>
-    <description>Looks up a medical device from cmdb_ci_med_device by serial number to get warranty info and customer.</description>
+    <description>Looks up a medical device from cmdb_ci_med_device by serial number. Returns warranty info, customer name, and customer sys_id.</description>
     <input_schema>[{"name":"serial_number","description":"Serial number of the medical device","mandatory":true}]</input_schema>
     <name>Lookup Device</name>
     <post_processing_script/>

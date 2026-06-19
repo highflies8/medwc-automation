@@ -5,7 +5,7 @@
     <sys_update_name>sn_aia_agent_tool_m2m_6d1e7952b2e34b5ebd286509ae427e27</sys_update_name>
     <active>true</active>
     <agent>f4caf00dad744168941f9b55478451ea</agent>
-    <description>Searches the Medtric Warranty Policies knowledge base for relevant coverage policy articles based on keywords from the claim reason.</description>
+    <description>Searches the Medtric Warranty Policies knowledge base for relevant coverage policy articles.</description>
     <display_output>false</display_output>
     <document_status/>
     <execution_mode>autopilot</execution_mode>

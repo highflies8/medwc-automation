@@ -5,7 +5,7 @@
     <sys_update_name>sn_aia_agent_tool_m2m_2ed6f692afe94e32b4499243bf41bdcf</sys_update_name>
     <active>true</active>
     <agent>f4caf00dad744168941f9b55478451ea</agent>
-    <description>Looks up a medical device from cmdb_ci_med_device by serial number to get warranty info and customer.</description>
+    <description>Looks up a medical device from cmdb_ci_med_device by serial number. Returns warranty info, customer name, and customer sys_id.</description>
     <display_output>false</display_output>
     <document_status/>
     <execution_mode>autopilot</execution_mode>
