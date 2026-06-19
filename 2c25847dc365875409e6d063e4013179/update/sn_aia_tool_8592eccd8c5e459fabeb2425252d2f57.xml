@@ -4,294 +4,70 @@
     <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
     <sys_update_name>sn_aia_tool_8592eccd8c5e459fabeb2425252d2f57</sys_update_name>
     <active>true</active>
-    <description>Updates a warranty claim with agent decision and recommendation. Agent asks for approval in instructions before calling. IMPORTANT: agent_decision must be exact lowercase: approve, deny, or escalate.</description>
-    <input_schema>[{"name":"number","description":"Claim number (WC-format) to identify the record","mandatory":true},{"name":"agent_decision","description":"Decision value - MUST be exact lowercase: approve, deny, or escalate","mandatory":true},{"name":"agent_recommendation","description":"Complete multi-paragraph reasoning with KB citations embedded","mandatory":true},{"name":"api_call_timestamp","description":"Current timestamp when decision was made (YYYY-MM-DD HH:MM:SS format)","mandatory":false},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
+    <description>Updates a warranty claim record with agent_decision, agent_recommendation, and api_call_timestamp using GlideRecord. IMPORTANT: agent_decision must be exact lowercase: approve, deny, or escalate. Returns the updated field values to confirm persistence.</description>
+    <input_schema>[{"name":"number","description":"Claim number in WC-format (e.g. WC0001001)","mandatory":true},{"name":"agent_decision","description":"Decision value - MUST be exact lowercase: approve, deny, or escalate","mandatory":true},{"name":"agent_recommendation","description":"Complete multi-paragraph reasoning with KB citations embedded (max 4000 chars)","mandatory":true},{"name":"api_call_timestamp","description":"Current timestamp (YYYY-MM-DD HH:MM:SS format)","mandatory":false}]</input_schema>
     <name>Update Warranty Claim</name>
     <post_processing_script/>
     <record_type>custom</record_type>
-    <script><![CDATA[(function (inputs) {
-    function getChoiceList(tableName, fieldName) {
-        var choices = GlideChoiceList.getChoiceList(tableName, fieldName);
-        if (!choices) return [];
+    <script><![CDATA[(function(inputs) {
+    var claimNumber = inputs.number;
+    var decision = inputs.agent_decision;
+    var recommendation = inputs.agent_recommendation;
+    var timestamp = inputs.api_call_timestamp || '';
 
-
-        var choicesArray = [];
-        for (var i = 0; i < choices.getSize(); i++) {
-            choicesArray.push({
-                value: choices.getChoice(i).getValue(),
-                label: choices.getChoice(i).getLabel(),
-            });
-        }
-        return choicesArray;
+    // Validate decision value
+    var validDecisions = ['approve', 'deny', 'escalate'];
+    if (validDecisions.indexOf(decision.toLowerCase()) === -1) {
+        return JSON.stringify({ status: 'error', message: 'Invalid agent_decision: ' + decision + '. Must be approve, deny, or escalate.' });
     }
+    decision = decision.toLowerCase();
 
-
-    // parses query expression containing {{variables}}
-    // by replacing {{variableName}} with the value of the variableName property in the inputs object
-    // if the variableName property is not found in the inputs object, the variableName is returned as is
-    function parseQuery(expression, inputs) {
-        if (expression === '') return '';
-        return expression.replace(
-            /{{\s*(\w+)\s*}}/g,
-            function (match, variableName) {
-                if (inputs && inputs.hasOwnProperty(variableName)) {
-                    return inputs[variableName].toLowerCase();
-                }
-                return match;
-            }
-        );
-    }
-
-
-    // parses {{value}} and obtains the correct value for a choice or reference field.
-    function parseValue(table, value, field, inputs) {
-        if (!value || typeof value === 'object') return '';
-        // regex to parse {{var}} and check if the inputs contain that prop
-        var fieldValue = value.replace(
-            /{{\s*(\w+)\s*}}/g,
-            function (match, variableName) {
-                if (inputs && inputs.hasOwnProperty(variableName)) {
-                    return inputs[variableName];
-                }
-                return '';
-            }
-        );
-        if (!fieldValue) return field.type === 'string' ? '' : null;
-        if (field.type === 'choice') {
-            var choices = getChoiceList(table, field.id);
-            for (var i = 0; i < choices.length; i++) {
-                if (
-                    choices[i].value == fieldValue ||
-                    choices[i].label
-                        .toLowerCase()
-                        .includes(fieldValue.toLowerCase())
-                ) {
-                    return choices[i].value;
-                }
-            }
-            // Neither value nor label matched
-            gs.error(
-                '[AIA AGENTS MSG] Invalid choice field value or label: {0}',
-                fieldValue
-            );
-        } else if (field.referenceTable) {
-            // First check if the input is a valid sys_id
-            var refGr = new GlideRecordSecure(field.referenceTable);
-            refGr.addQuery('sys_id', fieldValue);
-            refGr.query();
-            if (refGr.getRowCount() === 1) {
-                return fieldValue; // User input is a valid sys_id
-            }
-
-
-            if (field.referenceTableDefaultField) {
-                // If not, try to find a record with matching display value
-                var refName = field.referenceTableDefaultField;
-                refGr = new GlideRecordSecure(field.referenceTable);
-
-
-                // Check for both exact match and display value containing the input
-                var qr = refGr.addQuery(refName, fieldValue);
-                qr.addOrCondition(refName, 'CONTAINS', fieldValue);
-                refGr.setLimit(1);
-                refGr.query();
-
-
-                if (refGr.next()) {
-                    return refGr.getUniqueValue(); // Return the sys_id
-                }
-            }
-            // No match found
-            gs.error(
-                '[AIA AGENTS MSG] Invalid reference field value or label: {0}',
-                fieldValue
-            );
-        }
-        return fieldValue;
-    }
-
-
-    var table = inputs.crudInputs.table.value;
-    var tableName = inputs.crudInputs.table.displayValue;
-    var query = parseQuery(inputs.crudInputs.query, inputs);
-    var fieldValues = inputs.crudInputs.fieldValues
-        ? inputs.crudInputs.fieldValues
-        : [];
-    fieldValues = fieldValues.map(function (item) {
-        var fieldValue = item.value ? item.value.fieldValue : '';
-        return {
-            field: item.field.id,
-            value: parseValue(table, fieldValue, item.field, inputs),
-        };
-    });
-
-
-    var gr = new GlideRecordSecure(table);
-    if (query) {
-        gr.addEncodedQuery(query, true);
-    } else {
-        gs.error('[AIA error] No query provided');
-        return {
-            message: 'No query provided',
-            status: sn_i18n.Message.getMessage('sn_aia', 'error'),
-        };
-    }
-
-
-    var updated = [];
-    var failed = [];
-
-
+    // Find the claim by number
+    var gr = new GlideRecord('x_snc_medwc_auto_0_warranty_claim');
+    gr.addQuery('number', claimNumber);
     gr.query();
-    while (gr.next()) {
-        if (gr.canWrite()) {
-            // Store original record ID
-            var recordId = gr.getUniqueValue();
 
-
-            // Set field values
-            fieldValues.forEach(function (item) {
-                if (gr.isValidField(item.field)) {
-                    gr.setValue(item.field, item.value);
-                }
-            });
-
-
-            // Attempt update
-            var updatedId = gr.update();
-
-
-            if (updatedId) {
-                updated.push(updatedId);
-            } else {
-                // Update operation failed entirely
-                failed.push(recordId);
-            }
-        }
+    if (!gr.next()) {
+        return JSON.stringify({ status: 'error', message: 'No warranty claim found with number: ' + claimNumber });
     }
 
+    var sysId = gr.getValue('sys_id');
 
-    var fullSuccessCount = updated.length;
-    var completeFailCount = failed.length;
-
-
-    var totalCount = fullSuccessCount + completeFailCount;
-
-
-    // Create simple main message: X out of Y records updated
-    var mainMessage;
-    if (totalCount === 1) {
-        // Single record case
-        if (fullSuccessCount === 1) {
-            mainMessage = sn_i18n.Message.getMessage(
-                'sn_aia',
-                '1 out of 1 record updated in the {table} table.',
-                {
-                    table: tableName,
-                }
-            );
-        } else {
-            mainMessage = sn_i18n.Message.getMessage(
-                'sn_aia',
-                '0 out of 1 record updated in the {table} table.',
-                {
-                    table: tableName,
-                }
-            );
-        }
+    // Set the fields
+    gr.setValue('agent_decision', decision);
+    gr.setValue('agent_recommendation', recommendation.substring(0, 4000));
+    if (timestamp) {
+        var gdt = new GlideDateTime();
+        gdt.setDisplayValue(timestamp);
+        gr.setValue('api_call_timestamp', gdt.getValue());
     } else {
-        // Multiple records case
-        mainMessage = sn_i18n.Message.getMessage(
-            'sn_aia',
-            '{successCount} out of {totalCount} records updated in the {table} table.',
-            {
-                successCount: fullSuccessCount.toString(),
-                totalCount: totalCount.toString(),
-                table: tableName,
-            }
-        );
+        gr.setValue('api_call_timestamp', new GlideDateTime().getValue());
     }
 
+    // Force the update
+    gr.setWorkflow(true);
+    gr.autoSysFields(true);
+    gr.update();
 
-    // Create detailed messages for different update types
-    var successMessage = '';
-    var failureMessage = '';
+    // Read back to confirm persistence
+    var verify = new GlideRecord('x_snc_medwc_auto_0_warranty_claim');
+    verify.get(sysId);
 
-
-    // Success message
-    if (fullSuccessCount > 0) {
-        var fullSuccessSingular = sn_i18n.Message.getMessage(
-            'sn_aia',
-            '{count} record completely updated: {ids}. ',
-            {
-                count: fullSuccessCount.toString(),
-                ids: JSON.stringify(updated),
-            }
-        );
-        var fullSuccessPlural = sn_i18n.Message.getMessage(
-            'sn_aia',
-            '{count} records completely updated: {ids}. ',
-            {
-                count: fullSuccessCount.toString(),
-                ids: JSON.stringify(updated),
-            }
-        );
-
-
-        successMessage = fullSuccessCount === 1 ? fullSuccessSingular : fullSuccessPlural;
-    }
-
-
-    // Complete failure message
-    if (completeFailCount > 0) {
-        var failureSingular = sn_i18n.Message.getMessage(
-            'sn_aia',
-            '{count} record failed to update: {ids}. ',
-            {
-                count: completeFailCount.toString(),
-                ids: JSON.stringify(failed),
-            }
-        );
-        var failurePlural = sn_i18n.Message.getMessage(
-            'sn_aia',
-            '{count} records failed to update: {ids}. ',
-            {
-                count: completeFailCount.toString(),
-                ids: JSON.stringify(failed),
-            }
-        );
-
-
-        failureMessage = completeFailCount === 1 ? failureSingular : failurePlural;
-    }
-
-
-    // Build detailed message
-    var detailedMessage = '';
-    if (successMessage) detailedMessage += successMessage;
-    if (failureMessage) detailedMessage += failureMessage;
-
-
-    var status;
-    if (totalCount === 0) {
-        status = sn_i18n.Message.getMessage('sn_aia', 'success'); // No records to update
-    } else if (failed.length === 0) {
-        status = sn_i18n.Message.getMessage('sn_aia', 'success'); // All records fully updated successfully
-    } else {
-        status = sn_i18n.Message.getMessage('sn_aia', 'error'); // Some records failed to update
-    }
-
-
-    return {
-        message: mainMessage,
-        detailedMessage: detailedMessage,
-        status: status,
-    };
+    return JSON.stringify({
+        status: 'success',
+        message: 'Warranty claim ' + claimNumber + ' updated successfully',
+        claim_sys_id: sysId,
+        claim_number: verify.getValue('number'),
+        agent_decision: verify.getValue('agent_decision'),
+        agent_recommendation_length: (verify.getValue('agent_recommendation') || '').length,
+        state: verify.getValue('state'),
+        api_call_timestamp: verify.getValue('api_call_timestamp')
+    });
 })(inputs);]]></script>
     <sys_domain>global</sys_domain>
     <sys_overrides/>
     <target_document/>
     <target_document_table>sn_aia_tool</target_document_table>
-    <type>crud</type>
+    <type>script</type>
   </sn_aia_tool>
 </record_update>
