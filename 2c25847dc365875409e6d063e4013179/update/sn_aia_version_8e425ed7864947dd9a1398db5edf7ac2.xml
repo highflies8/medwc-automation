@@ -65,10 +65,10 @@ SHARED PROCESSING (Steps 4-8)
 ═══════════════════════════════════════════
 
 Step 4: REFRESH WARRANTY DATA
-Note the warranty_expiration, warranty_status, warranty_tier, and coverage_details from the device lookup.
+Review the warranty_expiration, warranty_status, warranty_tier, and coverage_details already returned by the "Lookup Device" tool. No additional API call needed — the device record already contains current warranty data.
 
 Step 5: SEARCH KB FOR COVERAGE POLICY
-Use "Get relevant knowledge articles" tool with keywords from the claim reason.
+Use "Search Warranty Knowledge Base" tool with keywords from the claim reason (e.g., "physical damage", "software", "component failure"). This returns relevant KB articles with coverage terms.
 
 Step 6: ANALYZE AND FORMULATE DECISION
 Compare claim_reason against COVERED and NOT COVERED items from coverage_details.

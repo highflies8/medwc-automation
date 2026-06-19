@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_tool_m2m">
+  <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+    <sys_id>6d1e7952b2e34b5ebd286509ae427e27</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_tool_m2m_6d1e7952b2e34b5ebd286509ae427e27</sys_update_name>
+    <active>true</active>
+    <agent>f4caf00dad744168941f9b55478451ea</agent>
+    <description>Searches the Medtric Warranty Policies knowledge base for relevant coverage policy articles based on keywords from the claim reason.</description>
+    <display_output>false</display_output>
+    <document_status/>
+    <execution_mode>autopilot</execution_mode>
+    <inputs>[{"name":"search_terms","description":"Keywords to search for in KB articles (e.g., 'physical damage drop', 'software firmware', 'component failure')","mandatory":true}]</inputs>
+    <max_auto_executions>10</max_auto_executions>
+    <name>Search Warranty Knowledge Base</name>
+    <output_transformation_strategy>none</output_transformation_strategy>
+    <post_message>Knowledge articles retrieved.</post_message>
+    <post_processing_script/>
+    <pre_message>Searching warranty policy knowledge base...</pre_message>
+    <pre_run>false</pre_run>
+    <sys_domain>global</sys_domain>
+    <sys_overrides/>
+    <timeout/>
+    <tool>51b7b6f38181446a8bd8beab54a6b3f2</tool>
+    <tool_attributes>{}</tool_attributes>
+    <transformation_instructions/>
+    <widgets/>
+  </sn_aia_agent_tool_m2m>
+</record_update>

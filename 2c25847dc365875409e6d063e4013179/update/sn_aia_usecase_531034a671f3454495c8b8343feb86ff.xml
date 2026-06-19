@@ -19,11 +19,11 @@ Step 3: Create Warranty Claim Record.
 - Use the Warranty Claims Agent to create a new warranty claim record with customer (reference sys_id), device (reference sys_id), caller_name, claim_reason, priority based on urgency, state=New (1).
 
 Step 4: Refresh Warranty Data.
-- Use the Warranty Claims Agent to call the "Lookup Device Warranty" flow action with device sys_id to update device warranty fields from the Medtric API.
-- If the API returns no data, inform the user that warranty information could not be found and recommend ESCALATE.
+- Use the Warranty Claims Agent "Lookup Device" tool results which already contain warranty_expiration, warranty_status, warranty_tier, and coverage_details.
+- If warranty data is missing or Unknown, recommend ESCALATE.
 
 Step 5: Search Warranty Policy Knowledge Base.
-- Use the Warranty Claims Agent to search the Medtric Warranty Policies knowledge base for relevant coverage policy.
+- Use the Warranty Claims Agent "Search Warranty Knowledge Base" tool with keywords from the claim reason.
 - Extract keywords from the claim reason to find applicable policy articles.
 - Cite the KB article title and number in the decision reasoning.
 
@@ -37,7 +37,9 @@ Step 6: Analyze Coverage and Decide.
   - If ambiguous → ESCALATE
 
 Step 7: Update Record with Decision.
-- Use the Warranty Claims Agent to update the warranty claim record with agent_decision (Approve/Deny/Escalate), agent_recommendation (full reasoning trace), kb_article_cited (KB article number and title), and set state to appropriate value (3=Resolved for Approve, 4=Closed for Deny, -5=Pending for Escalate).
+- Use the Warranty Claims Agent to update the warranty claim record with agent_decision (approve/deny/escalate in lowercase), agent_recommendation (full reasoning trace with KB citations embedded), and api_call_timestamp.
+- Also use the "Add Work Note to Claim" tool to add an audit trail journal entry.
+- The Business Rule "Sync Status with Agent Decision" will automatically set state (3=Resolved for approve, 4=Closed for deny, -5=On Hold for escalate).
 
 Step 8: Present Results.
 - Display a formatted summary to the user:
