@@ -15,9 +15,9 @@
     <objective_template><![CDATA[Process claim ${number}]]></objective_template>
     <portal/>
     <profile/>
-    <run_as>sys_created_by</run_as>
+    <run_as>specific_user</run_as>
     <run_as_script/>
-    <run_as_user/>
+    <run_as_user>6816f79cc0a8016401c5a33be04be441</run_as_user>
     <run_dayofmonth/>
     <run_dayofweek/>
     <run_period/>
