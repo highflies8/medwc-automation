@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_tool_m2m">
+  <sn_aia_agent_tool_m2m action="DELETE">
+    <sys_id>dfeee650689046748a1c849811400ddf</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_tool_m2m_dfeee650689046748a1c849811400ddf</sys_update_name>
+    <active>true</active>
+    <agent>f4caf00dad744168941f9b55478451ea</agent>
+    <description>Searches Medtric warranty policies using AI Search RAG retrieval with semantic search against the Medtric Warranty Policies knowledge base. Returns relevant KB articles with number, title, and content. Use 1-2 keywords from the claim reason.</description>
+    <display_output>false</display_output>
+    <document_status/>
+    <execution_mode>autopilot</execution_mode>
+    <inputs>[{"name":"search_query","description":"Search query for warranty policy lookup. Use keywords from the claim reason (e.g., 'physical damage dropped', 'battery failure', 'screen defect', 'warranty expired')","mandatory":true}]</inputs>
+    <max_auto_executions>10</max_auto_executions>
+    <name>Search Warranty Policy Knowledge Base</name>
+    <output_transformation_strategy>none</output_transformation_strategy>
+    <post_message>Policy review complete.</post_message>
+    <post_processing_script/>
+    <pre_message>Checking warranty policies...</pre_message>
+    <pre_run>false</pre_run>
+    <sys_domain>global</sys_domain>
+    <sys_overrides/>
+    <timeout/>
+    <tool>23aaa24c5b44475db4e2c38809353bc3</tool>
+    <tool_attributes>{}</tool_attributes>
+    <transformation_instructions/>
+    <widgets/>
+  </sn_aia_agent_tool_m2m>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</application>
+        <file_path/>
+        <instance_id>c6bd6ec43b914358a36804e0b5e45a2b</instance_id>
+        <instance_name>demoalectriallwfaeu152454</instance_name>
+        <name>sn_aia_agent_tool_m2m_dfeee650689046748a1c849811400ddf</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_tool_m2m">
+  <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+    <sys_id>dfeee650689046748a1c849811400ddf</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>sn_aia_agent_tool_m2m_dfeee650689046748a1c849811400ddf</sys_update_name>
+    <active>true</active>
+    <agent>f4caf00dad744168941f9b55478451ea</agent>
+    <description>Searches Medtric warranty policies using AI Search RAG retrieval with semantic search against the Medtric Warranty Policies knowledge base. Returns relevant KB articles with number, title, and content. Use 1-2 keywords from the claim reason.</description>
+    <display_output>false</display_output>
+    <document_status/>
+    <execution_mode>autopilot</execution_mode>
+    <inputs>[{"name":"search_query","description":"Search query for warranty policy lookup. Use keywords from the claim reason (e.g., 'physical damage dropped', 'battery failure', 'screen defect', 'warranty expired')","mandatory":true}]</inputs>
+    <max_auto_executions>10</max_auto_executions>
+    <name>Search Warranty Policy Knowledge Base</name>
+    <output_transformation_strategy>none</output_transformation_strategy>
+    <post_message>Policy review complete.</post_message>
+    <post_processing_script/>
+    <pre_message>Checking warranty policies...</pre_message>
+    <pre_run>false</pre_run>
+    <sys_domain>global</sys_domain>
+    <sys_overrides/>
+    <timeout/>
+    <tool>23aaa24c5b44475db4e2c38809353bc3</tool>
+    <tool_attributes>{}</tool_attributes>
+    <transformation_instructions/>
+    <widgets/>
+  </sn_aia_agent_tool_m2m>
+</record_update>]]></payload>
+        <payload_hash>302127885</payload_hash>
+        <record_name>Search Warranty Policy Knowledge Base</record_name>
+        <reverted_from/>
+        <source>be8cbbb9c3a14f5409e6d063e40131c1</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-19 07:39:16</sys_created_on>
+        <sys_id>e78c337dc3a14f5409e6d063e40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19eded1de470000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-19 07:39:16</sys_updated_on>
+        <type>Agent Tool</type>
+        <update_guid>a78c337d76a14f540bb93b492c21defc</update_guid>
+        <update_guid_history>a78c337d76a14f540bb93b492c21defc:302127885,bc8337b1406d0f54e1ffead61f51bd43:1135037339,7f0dc9350d21c794fda61be7ce0c91ee:-763447505,fc80d8fd70e987543ff320b89f7bcd7d:-19236966</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Search Warranty Policy Knowledge Base">d5460486c3e54f5409e6d063e4013116</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-19 08:21:44</sys_created_on>
+        <sys_db_object display_value="" name="sn_aia_agent_tool_m2m">sn_aia_agent_tool_m2m</sys_db_object>
+        <sys_id>161cb51c60524ba09e98fdd67a3e9440</sys_id>
+        <sys_metadata>dfeee650689046748a1c849811400ddf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Search Warranty Policy Knowledge Base</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_scope_delete display_value="">b721f8752e6c40babc0abf76f1a7f864</sys_scope_delete>
+        <sys_update_name>sn_aia_agent_tool_m2m_dfeee650689046748a1c849811400ddf</sys_update_name>
+        <sys_update_version display_value="sn_aia_agent_tool_m2m_dfeee650689046748a1c849811400ddf">e78c337dc3a14f5409e6d063e40131fd</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-19 08:21:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_tool">
-  <sn_aia_tool action="INSERT_OR_UPDATE">
-    <sys_id>6369871d894c4cff91ef5872e9e94485</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sn_aia_tool_6369871d894c4cff91ef5872e9e94485</sys_update_name>
-    <active>true</active>
-    <description>Updates an existing warranty claim record with agent decision, recommendation, and other field changes.</description>
-    <input_schema>[{"name":"record_number","description":"The claim number to update","mandatory":true},{"name":"agent_decision","description":"Agent decision: APPROVE, DENY, or ESCALATE","mandatory":false},{"name":"agent_recommendation","description":"Full step-by-step reasoning for the decision","mandatory":false},{"name":"state","description":"New state for the claim","mandatory":false},{"name":"warranty_details","description":"Warranty coverage details from API","mandatory":false},{"name":"warranty_expiry","description":"Warranty expiry date from API","mandatory":false},{"name":"device_name","description":"Device name from API","mandatory":false},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
-    <name>Update Warranty Claim Record</name>
-    <post_processing_script/>
-    <record_type>custom</record_type>
-    <script><![CDATA[(function (inputs) {
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Updates an existing warranty claim record with agent decision, recommendation, and other field changes.</description>
+        <input_schema>[{"name":"record_number","description":"The claim number to update","mandatory":true},{"name":"agent_decision","description":"Agent decision: APPROVE, DENY, or ESCALATE","mandatory":false},{"name":"agent_recommendation","description":"Full step-by-step reasoning for the decision","mandatory":false},{"name":"state","description":"New state for the claim","mandatory":false},{"name":"warranty_details","description":"Warranty coverage details from API","mandatory":false},{"name":"warranty_expiry","description":"Warranty expiry date from API","mandatory":false},{"name":"device_name","description":"Device name from API","mandatory":false},{"name":"crudInputs","description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values.","mandatory":true}]</input_schema>
+        <name>Update Warranty Claim Record</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function (inputs) {
     function getChoiceList(tableName, fieldName) {
         var choices = GlideChoiceList.getChoiceList(tableName, fieldName);
         if (!choices) return [];
@@ -288,10 +284,22 @@
         status: status,
     };
 })(inputs);]]></script>
-    <sys_domain>global</sys_domain>
-    <sys_overrides/>
-    <target_document/>
-    <target_document_table>sn_aia_tool</target_document_table>
-    <type>crud</type>
-  </sn_aia_tool>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 14:16:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>6369871d894c4cff91ef5872e9e94485</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Update Warranty Claim Record</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sn_aia_tool_6369871d894c4cff91ef5872e9e94485</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 14:16:37</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>crud</type>
+    </sn_aia_tool>
 </record_update>

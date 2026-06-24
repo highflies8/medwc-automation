@@ -1,35 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_section caption="Agent Decision" section_id="7ea96e46c0064ca98e50e67fa43f3408" sys_domain="global" table="x_snc_medwc_auto_0_warranty_claim" view="Default view">
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>agent_recommendation</element>
-      <position>0</position>
-      <sys_id>d6f208348cbf4247a2166d4d2ac90978</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Agent Decision" display_value="Agent Decision" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">7ea96e46c0064ca98e50e67fa43f3408</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>agent_decision</element>
-      <position>1</position>
-      <sys_id>aa1055aaf7a148e9a91858302c02cbeb</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Agent Decision" display_value="Agent Decision" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">7ea96e46c0064ca98e50e67fa43f3408</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_section action="INSERT_OR_UPDATE">
-      <caption>Agent Decision</caption>
-      <header>false</header>
-      <name>x_snc_medwc_auto_0_warranty_claim</name>
-      <roles/>
-      <sys_domain>global</sys_domain>
-      <sys_id>7ea96e46c0064ca98e50e67fa43f3408</sys_id>
-      <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-      <sys_user/>
-      <title>false</title>
-      <view_name/>
-      <view>Default view</view>
+    <sys_ui_section caption="Agent Decision" section_id="7ea96e46c0064ca98e50e67fa43f3408" sys_domain="global" table="x_snc_medwc_auto_0_warranty_claim" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>agent_recommendation</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 19:05:03</sys_created_on>
+            <sys_id>d6f208348cbf4247a2166d4d2ac90978</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Agent Decision" display_value="Agent Decision" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">7ea96e46c0064ca98e50e67fa43f3408</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 19:05:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>agent_decision</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 19:05:03</sys_created_on>
+            <sys_id>aa1055aaf7a148e9a91858302c02cbeb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Agent Decision" display_value="Agent Decision" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">7ea96e46c0064ca98e50e67fa43f3408</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 19:05:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Agent Decision</caption>
+            <header>false</header>
+            <name>x_snc_medwc_auto_0_warranty_claim</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 13:44:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7ea96e46c0064ca98e50e67fa43f3408</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_medwc_auto_0_warranty_claim</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+            <sys_update_name>sys_ui_section_7ea96e46c0064ca98e50e67fa43f3408</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 13:44:21</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
     </sys_ui_section>
-  </sys_ui_section>
 </record_update>

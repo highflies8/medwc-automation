@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config">
+    <ua_table_licensing_config action="INSERT_OR_UPDATE">
+        <is_fulfillment>false</is_fulfillment>
+        <license_condition/>
+        <license_model>none</license_model>
+        <license_roles/>
+        <name>x_snc_medwc_auto_0_warranty_claim</name>
+        <op_delete>true</op_delete>
+        <op_insert>true</op_insert>
+        <op_update>true</op_update>
+        <owner_condition/>
+        <sys_class_name>ua_table_licensing_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:44:16</sys_created_on>
+        <sys_id>e0864839c3a5875409e6d063e401319b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_medwc_auto_0_warranty_claim</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>ua_table_licensing_config_e0864839c3a5875409e6d063e401319b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:44:16</sys_updated_on>
+    </ua_table_licensing_config>
+</record_update>

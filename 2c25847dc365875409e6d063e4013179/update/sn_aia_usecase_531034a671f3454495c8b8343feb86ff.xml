@@ -1,11 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_usecase">
-  <sn_aia_usecase action="INSERT_OR_UPDATE">
-    <sys_id>531034a671f3454495c8b8343feb86ff</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sn_aia_usecase_531034a671f3454495c8b8343feb86ff</sys_update_name>
-    <acl>0b3b86377789444484cb9ce33f06e535</acl>
-    <active>true</active>
-    <base_plan>Step 1: Receive and Parse Claim Request.
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_usecase">
+    <sn_aia_usecase action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <applicability_script/>
+        <base_plan>Step 1: Receive and Parse Claim Request.
 - Use the Warranty Claims Agent to extract claim details from the customer's message: customer name, device serial number, caller name, claim reason, and urgency level.
 - If the message contains "URGENT", "immediately", or "ASAP", ensure priority is set to Critical.
 - DO NOT PROCEED if device serial number or claim reason cannot be identified. Ask the user to provide missing details.
@@ -52,14 +49,30 @@ Step 8: Present Results.
   - Reasoning: step-by-step explanation
   - Next Steps: what happens next (fulfillment work order for approve, denial notice for deny, human review for escalate)
 - NEVER invent warranty terms. Use only data from the API and knowledge base.</base_plan>
-    <context_processing_script/>
-    <description>Automate end-to-end warranty claim processing. Orchestrates the Warranty Claims Agent to extract claim details, look up devices and customers, verify warranty entitlements via Medtric API, analyze coverage against KB policy, and deliver approve/deny/escalate recommendations.</description>
-    <execution_mode>copilot</execution_mode>
-    <internal_name>global.x_snc_medwc_auto_0.Medtric Warranty Claims Automation</internal_name>
-    <name>Medtric Warranty Claims Automation</name>
-    <record_type>custom</record_type>
-    <strategy>b264c470ff1022106c36ffffffffff67</strategy>
-    <sys_domain>global</sys_domain>
-    <team name="Warranty Claims Team">de3d9a0a2b634d3ca4405539e2357cce</team>
-  </sn_aia_usecase>
+        <condition/>
+        <context_processing_script/>
+        <description>Automate end-to-end warranty claim processing. Orchestrates the Warranty Claims Agent to extract claim details, look up devices and customers, verify warranty entitlements via Medtric API, analyze coverage against KB policy, and deliver approve/deny/escalate recommendations.</description>
+        <execution_mode>copilot</execution_mode>
+        <internal_name>global.x_snc_medwc_auto_0.Medtric Warranty Claims Automation</internal_name>
+        <name>Medtric Warranty Claims Automation</name>
+        <parent/>
+        <record_type>custom</record_type>
+        <root_usecase_id/>
+        <source_id/>
+        <strategy display_value="ReActive Planner">b264c470ff1022106c36ffffffffff67</strategy>
+        <sys_class_name>sn_aia_usecase</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 14:17:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>531034a671f3454495c8b8343feb86ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Medtric Warranty Claims Automation</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sn_aia_usecase_531034a671f3454495c8b8343feb86ff</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 14:17:24</sys_updated_on>
+        <team display_value="Warranty Claims Team">de3d9a0a2b634d3ca4405539e2357cce</team>
+    </sn_aia_usecase>
 </record_update>

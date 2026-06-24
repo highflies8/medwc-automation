@@ -1,44 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_section caption="Agent Analysis" section_id="e8ac54517a1a4dafb169845fd1168114" sys_domain="global" table="x_snc_medwc_auto_0_warranty_claim" view="Default view">
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>agent_recommendation</element>
-      <position>0</position>
-      <sys_id>57d88ebb28b0487da27518f237d308d9</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Agent Analysis" display_value="Agent Analysis" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">e8ac54517a1a4dafb169845fd1168114</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>agent_decision</element>
-      <position>1</position>
-      <sys_id>674ef9ca78e54749b45c437f86412ee6</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Agent Analysis" display_value="Agent Analysis" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">e8ac54517a1a4dafb169845fd1168114</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>api_call_timestamp</element>
-      <position>2</position>
-      <sys_id>d8e4e59ff08d4cbfa0e1fb860379b090</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Agent Analysis" display_value="Agent Analysis" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">e8ac54517a1a4dafb169845fd1168114</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_section action="INSERT_OR_UPDATE">
-      <caption>Agent Analysis</caption>
-      <header>false</header>
-      <name>x_snc_medwc_auto_0_warranty_claim</name>
-      <roles/>
-      <sys_domain>global</sys_domain>
-      <sys_id>e8ac54517a1a4dafb169845fd1168114</sys_id>
-      <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-      <sys_user/>
-      <title>false</title>
-      <view_name/>
-      <view>Default view</view>
+    <sys_ui_section caption="Agent Analysis" section_id="e8ac54517a1a4dafb169845fd1168114" sys_domain="global" table="x_snc_medwc_auto_0_warranty_claim" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>agent_recommendation</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-24 13:30:21</sys_created_on>
+            <sys_id>57d88ebb28b0487da27518f237d308d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Agent Analysis" display_value="Agent Analysis" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">e8ac54517a1a4dafb169845fd1168114</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-24 13:30:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>agent_decision</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-24 13:30:21</sys_created_on>
+            <sys_id>674ef9ca78e54749b45c437f86412ee6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Agent Analysis" display_value="Agent Analysis" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">e8ac54517a1a4dafb169845fd1168114</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-24 13:30:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>api_call_timestamp</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-24 13:30:21</sys_created_on>
+            <sys_id>d8e4e59ff08d4cbfa0e1fb860379b090</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Agent Analysis" display_value="Agent Analysis" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">e8ac54517a1a4dafb169845fd1168114</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-24 13:30:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Agent Analysis</caption>
+            <header>false</header>
+            <name>x_snc_medwc_auto_0_warranty_claim</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 18:52:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e8ac54517a1a4dafb169845fd1168114</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_medwc_auto_0_warranty_claim</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+            <sys_update_name>sys_ui_section_e8ac54517a1a4dafb169845fd1168114</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 18:52:52</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
     </sys_ui_section>
-  </sys_ui_section>
 </record_update>

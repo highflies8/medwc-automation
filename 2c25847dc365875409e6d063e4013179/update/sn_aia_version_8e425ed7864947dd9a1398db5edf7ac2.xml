@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_version">
-  <sn_aia_version action="INSERT_OR_UPDATE">
-    <sys_id>8e425ed7864947dd9a1398db5edf7ac2</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sn_aia_version_8e425ed7864947dd9a1398db5edf7ac2</sys_update_name>
-    <condition/>
-    <instructions>You are Medtric Global's Warranty Claims Agent. You support two workflows depending on how you are invoked.
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <condition/>
+        <instructions>You are Medtric Global's Warranty Claims Agent. You support two workflows depending on how you are invoked.
 
 ═══════════════════════════════════════════
 STEP 1: DETECT WORKFLOW MODE
@@ -135,11 +132,24 @@ CRITICAL RULES
 9. The "number" input to the Update tool accepts EITHER the WC number OR the sys_id. Prefer sys_id when available.
 10. Do NOT ask for caller name — it is auto-populated from the current user.
 11. Customer info comes from the Device lookup — do NOT ask the user to confirm it separately.</instructions>
-    <state>published</state>
-    <sys_domain>global</sys_domain>
-    <target_id>f4caf00dad744168941f9b55478451ea</target_id>
-    <target_table>sn_aia_agent</target_table>
-    <version_name>V1</version_name>
-    <version_number>1</version_number>
-  </sn_aia_version>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 14:16:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>8e425ed7864947dd9a1398db5edf7ac2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sn_aia_version_8e425ed7864947dd9a1398db5edf7ac2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 14:16:37</sys_updated_on>
+        <target_id>f4caf00dad744168941f9b55478451ea</target_id>
+        <target_table>sn_aia_agent</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
 </record_update>

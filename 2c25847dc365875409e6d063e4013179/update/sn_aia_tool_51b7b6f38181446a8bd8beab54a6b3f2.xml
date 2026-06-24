@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_tool">
-  <sn_aia_tool action="INSERT_OR_UPDATE">
-    <sys_id>51b7b6f38181446a8bd8beab54a6b3f2</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sn_aia_tool_51b7b6f38181446a8bd8beab54a6b3f2</sys_update_name>
-    <active>true</active>
-    <description>Searches the Medtric Warranty Policies knowledge base for relevant coverage policy articles.</description>
-    <input_schema>[{"name":"search_terms","description":"Keywords to search for in KB articles (e.g., 'physical damage drop', 'software firmware', 'component failure')","mandatory":true}]</input_schema>
-    <name>Search Warranty Knowledge Base</name>
-    <post_processing_script/>
-    <record_type>custom</record_type>
-    <script><![CDATA[(function(inputs) {
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Searches the Medtric Warranty Policies knowledge base for relevant coverage policy articles.</description>
+        <input_schema>[{"name":"search_terms","description":"Keywords to search for in KB articles (e.g., 'physical damage drop', 'software firmware', 'component failure')","mandatory":true}]</input_schema>
+        <name>Search Warranty Knowledge Base</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
     var results = [];
     var keywords = inputs.search_terms.toLowerCase().split(' ');
     var gr = new GlideRecord('kb_knowledge');
@@ -41,10 +37,22 @@
     }
     return JSON.stringify({ status: 'success', articles: results.slice(0, 3) });
 })(inputs);]]></script>
-    <sys_domain>global</sys_domain>
-    <sys_overrides/>
-    <target_document/>
-    <target_document_table>sn_aia_tool</target_document_table>
-    <type>script</type>
-  </sn_aia_tool>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-19 10:37:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>51b7b6f38181446a8bd8beab54a6b3f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Search Warranty Knowledge Base</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sn_aia_tool_51b7b6f38181446a8bd8beab54a6b3f2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-19 10:37:12</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
 </record_update>

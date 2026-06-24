@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 14:17:37</sys_created_on>
+        <sys_id>892e8c791b21479405438442604bcb18</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>global.x_snc_medwc_auto_0.Medtric Warranty Claims Automation.snc_internal</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_security_acl display_value="global.x_snc_medwc_auto_0.Medtric Warranty Claims Automation">0b3b86377789444484cb9ce33f06e535</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_892e8c791b21479405438442604bcb18</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 14:17:37</sys_updated_on>
+        <sys_user_role display_value="snc_internal" name="snc_internal">7fcaa702933002009c8579b4f47ffbde</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

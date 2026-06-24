@@ -1,56 +1,88 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
-    <sys_id>83a6b593fbf240efba02be410a50a698</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sys_hub_action_type_definition_83a6b593fbf240efba02be410a50a698</sys_update_name>
-    <access>public</access>
-    <active>true</active>
-    <callable_by_client_api>false</callable_by_client_api>
-    <category>x_snc_medwc_auto_0</category>
-    <description>Looks up warranty information for a medical device by serial number from the Medtric Device Warranty API.</description>
-    <ih_action>false</ih_action>
-    <internal_name>lookup_medtric_device_warranty</internal_name>
-    <label_cache>[{"name":"{{action.serial_number}}","label":"action➛Serial Number","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
-    <name>Lookup Medtric Device Warranty</name>
-    <pre_compiled>false</pre_compiled>
-    <state>draft</state>
-    <sys_domain>global</sys_domain>
-    <sys_domain_path>/</sys_domain_path>
-    <system_level>false</system_level>
-  </sys_hub_action_type_definition>
-  <sys_hub_step_instance action="INSERT_OR_UPDATE">
-    <sys_id>3fce634b07ee48c8bf4e6b08f723e5f5</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <action>83a6b593fbf240efba02be410a50a698</action>
-    <active>true</active>
-    <cid>3fce634b-07ee-48c8-bf4e-6b08f723e5f5</cid>
-    <error_handling_type>1</error_handling_type>
-    <internal_name>action_script_1</internal_name>
-    <label>Call Medtric Warranty API</label>
-    <name>Script Step</name>
-    <nesting_level>0</nesting_level>
-    <order>1</order>
-    <parent>83a6b593fbf240efba02be410a50a698</parent>
-    <parent_table>sys_hub_action_type_definition</parent_table>
-    <step_config>09e7e94bdb311300c5c8f31b6896192a</step_config>
-    <step_type>106afb6647032200b4fad7527c9a71e7</step_type>
-    <warn_overridden_variables>false</warn_overridden_variables>
-  </sys_hub_step_instance>
-  <sys_variable_value action="delete_multiple" query="variable=43b4d580487a4b568216369bdaf460f2"/>
-  <sys_variable_value action="delete_multiple" query="variable=4ac1220e3707424a9d0895189da93548"/>
-  <sys_variable_value action="delete_multiple" query="variable=75cf18c36f994a489ce986446d1ba94a"/>
-  <sys_variable_value action="delete_multiple" query="variable=9dd959bf30984cedbe7a6317510c2f80"/>
-  <sys_variable_value action="delete_multiple" query="variable=a22df22f989f4d3c964aaf19bc80635a"/>
-  <sys_variable_value action="delete_multiple" query="variable=cb7f64490e2b4d309d6d26736bcb02fb"/>
-  <sys_variable_value action="delete_multiple" query="variable=198105b1606d439d8681689cbf262f98"/>
-  <sys_variable_value action="delete_multiple" query="variable=fbe18de8d9694ee19712e4f3b3ad6194"/>
-  <sys_variable_value action="INSERT_OR_UPDATE">
-    <sys_id>40f14d32f31544119b35cdf96a4cf9d7</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <document>sys_hub_step_instance</document>
-    <document_key>3fce634b07ee48c8bf4e6b08f723e5f5</document_key>
-    <order>100</order>
-    <value>(function execute(inputs, outputs) {
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <attributes/>
+        <authored_on_release_version/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="">x_snc_medwc_auto_0</category>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Looks up warranty information for a medical device by serial number from the Medtric Device Warranty API.</description>
+        <flow_priority/>
+        <ih_action>false</ih_action>
+        <internal_name>lookup_medtric_device_warranty</internal_name>
+        <label_cache>[{"name":"{{action.serial_number}}","label":"action➛Serial Number","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <master_snapshot_digest/>
+        <name>Lookup Medtric Device Warranty</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <state>draft</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:50:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>83a6b593fbf240efba02be410a50a698</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Lookup Medtric Device Warranty</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_83a6b593fbf240efba02be410a50a698</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:50:59</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=83a6b593fbf240efba02be410a50a698"/>
+    <sys_variable_value action="delete_multiple" query="document_key=83a6b593fbf240efba02be410a50a698"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698^id=83a6b593fbf240efba02be410a50a698"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=83a6b593fbf240efba02be410a50a698^sys_idNOT IN3fce634b07ee48c8bf4e6b08f723e5f5"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Lookup Medtric Device Warranty">83a6b593fbf240efba02be410a50a698</action>
+        <cid>3fce634b-07ee-48c8-bf4e-6b08f723e5f5</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Call Medtric Warranty API</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>3fce634b07ee48c8bf4e6b08f723e5f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=3fce634b07ee48c8bf4e6b08f723e5f5"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3fce634b07ee48c8bf4e6b08f723e5f5</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>40f14d32f31544119b35cdf96a4cf9d7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
     var serialNumber = inputs.serial_number;
     
     var restMessage = new sn_ws.RESTMessageV2();
@@ -82,681 +114,1630 @@
         outputs.device_serial_number = '';
     }
 })(inputs, outputs);</value>
-    <variable>71aa7f6647032200b4fad7527c9a719b</variable>
-  </sys_variable_value>
-  <sys_variable_value action="INSERT_OR_UPDATE">
-    <sys_id>bdf1f01f2a1946b59baec16c49e4a717</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <document>sys_hub_step_instance</document>
-    <document_key>3fce634b07ee48c8bf4e6b08f723e5f5</document_key>
-    <order>100</order>
-    <value>instance</value>
-    <variable>74315b04b3201300176b051a16a8dc2b</variable>
-  </sys_variable_value>
-  <sys_element_mapping action="INSERT_OR_UPDATE">
-    <sys_id>dcf75a7f4a1e40cca2f188c1b8e75acf</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <field>serial_number</field>
-    <id>3fce634b07ee48c8bf4e6b08f723e5f5</id>
-    <table>var__m_sys_hub_step_ext_input_3fce634b07ee48c8bf4e6b08f723e5f5</table>
-    <value>{{action.serial_number}}</value>
-  </sys_element_mapping>
-  <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
-    <sys_id>b6240d510fe14bd282cc96c87b65f963</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>serial_number</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Serial Number</label>
-    <mandatory>false</mandatory>
-    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
-    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
-    <model_table>sys_hub_step_instance</model_table>
-    <name>var__m_sys_hub_step_ext_input_3fce634b07ee48c8bf4e6b08f723e5f5</name>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_step_ext_input>
-  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
-    <sys_id>0542b2e0ae204b9bb3e8fe82e590b164</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>warranty_details</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Warranty Details</label>
-    <mandatory>false</mandatory>
-    <max_length>4000</max_length>
-    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
-    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
-    <model_table>sys_hub_step_instance</model_table>
-    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_step_ext_output>
-  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
-    <sys_id>8027cbc7473b42f193e0565873c6450a</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>device_name</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Device Name</label>
-    <mandatory>false</mandatory>
-    <max_length>255</max_length>
-    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
-    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
-    <model_table>sys_hub_step_instance</model_table>
-    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_step_ext_output>
-  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
-    <sys_id>99abacd034d74f4ba5f49925dfa7c49b</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>device_serial_number</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Device Serial Number</label>
-    <mandatory>false</mandatory>
-    <max_length>255</max_length>
-    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
-    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
-    <model_table>sys_hub_step_instance</model_table>
-    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_step_ext_output>
-  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
-    <sys_id>9d02b076ee58475aaa161acb30b2a157</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>customer_name</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Customer Name</label>
-    <mandatory>false</mandatory>
-    <max_length>255</max_length>
-    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
-    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
-    <model_table>sys_hub_step_instance</model_table>
-    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_step_ext_output>
-  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
-    <sys_id>accf97aa0dd34d708afdd4dfa09a4100</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>purchase_date</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Purchase Date</label>
-    <mandatory>false</mandatory>
-    <max_length>255</max_length>
-    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
-    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
-    <model_table>sys_hub_step_instance</model_table>
-    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_step_ext_output>
-  <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
-    <sys_id>c47d798822a146f99ecb79db8b2120d6</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>warranty_expiry_date</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Warranty Expiry Date</label>
-    <mandatory>false</mandatory>
-    <max_length>255</max_length>
-    <model>3fce634b07ee48c8bf4e6b08f723e5f5</model>
-    <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
-    <model_table>sys_hub_step_instance</model_table>
-    <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_step_ext_output>
-  <sys_hub_action_input action="INSERT_OR_UPDATE">
-    <sys_id>f2896d2d4e7b4902a0bd68737130470b</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>serial_number</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Serial Number</label>
-    <mandatory>true</mandatory>
-    <max_length>255</max_length>
-    <model>83a6b593fbf240efba02be410a50a698</model>
-    <model_id>[object Object]</model_id>
-    <model_table>sys_hub_action_type_definition</model_table>
-    <name>var__m_sys_hub_action_input_83a6b593fbf240efba02be410a50a698</name>
-    <order>1</order>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_action_input>
-  <sys_hub_action_input action="INSERT_OR_UPDATE">
-    <sys_id>815b51bba74c44e8af4655a029f8608a</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>device_sys_id</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Device Sys ID</label>
-    <mandatory>true</mandatory>
-    <max_length>32</max_length>
-    <model>83a6b593fbf240efba02be410a50a698</model>
-    <model_table>sys_hub_action_type_definition</model_table>
-    <order>1</order>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_action_input>
-  <sys_documentation action="INSERT_OR_UPDATE">
-    <sys_id>7b7410d120654993b433675f30209b41</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <element>serial_number</element>
-    <label>Serial Number</label>
-    <language>en</language>
-    <name>var__m_sys_hub_action_input_83a6b593fbf240efba02be410a50a698</name>
-    <plural>Serial Numbers</plural>
-  </sys_documentation>
-  <sys_documentation action="INSERT_OR_UPDATE">
-    <sys_id>eea7516b5da8473bad5bda52c2df0faf</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <element>warranty_expiry_date</element>
-    <label>Warranty Expiry Date</label>
-    <language>en</language>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <plural>Warranty Expiry Dates</plural>
-  </sys_documentation>
-  <sys_documentation action="INSERT_OR_UPDATE">
-    <sys_id>f91a17db903d4238a226c4a1f5e39980</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <element>purchase_date</element>
-    <label>Purchase Date</label>
-    <language>en</language>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <plural>Purchase Dates</plural>
-  </sys_documentation>
-  <sys_documentation action="INSERT_OR_UPDATE">
-    <sys_id>22adb0e272994df78ae0a0a8a86d7dd7</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <element>warranty_details</element>
-    <label>Warranty Details</label>
-    <language>en</language>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <plural>Warranty Details</plural>
-  </sys_documentation>
-  <sys_documentation action="INSERT_OR_UPDATE">
-    <sys_id>40f6d03f36324f21baef50bdb2edafff</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <element>device_serial_number</element>
-    <label>Device Serial Number</label>
-    <language>en</language>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <plural>Device Serial Numbers</plural>
-  </sys_documentation>
-  <sys_documentation action="INSERT_OR_UPDATE">
-    <sys_id>c129dfafce504900a760fc6b19b20de3</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <element>customer_name</element>
-    <label>Customer Name</label>
-    <language>en</language>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <plural>Customer Names</plural>
-  </sys_documentation>
-  <sys_documentation action="INSERT_OR_UPDATE">
-    <sys_id>e40bd23ec7ab48fbabc94a3f0d2c1558</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <element>device_name</element>
-    <label>Device Name</label>
-    <language>en</language>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <plural>Device Names</plural>
-  </sys_documentation>
-  <sys_documentation action="INSERT_OR_UPDATE">
-    <sys_id>2ad8a19fa7b34d4f9891d6e6ad5d0270</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <element>__action_status__</element>
-    <label>Action Status</label>
-    <language>en</language>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <plural>Action Status</plural>
-  </sys_documentation>
-  <sys_documentation action="INSERT_OR_UPDATE">
-    <sys_id>a9527e98bacb4b47a24775445da8947c</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <element>__dont_treat_as_error__</element>
-    <label>Don't Treat as Error</label>
-    <language>en</language>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <plural>Don't Treat as Errors</plural>
-  </sys_documentation>
-  <sys_hub_action_output action="INSERT_OR_UPDATE">
-    <sys_id>43b4d580487a4b568216369bdaf460f2</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>warranty_expiry_date</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Warranty Expiry Date</label>
-    <mandatory>false</mandatory>
-    <max_length>255</max_length>
-    <model>83a6b593fbf240efba02be410a50a698</model>
-    <model_id>[object Object]</model_id>
-    <model_table>sys_hub_action_type_definition</model_table>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <order>4</order>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_action_output>
-  <sys_hub_action_output action="INSERT_OR_UPDATE">
-    <sys_id>4ac1220e3707424a9d0895189da93548</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>purchase_date</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Purchase Date</label>
-    <mandatory>false</mandatory>
-    <max_length>255</max_length>
-    <model>83a6b593fbf240efba02be410a50a698</model>
-    <model_id>[object Object]</model_id>
-    <model_table>sys_hub_action_type_definition</model_table>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <order>5</order>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_action_output>
-  <sys_hub_action_output action="INSERT_OR_UPDATE">
-    <sys_id>75cf18c36f994a489ce986446d1ba94a</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>warranty_details</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Warranty Details</label>
-    <mandatory>false</mandatory>
-    <max_length>4000</max_length>
-    <model>83a6b593fbf240efba02be410a50a698</model>
-    <model_id>[object Object]</model_id>
-    <model_table>sys_hub_action_type_definition</model_table>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <order>3</order>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_action_output>
-  <sys_hub_action_output action="INSERT_OR_UPDATE">
-    <sys_id>9dd959bf30984cedbe7a6317510c2f80</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>device_serial_number</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Device Serial Number</label>
-    <mandatory>false</mandatory>
-    <max_length>255</max_length>
-    <model>83a6b593fbf240efba02be410a50a698</model>
-    <model_id>[object Object]</model_id>
-    <model_table>sys_hub_action_type_definition</model_table>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <order>6</order>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_action_output>
-  <sys_hub_action_output action="INSERT_OR_UPDATE">
-    <sys_id>a22df22f989f4d3c964aaf19bc80635a</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>customer_name</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Customer Name</label>
-    <mandatory>false</mandatory>
-    <max_length>255</max_length>
-    <model>83a6b593fbf240efba02be410a50a698</model>
-    <model_id>[object Object]</model_id>
-    <model_table>sys_hub_action_type_definition</model_table>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <order>1</order>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_action_output>
-  <sys_hub_action_output action="INSERT_OR_UPDATE">
-    <sys_id>cb7f64490e2b4d309d6d26736bcb02fb</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>device_name</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Device Name</label>
-    <mandatory>false</mandatory>
-    <max_length>255</max_length>
-    <model>83a6b593fbf240efba02be410a50a698</model>
-    <model_id>[object Object]</model_id>
-    <model_table>sys_hub_action_type_definition</model_table>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <order>2</order>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_action_output>
-  <sys_hub_action_output action="INSERT_OR_UPDATE">
-    <sys_id>198105b1606d439d8681689cbf262f98</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,action_error_output=true,uiType=object,uiTypeLabel=Object,uiUniqueId=83a6b593fbf240efba02be410a50a698-action-status,co_type_name=FDACTIONSTATUS</attributes>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>__action_status__</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Action Status</label>
-    <mandatory>false</mandatory>
-    <max_length>40</max_length>
-    <model>83a6b593fbf240efba02be410a50a698</model>
-    <model_id>83a6b593fbf240efba02be410a50a698</model_id>
-    <model_table>sys_hub_action_type_definition</model_table>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <order>1</order>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_action_output>
-  <sys_hub_action_output action="INSERT_OR_UPDATE">
-    <sys_id>fbe18de8d9694ee19712e4f3b3ad6194</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <active>true</active>
-    <array>false</array>
-    <array_denormalized>false</array_denormalized>
-    <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,action_error_output=true,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=83a6b593fbf240efba02be410a50a698-action-error,visible_in_ui=false</attributes>
-    <audit>false</audit>
-    <display>false</display>
-    <dynamic_creation>false</dynamic_creation>
-    <element>__dont_treat_as_error__</element>
-    <element_reference>false</element_reference>
-    <function_field>false</function_field>
-    <internal_type>string</internal_type>
-    <label>Don't Treat as Error</label>
-    <mandatory>false</mandatory>
-    <max_length>40</max_length>
-    <model>83a6b593fbf240efba02be410a50a698</model>
-    <model_id>83a6b593fbf240efba02be410a50a698</model_id>
-    <model_table>sys_hub_action_type_definition</model_table>
-    <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
-    <order>2</order>
-    <primary>false</primary>
-    <read_only>false</read_only>
-    <reference_floats>false</reference_floats>
-    <spell_check>false</spell_check>
-    <staged>false</staged>
-    <table_reference>false</table_reference>
-    <text_index>false</text_index>
-    <unique>false</unique>
-    <use_dependent_field>false</use_dependent_field>
-    <use_dynamic_default>false</use_dynamic_default>
-    <virtual>false</virtual>
-    <xml_view>false</xml_view>
-  </sys_hub_action_output>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3fce634b07ee48c8bf4e6b08f723e5f5</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>bdf1f01f2a1946b59baec16c49e4a717</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <value>instance</value>
+        <variable display_value="Required Runtime">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=3fce634b07ee48c8bf4e6b08f723e5f5"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>serial_number</field>
+        <id>3fce634b07ee48c8bf4e6b08f723e5f5</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>dcf75a7f4a1e40cca2f188c1b8e75acf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_3fce634b07ee48c8bf4e6b08f723e5f5</table>
+        <value>{{action.serial_number}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5^id=3fce634b07ee48c8bf4e6b08f723e5f5"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=3fce634b07ee48c8bf4e6b08f723e5f5"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=3fce634b07ee48c8bf4e6b08f723e5f5"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=3fce634b07ee48c8bf4e6b08f723e5f5^sys_idNOT INb6240d510fe14bd282cc96c87b65f963"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>serial_number</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Serial Number</label>
+        <mandatory>false</mandatory>
+        <max_length/>
+        <model display_value="Call Medtric Warranty API">3fce634b07ee48c8bf4e6b08f723e5f5</model>
+        <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+        <next_element/>
+        <order/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>b6240d510fe14bd282cc96c87b65f963</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=3fce634b07ee48c8bf4e6b08f723e5f5^sys_idNOT IN0542b2e0ae204b9bb3e8fe82e590b164,8027cbc7473b42f193e0565873c6450a,99abacd034d74f4ba5f49925dfa7c49b,9d02b076ee58475aaa161acb30b2a157,accf97aa0dd34d708afdd4dfa09a4100,c47d798822a146f99ecb79db8b2120d6"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>warranty_details</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Warranty Details</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Call Medtric Warranty API">3fce634b07ee48c8bf4e6b08f723e5f5</model>
+        <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+        <next_element/>
+        <order/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>0542b2e0ae204b9bb3e8fe82e590b164</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>device_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Device Name</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Call Medtric Warranty API">3fce634b07ee48c8bf4e6b08f723e5f5</model>
+        <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+        <next_element/>
+        <order/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>8027cbc7473b42f193e0565873c6450a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>device_serial_number</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Device Serial Number</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Call Medtric Warranty API">3fce634b07ee48c8bf4e6b08f723e5f5</model>
+        <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+        <next_element/>
+        <order/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>99abacd034d74f4ba5f49925dfa7c49b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>customer_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Customer Name</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Call Medtric Warranty API">3fce634b07ee48c8bf4e6b08f723e5f5</model>
+        <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+        <next_element/>
+        <order/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>9d02b076ee58475aaa161acb30b2a157</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>purchase_date</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Purchase Date</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Call Medtric Warranty API">3fce634b07ee48c8bf4e6b08f723e5f5</model>
+        <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+        <next_element/>
+        <order/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>accf97aa0dd34d708afdd4dfa09a4100</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>warranty_expiry_date</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Warranty Expiry Date</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Call Medtric Warranty API">3fce634b07ee48c8bf4e6b08f723e5f5</model>
+        <model_id>3fce634b07ee48c8bf4e6b08f723e5f5</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_3fce634b07ee48c8bf4e6b08f723e5f5</name>
+        <next_element/>
+        <order/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>c47d798822a146f99ecb79db8b2120d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=3fce634b07ee48c8bf4e6b08f723e5f5"/>
+    <sys_hub_action_input action="delete_multiple" query="model=83a6b593fbf240efba02be410a50a698^sys_idNOT IN815b51bba74c44e8af4655a029f8608a,f2896d2d4e7b4902a0bd68737130470b"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>device_sys_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Device Sys ID</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Lookup Medtric Device Warranty">83a6b593fbf240efba02be410a50a698</model>
+        <model_id/>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name/>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 18:52:49</sys_created_on>
+        <sys_id>815b51bba74c44e8af4655a029f8608a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 18:52:49</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=815b51bba74c44e8af4655a029f8608a"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>serial_number</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Serial Number</label>
+        <mandatory>true</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Lookup Medtric Device Warranty">83a6b593fbf240efba02be410a50a698</model>
+        <model_id>[object Object]</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_83a6b593fbf240efba02be410a50a698</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>f2896d2d4e7b4902a0bd68737130470b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=f2896d2d4e7b4902a0bd68737130470b"/>
+    <sys_hub_action_output action="delete_multiple" query="model=83a6b593fbf240efba02be410a50a698^sys_idNOT IN198105b1606d439d8681689cbf262f98,43b4d580487a4b568216369bdaf460f2,4ac1220e3707424a9d0895189da93548,75cf18c36f994a489ce986446d1ba94a,9dd959bf30984cedbe7a6317510c2f80,a22df22f989f4d3c964aaf19bc80635a,cb7f64490e2b4d309d6d26736bcb02fb,fbe18de8d9694ee19712e4f3b3ad6194"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,action_error_output=true,uiType=object,uiTypeLabel=Object,uiUniqueId=83a6b593fbf240efba02be410a50a698-action-status,co_type_name=FDACTIONSTATUS</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__action_status__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Action Status</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Lookup Medtric Device Warranty">83a6b593fbf240efba02be410a50a698</model>
+        <model_id>83a6b593fbf240efba02be410a50a698</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>198105b1606d439d8681689cbf262f98</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=198105b1606d439d8681689cbf262f98"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=198105b1606d439d8681689cbf262f98"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>warranty_expiry_date</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Warranty Expiry Date</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Lookup Medtric Device Warranty">83a6b593fbf240efba02be410a50a698</model>
+        <model_id>[object Object]</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>43b4d580487a4b568216369bdaf460f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=43b4d580487a4b568216369bdaf460f2"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=43b4d580487a4b568216369bdaf460f2"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>purchase_date</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Purchase Date</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Lookup Medtric Device Warranty">83a6b593fbf240efba02be410a50a698</model>
+        <model_id>[object Object]</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <next_element/>
+        <order>5</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>4ac1220e3707424a9d0895189da93548</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4ac1220e3707424a9d0895189da93548"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=4ac1220e3707424a9d0895189da93548"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>warranty_details</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Warranty Details</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Lookup Medtric Device Warranty">83a6b593fbf240efba02be410a50a698</model>
+        <model_id>[object Object]</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>75cf18c36f994a489ce986446d1ba94a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=75cf18c36f994a489ce986446d1ba94a"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=75cf18c36f994a489ce986446d1ba94a"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>device_serial_number</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Device Serial Number</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Lookup Medtric Device Warranty">83a6b593fbf240efba02be410a50a698</model>
+        <model_id>[object Object]</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <next_element/>
+        <order>6</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>9dd959bf30984cedbe7a6317510c2f80</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9dd959bf30984cedbe7a6317510c2f80"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=9dd959bf30984cedbe7a6317510c2f80"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>customer_name</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Customer Name</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Lookup Medtric Device Warranty">83a6b593fbf240efba02be410a50a698</model>
+        <model_id>[object Object]</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>a22df22f989f4d3c964aaf19bc80635a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a22df22f989f4d3c964aaf19bc80635a"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=a22df22f989f4d3c964aaf19bc80635a"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>device_name</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Device Name</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Lookup Medtric Device Warranty">83a6b593fbf240efba02be410a50a698</model>
+        <model_id>[object Object]</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>cb7f64490e2b4d309d6d26736bcb02fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=cb7f64490e2b4d309d6d26736bcb02fb"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=cb7f64490e2b4d309d6d26736bcb02fb"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,action_error_output=true,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=83a6b593fbf240efba02be410a50a698-action-error,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Lookup Medtric Device Warranty">83a6b593fbf240efba02be410a50a698</model>
+        <model_id>83a6b593fbf240efba02be410a50a698</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>fbe18de8d9694ee19712e4f3b3ad6194</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=fbe18de8d9694ee19712e4f3b3ad6194"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=fbe18de8d9694ee19712e4f3b3ad6194"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=83a6b593fbf240efba02be410a50a698"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=83a6b593fbf240efba02be410a50a698"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>serial_number</element>
+        <help/>
+        <hint/>
+        <label>Serial Number</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_83a6b593fbf240efba02be410a50a698</name>
+        <plural>Serial Numbers</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>7b7410d120654993b433675f30209b41</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Serial Number</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_83a6b593fbf240efba02be410a50a698_serial_number_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_83a6b593fbf240efba02be410a50a698"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>warranty_details</element>
+        <help/>
+        <hint/>
+        <label>Warranty Details</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <plural>Warranty Details</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>22adb0e272994df78ae0a0a8a86d7dd7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Warranty Details</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698_warranty_details_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__action_status__</element>
+        <help/>
+        <hint/>
+        <label>Action Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <plural>Action Status</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>2ad8a19fa7b34d4f9891d6e6ad5d0270</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Action Status</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698___action_status___en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>device_serial_number</element>
+        <help/>
+        <hint/>
+        <label>Device Serial Number</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <plural>Device Serial Numbers</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>40f6d03f36324f21baef50bdb2edafff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Device Serial Number</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698_device_serial_number_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__dont_treat_as_error__</element>
+        <help/>
+        <hint/>
+        <label>Don't Treat as Error</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <plural>Don't Treat as Errors</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>a9527e98bacb4b47a24775445da8947c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Don't Treat as Error</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698___dont_treat_as_error___en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>customer_name</element>
+        <help/>
+        <hint/>
+        <label>Customer Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <plural>Customer Names</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>c129dfafce504900a760fc6b19b20de3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Customer Name</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698_customer_name_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>device_name</element>
+        <help/>
+        <hint/>
+        <label>Device Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <plural>Device Names</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>e40bd23ec7ab48fbabc94a3f0d2c1558</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Device Name</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698_device_name_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>warranty_expiry_date</element>
+        <help/>
+        <hint/>
+        <label>Warranty Expiry Date</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <plural>Warranty Expiry Dates</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:00</sys_created_on>
+        <sys_id>eea7516b5da8473bad5bda52c2df0faf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Warranty Expiry Date</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698_warranty_expiry_date_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:00</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>purchase_date</element>
+        <help/>
+        <hint/>
+        <label>Purchase Date</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698</name>
+        <plural>Purchase Dates</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:51:01</sys_created_on>
+        <sys_id>f91a17db903d4238a226c4a1f5e39980</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Purchase Date</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698_purchase_date_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:51:01</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_83a6b593fbf240efba02be410a50a698"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=83a6b593fbf240efba02be410a50a698"/>
 </record_update>

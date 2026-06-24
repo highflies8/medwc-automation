@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer">
+    <sys_wizard_answer action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <answer>Warranty Claim</answer>
+        <button_label/>
+        <dependent_value/>
+        <element/>
+        <name>Warranty Claim</name>
+        <next_question/>
+        <order>100</order>
+        <payload_name/>
+        <question display_value="Task" name="Task">a0f89235086003100a22e9371c04a48a</question>
+        <roles/>
+        <script/>
+        <sys_class_name>sys_wizard_answer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 13:44:14</sys_created_on>
+        <sys_id>c8868439c3a5875409e6d063e4013179</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Warranty Claim</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_wizard_answer_c8868439c3a5875409e6d063e4013179</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 13:44:14</sys_updated_on>
+        <table/>
+        <target_url>x_snc_medwc_auto_0_warranty_claim.do</target_url>
+        <type>1</type>
+    </sys_wizard_answer>
+</record_update>

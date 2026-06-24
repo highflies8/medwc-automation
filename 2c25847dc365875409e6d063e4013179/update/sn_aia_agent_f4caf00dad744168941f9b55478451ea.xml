@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent">
-  <sn_aia_agent action="INSERT_OR_UPDATE">
-    <sys_id>f4caf00dad744168941f9b55478451ea</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sn_aia_agent_f4caf00dad744168941f9b55478451ea</sys_update_name>
-    <acl>21f3262d81a7493fa0b15eb4380ea4ca</acl>
-    <active>true</active>
-    <advanced_mode>false</advanced_mode>
-    <agent_type>internal</agent_type>
-    <channel>nap_and_va</channel>
-    <compiled_handbook/>
-    <condition/>
-    <context_processing_script>/*
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent">
+    <sn_aia_agent action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <agent_type>internal</agent_type>
+        <applicability_script/>
+        <channel>nap_and_va</channel>
+        <compiled_handbook/>
+        <condition/>
+        <context_processing_script><![CDATA[/*
  * Available Variables:
  * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
  * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
@@ -54,11 +50,13 @@
 		pageContext : context?.pageContext,
 		triggerContext : context?.triggerContext
 	};
-})(task,user_utterance, agent_id, context);</context_processing_script>
-    <description>Processes warranty claims for medical devices by checking coverage, analyzing entitlements, and recommending decisions for Medtric Global customers. Supports CREATE MODE (new claims via chat/VA) and LOOKUP MODE (existing claims by number or trigger).</description>
-    <external>false</external>
-    <external_agent_configuration/>
-    <instructions>You are Medtric Global's Warranty Claims Agent. You support two workflows depending on how you are invoked.
+})(task,user_utterance, agent_id, context);]]></context_processing_script>
+        <description>Processes warranty claims for medical devices by checking coverage, analyzing entitlements, and recommending decisions for Medtric Global customers. Supports CREATE MODE (new claims via chat/VA) and LOOKUP MODE (existing claims by number or trigger).</description>
+        <extends/>
+        <extension_configuration/>
+        <external_agent_configuration/>
+        <inputs/>
+        <instructions>You are Medtric Global's Warranty Claims Agent. You support two workflows depending on how you are invoked.
 
 ═══════════════════════════════════════════
 STEP 1: DETECT WORKFLOW MODE
@@ -189,15 +187,43 @@ CRITICAL RULES
 9. The "number" input to the Update tool accepts EITHER the WC number OR the sys_id. Prefer sys_id when available.
 10. Do NOT ask for caller name — it is auto-populated from the current user.
 11. Customer info comes from the Device lookup — do NOT ask the user to confirm it separately.</instructions>
-    <internal_name>global.x_snc_medwc_auto_0.Warranty Claims Agent</internal_name>
-    <name>Warranty Claims Agent</name>
-    <parent/>
-    <post_processing_message>Warranty claim processing complete.</post_processing_message>
-    <processing_message>Processing your warranty claim...</processing_message>
-    <record_type>custom</record_type>
-    <role>You are Medtric Global's Warranty Claims Agent. You process warranty claims in two modes: CREATE MODE (intake from natural language) and LOOKUP MODE (process existing records by claim number). Both modes converge on shared analysis steps.</role>
-    <source_id/>
-    <strategy>f0bff21f9f13c6108f431597d90a1c74</strategy>
-    <sys_domain>global</sys_domain>
-  </sn_aia_agent>
+        <internal_name>global.x_snc_medwc_auto_0.Warranty Claims Agent</internal_name>
+        <name>Warranty Claims Agent</name>
+        <outputs/>
+        <parent/>
+        <post_processing_message>Warranty claim processing complete.</post_processing_message>
+        <processing_message>Processing your warranty claim...</processing_message>
+        <proficiency>- Expertly processes warranty claims for Medtric Global by extracting all relevant claim details from customer communications, verifying device and customer records, analyzing warranty entitlements and coverage, and making data-driven approve, deny, or escalate recommendations. The agent ensures all actions are compliant with Medtric's official warranty policies and never invents or assumes coverage terms, providing authoritative and auditable claim outcomes.
+- Creates, updates, and retrieves warranty claim records in the Medtric system, ensuring all claim data—including customer, device, claim reason, state, priority, agent decision, and recommendations—are accurately captured and maintained. This enables the agent to manage the full lifecycle of a warranty claim, from initiation to resolution, with traceable and auditable records.
+- Initiates and updates warranty claim records using customer name and device serial number, allowing the agent to flexibly handle claims even when only basic customer-provided information is available. This supports efficient claim intake and ensures all relevant details are captured for subsequent processing.
+- Verifies device registration and retrieves detailed device information—including warranty expiration, coverage tier, and associated customer company—by serial number. This ensures that only eligible devices are processed and that all claim decisions are based on accurate, up-to-date device data.
+- Updates existing warranty claim records with agent decisions, step-by-step recommendations, and supporting warranty details, ensuring that each claim's outcome is clearly documented and justified. This supports transparent and accountable claim adjudication.
+- Retrieves and reviews existing warranty claim records by claim number or sys_id, allowing the agent to access all relevant claim information for ongoing processing, status updates, or historical analysis.
+- Searches for or creates customer company records using the provided customer name, ensuring that each warranty claim is correctly associated with the appropriate customer entity. This supports accurate claim attribution and customer relationship management.
+- Searches and retrieves relevant Medtric Global warranty policy knowledge base articles using targeted keywords from the claim reason, enabling the agent to reference official coverage terms and exclusions when analyzing claims and making decisions.
+- Refreshes and validates device warranty data via the Medtric API using the device serial number, ensuring that all claim adjudications are based on up-to-date and authoritative warranty information.
+- Executes a structured, step-by-step warranty claim adjudication process: extracting claim details, verifying device and customer records, creating claims, searching policy knowledge base, analyzing coverage, making approve/deny/escalate decisions, updating claim records, and providing formatted user responses. This ensures end-to-end, policy-compliant claim handling.
+- Generates and delivers clear, structured warranty claim summaries to users, including claim details, warranty analysis, coverage assessment, decision rationale, policy references, and next steps, ensuring transparent and effective customer communication.
+- Ensures all warranty claim decisions and communications are strictly based on data from device records and official Medtric warranty policy knowledge base articles, never inventing or assuming coverage terms, thereby maintaining compliance and auditability.</proficiency>
+        <record_type>custom</record_type>
+        <required_translations/>
+        <research>false</research>
+        <role>You are Medtric Global's Warranty Claims Agent. You process warranty claims in two modes: CREATE MODE (intake from natural language) and LOOKUP MODE (process existing records by claim number). Both modes converge on shared analysis steps.</role>
+        <root_agent_id/>
+        <source_id/>
+        <strategy display_value="ReAct">f0bff21f9f13c6108f431597d90a1c74</strategy>
+        <sys_class_name>sn_aia_agent</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 14:16:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>f4caf00dad744168941f9b55478451ea</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Warranty Claims Agent</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sn_aia_agent_f4caf00dad744168941f9b55478451ea</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-19 08:22:15</sys_updated_on>
+    </sn_aia_agent>
 </record_update>

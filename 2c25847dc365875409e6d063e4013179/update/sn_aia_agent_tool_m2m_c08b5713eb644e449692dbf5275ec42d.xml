@@ -1,28 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_aia_agent_tool_m2m">
-  <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
-    <sys_id>c08b5713eb644e449692dbf5275ec42d</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sn_aia_agent_tool_m2m_c08b5713eb644e449692dbf5275ec42d</sys_update_name>
-    <active>true</active>
-    <agent>f4caf00dad744168941f9b55478451ea</agent>
-    <description>Looks up a customer company from core_company by name.</description>
-    <display_output>false</display_output>
-    <document_status/>
-    <execution_mode>autopilot</execution_mode>
-    <inputs>[{"name":"customer_name","value":"","description":"Customer company name","mandatory":true,"invalidMessage":null},{"name":"crudInputs","value":{"operation":"lookup","table":{"value":"core_company","displayValue":"core_company"},"query":"nameLIKE{{customer_name}}","returnFields":[{"excludedOperators":[],"extendedOperators":null,"name":"sys_id","label":"sys_id","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"sys_id","sublabel":"sys_id"},{"excludedOperators":[],"extendedOperators":null,"name":"name","label":"name","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"name","sublabel":"name"}],"limit":"5"},"description":"Lookup operation configuration","mandatory":true,"invalidMessage":null}]</inputs>
-    <max_auto_executions>10</max_auto_executions>
-    <name>Lookup or Create Customer</name>
-    <output_transformation_strategy>none</output_transformation_strategy>
-    <post_message>Customer verified.</post_message>
-    <post_processing_script/>
-    <pre_message>Looking up customer...</pre_message>
-    <pre_run>false</pre_run>
-    <sys_domain>global</sys_domain>
-    <sys_overrides/>
-    <timeout/>
-    <tool>be8f28dea4634f278aa6d0b7fd6e8fee</tool>
-    <tool_attributes>{}</tool_attributes>
-    <transformation_instructions/>
-    <widgets/>
-  </sn_aia_agent_tool_m2m>
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <agent display_value="Warranty Claims Agent">f4caf00dad744168941f9b55478451ea</agent>
+        <description>Looks up a customer company from core_company by name.</description>
+        <display_mode/>
+        <display_output>false</display_output>
+        <document_status/>
+        <entity/>
+        <entity_id/>
+        <execution_mode>autopilot</execution_mode>
+        <inputs>[{"name":"customer_name","value":"","description":"Customer company name","mandatory":true,"invalidMessage":null},{"name":"crudInputs","value":{"operation":"lookup","table":{"value":"core_company","displayValue":"core_company"},"query":"nameLIKE{{customer_name}}","returnFields":[{"excludedOperators":[],"extendedOperators":null,"name":"sys_id","label":"sys_id","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"sys_id","sublabel":"sys_id"},{"excludedOperators":[],"extendedOperators":null,"name":"name","label":"name","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"dictionaryAttributes":[],"id":"name","sublabel":"name"}],"limit":"5"},"description":"Lookup operation configuration","mandatory":true,"invalidMessage":null}]</inputs>
+        <max_auto_executions>10</max_auto_executions>
+        <name>Lookup or Create Customer</name>
+        <output_transformation_strategy>none</output_transformation_strategy>
+        <post_message>Customer verified.</post_message>
+        <post_processing_script/>
+        <pre_message>Looking up customer...</pre_message>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>false</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 18:52:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>c08b5713eb644e449692dbf5275ec42d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Lookup or Create Customer</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_c08b5713eb644e449692dbf5275ec42d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 18:52:31</sys_updated_on>
+        <timeout/>
+        <tool display_value="Lookup or Create Customer">be8f28dea4634f278aa6d0b7fd6e8fee</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <widgets/>
+    </sn_aia_agent_tool_m2m>
 </record_update>

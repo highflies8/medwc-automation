@@ -1,40 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
-  <sp_portal action="INSERT_OR_UPDATE">
-    <sys_id>922d5c90b4ab4cd9acb84bd96e968f62</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sp_portal_922d5c90b4ab4cd9acb84bd96e968f62</sys_update_name>
-    <alternate_portal/>
-    <communication_channels/>
-    <css_variables/>
-    <dark_theme/>
-    <default>false</default>
-    <embeddable_macroponents/>
-    <enable_ais>true</enable_ais>
-    <enable_certificate_based_authentication>false</enable_certificate_based_authentication>
-    <enable_embeddables>false</enable_embeddables>
-    <enable_favorites>false</enable_favorites>
-    <hide_portal_name>false</hide_portal_name>
-    <homepage id="medtric_home">6094f9a28f4140f99f44a81adda6aa8d</homepage>
-    <icon/>
-    <inactive>false</inactive>
-    <kb_knowledge_base/>
-    <kb_knowledge_page/>
-    <login_page>a0e3b3acc3521200b0449f2974d3ae14</login_page>
-    <logo/>
-    <logo_alt_text/>
-    <notfound_page>3c2c9063cb11020000f8d856634c9c1f</notfound_page>
-    <quick_start_config/>
-    <rtl_enabled>false</rtl_enabled>
-    <sc_catalog/>
-    <sc_catalog_page/>
-    <sc_category_page/>
-    <search_application/>
-    <search_results_configuration/>
-    <sp_chat_queue/>
-    <sp_rectangle_menu/>
-    <theme>9a70f1410006484e8596f59923804108</theme>
-    <title>Medtric Customer Support Portal</title>
-    <ts_index_group/>
-    <url_suffix>medtric</url_suffix>
-  </sp_portal>
+    <sp_portal action="INSERT_OR_UPDATE">
+        <alternate_portal/>
+        <communication_channels/>
+        <css_variables/>
+        <dark_theme/>
+        <default>false</default>
+        <embeddable_macroponents/>
+        <enable_ais>true</enable_ais>
+        <enable_certificate_based_authentication>false</enable_certificate_based_authentication>
+        <enable_early_redirection>false</enable_early_redirection>
+        <enable_embeddables>false</enable_embeddables>
+        <enable_favorites>false</enable_favorites>
+        <enable_local_login>false</enable_local_login>
+        <enable_portal_authentication>false</enable_portal_authentication>
+        <hide_portal_name>false</hide_portal_name>
+        <homepage display_value="medtric_home">6094f9a28f4140f99f44a81adda6aa8d</homepage>
+        <icon/>
+        <inactive>false</inactive>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page display_value="csm_login">a0e3b3acc3521200b0449f2974d3ae14</login_page>
+        <logo/>
+        <logo_alt_text/>
+        <notfound_page display_value="404">3c2c9063cb11020000f8d856634c9c1f</notfound_page>
+        <portal_identity_providers/>
+        <quick_start_config/>
+        <rtl_enabled>false</rtl_enabled>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <search_application/>
+        <search_results_configuration/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu/>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 19:20:07</sys_created_on>
+        <sys_id>922d5c90b4ab4cd9acb84bd96e968f62</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Medtric Customer Support Portal</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sp_portal_922d5c90b4ab4cd9acb84bd96e968f62</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 19:20:07</sys_updated_on>
+        <theme display_value="Medtric Customer Support Theme">9a70f1410006484e8596f59923804108</theme>
+        <title>Medtric Customer Support Portal</title>
+        <ts_index_group/>
+        <url_suffix>medtric</url_suffix>
+        <user_registration_config/>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=922d5c90b4ab4cd9acb84bd96e968f62"/>
 </record_update>

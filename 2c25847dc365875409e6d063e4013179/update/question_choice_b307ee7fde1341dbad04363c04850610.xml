@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
-  <question_choice action="INSERT_OR_UPDATE">
-    <sys_id>b307ee7fde1341dbad04363c04850610</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>question_choice_b307ee7fde1341dbad04363c04850610</sys_update_name>
-    <inactive>false</inactive>
-    <order>2</order>
-    <question cat_item="4745678a76ee4fffb0178735f8cc2246" name="is_urgent" variable_set="NULL">c5e1ebcedc3745a5b73d5d56704df6f8</question>
-    <text>Yes - Device is critical for patient care</text>
-    <value>true</value>
-  </question_choice>
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>2</order>
+        <published_ref/>
+        <question display_value="Is this urgent?">c5e1ebcedc3745a5b73d5d56704df6f8</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 19:20:04</sys_created_on>
+        <sys_id>b307ee7fde1341dbad04363c04850610</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Yes - Device is critical for patient care</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>question_choice_b307ee7fde1341dbad04363c04850610</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 19:20:04</sys_updated_on>
+        <text>Yes - Device is critical for patient care</text>
+        <value>true</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=b307ee7fde1341dbad04363c04850610"/>
 </record_update>

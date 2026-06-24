@@ -1,80 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_section caption="Warranty Information" section_id="a5f9694584194f6fb5f2a86348b034d6" sys_domain="global" table="x_snc_medwc_auto_0_warranty_claim" view="Default view">
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.begin_split</element>
-      <position>0</position>
-      <sys_id>25bd763717a949128c2f35ee4550883f</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>device_name</element>
-      <position>1</position>
-      <sys_id>cda2b71b552a4a7bbb778dab35120355</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>warranty_tier</element>
-      <position>2</position>
-      <sys_id>753b214cdd9a4bf4b659aa5f15e13940</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.split</element>
-      <position>3</position>
-      <sys_id>15f2930527104c3ba00d562860400ab0</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>warranty_expiry</element>
-      <position>4</position>
-      <sys_id>2288caa582f44ef9b05890e0616643d5</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.end_split</element>
-      <position>5</position>
-      <sys_id>46e12e71344f45afa3516e9cbafde55f</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>warranty_details</element>
-      <position>6</position>
-      <sys_id>37b9b9eb9f79425bbf1b3479c05e8120</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_section action="INSERT_OR_UPDATE">
-      <caption>Warranty Information</caption>
-      <header>false</header>
-      <name>x_snc_medwc_auto_0_warranty_claim</name>
-      <roles/>
-      <sys_domain>global</sys_domain>
-      <sys_id>a5f9694584194f6fb5f2a86348b034d6</sys_id>
-      <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-      <sys_user/>
-      <title>false</title>
-      <view_name/>
-      <view>Default view</view>
+    <sys_ui_section caption="Warranty Information" section_id="a5f9694584194f6fb5f2a86348b034d6" sys_domain="global" table="x_snc_medwc_auto_0_warranty_claim" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 19:05:03</sys_created_on>
+            <sys_id>25bd763717a949128c2f35ee4550883f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 19:05:03</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>device_name</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 19:05:03</sys_created_on>
+            <sys_id>cda2b71b552a4a7bbb778dab35120355</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 19:05:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>warranty_tier</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 19:05:03</sys_created_on>
+            <sys_id>753b214cdd9a4bf4b659aa5f15e13940</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 19:05:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 19:05:03</sys_created_on>
+            <sys_id>15f2930527104c3ba00d562860400ab0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 19:05:03</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>warranty_expiry</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 19:05:03</sys_created_on>
+            <sys_id>2288caa582f44ef9b05890e0616643d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 19:05:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 19:05:03</sys_created_on>
+            <sys_id>46e12e71344f45afa3516e9cbafde55f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 19:05:03</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>warranty_details</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 19:05:03</sys_created_on>
+            <sys_id>37b9b9eb9f79425bbf1b3479c05e8120</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Warranty Information" display_value="Warranty Information" name="x_snc_medwc_auto_0_warranty_claim" sys_domain="global" view="Default view">a5f9694584194f6fb5f2a86348b034d6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 19:05:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Warranty Information</caption>
+            <header>false</header>
+            <name>x_snc_medwc_auto_0_warranty_claim</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 13:44:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a5f9694584194f6fb5f2a86348b034d6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_medwc_auto_0_warranty_claim</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+            <sys_update_name>sys_ui_section_a5f9694584194f6fb5f2a86348b034d6</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 13:44:21</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
     </sys_ui_section>
-  </sys_ui_section>
 </record_update>

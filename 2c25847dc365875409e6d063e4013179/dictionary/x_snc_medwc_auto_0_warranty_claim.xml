@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="8a085e368369466f9b4c1fd5d69e7231" extends="task" label="Warranty Claim" name="x_snc_medwc_auto_0_warranty_claim" type="collection">
+        <element label="Customer Notified" max_length="40" name="customer_notified" type="boolean"/>
+        <element label="Warranty Expiry" max_length="40" name="warranty_expiry" type="glide_date"/>
+        <element label="KB Article Cited" max_length="500" name="kb_article_cited" type="string"/>
+        <element label="Device Serial Number" mandatory="true" max_length="100" name="device_serial_number" type="string"/>
+        <element label="Claim Reason" mandatory="true" max_length="1000" name="claim_reason" type="string"/>
+        <element label="Device" mandatory="true" max_length="32" name="device" reference="cmdb_ci_med_device" type="reference"/>
+        <element label="API Call Timestamp" max_length="40" name="api_call_timestamp" type="glide_date_time"/>
+        <element label="Notification Sent Date" max_length="40" name="notification_sent_date" type="glide_date_time"/>
+        <element label="Device Name" max_length="200" name="device_name" type="string"/>
+        <element display="true" label="Caller Name" mandatory="true" max_length="200" name="caller_name" type="string"/>
+        <element label="Agent Recommendation" max_length="4000" name="agent_recommendation" type="string"/>
+        <element label="Warranty Details" max_length="4000" name="warranty_details" type="string"/>
+        <element display="true" label="Customer Name" mandatory="true" max_length="200" name="customer_name" type="string"/>
+        <element label="Customer" mandatory="true" max_length="32" name="customer" reference="core_company" type="reference"/>
+        <element choice="1" label="Agent Decision" max_length="40" name="agent_decision" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Approve" sequence="0" value="approve"/>
+                <element inactive_on_update="false" label="Escalate" sequence="2" value="escalate"/>
+                <element inactive_on_update="false" label="Deny" sequence="1" value="deny"/>
+            </choice>
+        </element>
+        <element label="Warranty Tier" max_length="200" name="warranty_tier" type="string"/>
+        <element label="Fulfillment Record" max_length="200" name="fulfillment_record" type="string"/>
+    </element>
+</database>

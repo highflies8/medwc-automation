@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_semantic_search_embedding_model_configuration">
+    <ais_semantic_search_embedding_model_configuration action="INSERT_OR_UPDATE">
+        <default>false</default>
+        <document_match_threshold>0.8</document_match_threshold>
+        <embedding_model display_value="ServiceNow Embedding (E5)">c153d0f2432302104611495d9bb8f2ec</embedding_model>
+        <semantic_search_configuration display_value="Get relevant knowledge articles">9946c086c3e54f5409e6d063e40131ec</semantic_search_configuration>
+        <sys_class_name>ais_semantic_search_embedding_model_configuration</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-19 08:21:43</sys_created_on>
+        <sys_id>1546c086c3e54f5409e6d063e40131f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>ais_semantic_search_embedding_model_configuration_1546c086c3e54f5409e6d063e40131f4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-19 08:21:43</sys_updated_on>
+    </ais_semantic_search_embedding_model_configuration>
+</record_update>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <agent display_value="Warranty Claims Agent">f4caf00dad744168941f9b55478451ea</agent>
+        <description>Fetch knowledge articles which contain similar and relevant information to the search query. This is not a general search engine for getting any piece of information. It provides access to specific, standard documentation on Medtric Global warranty policies, coverage terms, exclusions, and claim decision guidelines. It should be used only to fetch relevant articles based on the claim reason or warranty question. This tool is not designed for reviewing knowledge article roles or restrictions. This tool is to be run ONLY ONE TIME to find any relevant warranty policy articles related to the claim reason before making an approve, deny, or escalate decision.</description>
+        <display_mode>inline</display_mode>
+        <display_output>false</display_output>
+        <document_status/>
+        <entity>sn_aia_agent</entity>
+        <entity_id>f4caf00dad744168941f9b55478451ea</entity_id>
+        <execution_mode>autopilot</execution_mode>
+        <inputs>[{"name":"search_type","description":"Search type","value":"hybrid"},{"name":"query","description":"search query for retrieving relevant information from Knowledge Table"},{"name":"search_profile","value":"quick_action_kb_search_profile","label":"Quick Action - KB Search Profile","description":"Search profile"},{"name":"sources","label":["Knowledge Table"],"value":["kb_knowledge"],"description":"Search sources"},{"name":"fields","label":["Article body [kb_knowledge]","Number [kb_knowledge]","Short description [kb_knowledge]","Description [kb_knowledge]"],"value":["kb_knowledge.text","kb_knowledge.number","kb_knowledge.short_description","kb_knowledge.description"],"description":"Fields to be returned"},{"name":"search_results_limit","value":"10","description":"Search results limit"},{"name":"semantic_index_names","label":["body","title"],"value":["body","title"],"description":"Semantic indexed fields"},{"name":"document_match_threshold","value":"0.8","description":"Document matching threshold"},{"name":"chunking_mode","value":"SMALL_TO_BIG"},{"name":"chunk_unit","value":"WORDS"},{"name":"chunk_size","value":"750"},{"name":"expanded_snippet_size","value":"750"}]</inputs>
+        <max_auto_executions>10</max_auto_executions>
+        <name>Get relevant knowledge articles</name>
+        <output_transformation_strategy>abstract_summary</output_transformation_strategy>
+        <post_message/>
+        <post_processing_script/>
+        <pre_message/>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>true</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-19 08:21:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>d146c086c3e54f5409e6d063e40131e5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Get relevant knowledge articles</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_d146c086c3e54f5409e6d063e40131e5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-19 08:51:20</sys_updated_on>
+        <timeout/>
+        <tool display_value="AIA RAG Retriever">8021ddea2b0d52101d72fb466e91bfd1</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <widgets>db0e858eff62b210f465ffffffffff2c</widgets>
+    </sn_aia_agent_tool_m2m>
+</record_update>

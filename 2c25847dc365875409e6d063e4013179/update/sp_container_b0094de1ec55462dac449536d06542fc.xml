@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
-  <sp_container action="INSERT_OR_UPDATE">
-    <sys_id>b0094de1ec55462dac449536d06542fc</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sp_container_b0094de1ec55462dac449536d06542fc</sys_update_name>
-    <background_color/>
-    <background_image/>
-    <background_style>default</background_style>
-    <bootstrap_alt>false</bootstrap_alt>
-    <class_name/>
-    <container_class_name/>
-    <name>Homepage Container</name>
-    <order>1</order>
-    <semantic_tag/>
-    <sp_page id="medtric_home">6094f9a28f4140f99f44a81adda6aa8d</sp_page>
-    <subheader>false</subheader>
-    <title/>
-    <width>container</width>
-  </sp_container>
+    <sp_container action="INSERT_OR_UPDATE">
+        <aria_label/>
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Homepage Container</name>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_page display_value="medtric_home">6094f9a28f4140f99f44a81adda6aa8d</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 19:20:06</sys_created_on>
+        <sys_id>b0094de1ec55462dac449536d06542fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Homepage Container</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sp_container_b0094de1ec55462dac449536d06542fc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 19:20:06</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
 </record_update>

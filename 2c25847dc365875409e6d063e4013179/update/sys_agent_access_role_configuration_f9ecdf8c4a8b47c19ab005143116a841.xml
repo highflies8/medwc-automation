@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_agent_access_role_configuration">
-  <sys_agent_access_role_configuration action="INSERT_OR_UPDATE">
-    <sys_id>f9ecdf8c4a8b47c19ab005143116a841</sys_id>
-    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
-    <sys_update_name>sys_agent_access_role_configuration_f9ecdf8c4a8b47c19ab005143116a841</sys_update_name>
-    <action>limit_to_roles</action>
-    <agent>531034a671f3454495c8b8343feb86ff</agent>
-    <agent_table>sn_aia_usecase</agent_table>
-    <description/>
-    <name>531034a671f3454495c8b8343feb86ff</name>
-    <role_list>e4b3ba08d652493e8d193caa689a9157</role_list>
-  </sys_agent_access_role_configuration>
+    <sys_agent_access_role_configuration action="INSERT_OR_UPDATE">
+        <action>limit_to_roles</action>
+        <agent>531034a671f3454495c8b8343feb86ff</agent>
+        <agent_table>sn_aia_usecase</agent_table>
+        <allow_all_session_roles>false</allow_all_session_roles>
+        <description/>
+        <name>531034a671f3454495c8b8343feb86ff</name>
+        <role_list name="x_snc_medwc_auto_0.user">e4b3ba08d652493e8d193caa689a9157</role_list>
+        <sys_class_name>sys_agent_access_role_configuration</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-18 14:17:25</sys_created_on>
+        <sys_id>f9ecdf8c4a8b47c19ab005143116a841</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>531034a671f3454495c8b8343feb86ff</sys_name>
+        <sys_package display_value="MedWC Automation" source="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="MedWC Automation">2c25847dc365875409e6d063e4013179</sys_scope>
+        <sys_update_name>sys_agent_access_role_configuration_f9ecdf8c4a8b47c19ab005143116a841</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-18 14:17:25</sys_updated_on>
+    </sys_agent_access_role_configuration>
 </record_update>
