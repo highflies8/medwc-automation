@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_medwc_auto_0_warranty_claim">
+  <x_snc_medwc_auto_0_warranty_claim action="INSERT_OR_UPDATE">
+    <sys_id>90b1579d78f74271a8ba776430d1d87d</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>x_snc_medwc_auto_0_warranty_claim_90b1579d78f74271a8ba776430d1d87d</sys_update_name>
+    <caller_name>System Administrator</caller_name>
+    <claim_reason>Bluetooth connectivity lost with paired nurse station, unable to transmit data wirelessly</claim_reason>
+    <customer>36e230ad6ad84d70b70950c411f64b53</customer>
+    <device>d018ac6c21c54dd197b0b5ef1a0c2ad7</device>
+    <priority>2</priority>
+    <state>1</state>
+  </x_snc_medwc_auto_0_warranty_claim>
+</record_update>

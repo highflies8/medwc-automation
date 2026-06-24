@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_medwc_auto_0_warranty_claim">
+  <x_snc_medwc_auto_0_warranty_claim action="INSERT_OR_UPDATE">
+    <sys_id>0d1dda8818614f90b7d3b49692cde966</sys_id>
+    <sys_scope display_value="x_snc_medwc_auto_0">2c25847dc365875409e6d063e4013179</sys_scope>
+    <sys_update_name>x_snc_medwc_auto_0_warranty_claim_0d1dda8818614f90b7d3b49692cde966</sys_update_name>
+    <agent_decision>deny</agent_decision>
+    <agent_recommendation>Denied. Liquid damage is excluded from warranty coverage under all tiers. The 'Environmental Damage Exclusions' KB article explicitly lists water/liquid ingress as a non-covered event.</agent_recommendation>
+    <caller_name>System Administrator</caller_name>
+    <claim_reason>Water damage from spill in operating room</claim_reason>
+    <customer>36e230ad6ad84d70b70950c411f64b53</customer>
+    <device>d018ac6c21c54dd197b0b5ef1a0c2ad7</device>
+    <priority>4</priority>
+    <state>4</state>
+  </x_snc_medwc_auto_0_warranty_claim>
+</record_update>
