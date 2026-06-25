@@ -130,6 +130,7 @@ MedWC Automation helps organizations:
 
 <img width="1728" height="929" alt="image" src="https://github.com/user-attachments/assets/dcda1ed3-f946-42c1-9f02-fb5d38c8f188" />
 
+<img width="1728" height="929" alt="image" src="https://github.com/user-attachments/assets/55c8ec0c-4c3f-4db0-9bfe-e5a47d0a7602" />
 
 
 ## Dashboard
